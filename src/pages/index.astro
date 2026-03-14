@@ -14,18 +14,26 @@ import info from '../data/info.json';
     <div class="absolute inset-0 bg-gradient-to-br from-primary via-primary-light to-accent/40"></div>
     <div class="absolute inset-0 bg-[url('/images/hero.jpg')] bg-cover bg-[center_40%] bg-no-repeat"></div>
 
-    <!-- Video background (fades in when loaded) -->
+    <!-- Video carousel background -->
     <video
-      id="hero-video"
-      class="absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-1000"
+      id="hero-video-0"
+      class="hero-video absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-1000"
       autoplay
       muted
-      loop
       playsinline
       preload="auto"
       poster="/images/hero.jpg"
     >
       <source src="/images/hero-bg.mp4" type="video/mp4" />
+    </video>
+    <video
+      id="hero-video-1"
+      class="hero-video absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-1000"
+      muted
+      playsinline
+      preload="auto"
+    >
+      <source src="/images/hero-bg-seasons.mp4" type="video/mp4" />
     </video>
 
     <div class="absolute inset-0 bg-dark-overlay"></div>
@@ -250,16 +258,44 @@ import info from '../data/info.json';
 </style>
 
 <script>
-  const video = document.getElementById('hero-video') as HTMLVideoElement;
-  if (video) {
-    video.addEventListener('canplaythrough', () => {
-      video.classList.remove('opacity-0');
-      video.classList.add('opacity-100');
-    });
-    // Fallback if event already fired
-    if (video.readyState >= 4) {
-      video.classList.remove('opacity-0');
-      video.classList.add('opacity-100');
+  const videos = [
+    document.getElementById('hero-video-0') as HTMLVideoElement,
+    document.getElementById('hero-video-1') as HTMLVideoElement,
+  ];
+  let current = 0;
+
+  function showVideo(index: number) {
+    videos[index].currentTime = 0;
+    videos[index].play();
+    videos[index].classList.remove('opacity-0');
+    videos[index].classList.add('opacity-100');
+  }
+
+  function hideVideo(index: number) {
+    videos[index].classList.remove('opacity-100');
+    videos[index].classList.add('opacity-0');
+  }
+
+  function crossfade() {
+    const next = (current + 1) % videos.length;
+    showVideo(next);
+    hideVideo(current);
+    current = next;
+  }
+
+  // When a video ends, crossfade to the next one
+  videos.forEach((v) => {
+    v.addEventListener('ended', crossfade);
+  });
+
+  // Start first video once loaded
+  const first = videos[0];
+  if (first) {
+    const onReady = () => showVideo(0);
+    if (first.readyState >= 4) {
+      onReady();
+    } else {
+      first.addEventListener('canplaythrough', onReady, { once: true });
     }
   }
 </script>
