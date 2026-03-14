@@ -69,6 +69,8 @@ npm run preview      # preview production build
 npm start            # start Express production server (Hostinger)
 ```
 
+**Important:** Always restart the dev server (`npm run dev`) after making changes so the user can preview them at localhost:4321.
+
 ## Deploy (Hostinger)
 
 - **Hosting:** Hostinger Node.js Git auto-deploy from `main` branch

@@ -1,0 +1,632 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+import info from '../data/info.json';
+---
+
+<Layout title="Wesela i Eventy — Stara Stacja" description="Organizacja wesel i eventów na szczycie Szyndzielni. Sala na 120 osób z panoramicznym widokiem na Beskidy, profesjonalna obsługa, menu weselne.">
+  <Nav />
+
+  <!-- Hero — full-bleed photo -->
+  <section class="relative h-screen flex items-center justify-center overflow-hidden">
+    <div class="absolute inset-0 bg-[url('/images/wedding/wedding-79.jpg')] bg-cover bg-center"></div>
+    <div class="absolute inset-0 bg-gradient-to-t from-primary/80 via-dark/40 to-dark/20"></div>
+    <div class="relative z-10 text-center text-white px-6 max-w-4xl">
+      <p class="text-accent-light uppercase tracking-[0.15em] sm:tracking-[0.3em] text-xs sm:text-sm mb-6 animate-fade-in">Stara Stacja Weddings</p>
+      <h1 class="font-heading text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold mb-6">
+        <span class="text-pl">Wyjątkowe chwile</span>
+        <span class="text-en hidden">Exceptional Moments</span>
+        <span class="text-cs hidden">Výjimečné chvíle</span>
+      </h1>
+      <p class="text-xl md:text-2xl font-light text-white/80 mb-10">
+        <span class="text-pl">1000 metrów nad poziomem morza</span>
+        <span class="text-en hidden">1,000 meters above sea level</span>
+        <span class="text-cs hidden">1 000 metrů nad mořem</span>
+      </p>
+      <a href="#kontakt" class="inline-block px-10 py-4 bg-accent text-primary font-semibold uppercase tracking-wider text-sm hover:bg-accent-light transition-colors">
+        <span class="text-pl">Zaplanuj wesele</span>
+        <span class="text-en hidden">Plan your wedding</span>
+        <span class="text-cs hidden">Naplánujte svatbu</span>
+      </a>
+    </div>
+    <div class="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
+      <svg class="w-6 h-6 text-white/60" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+      </svg>
+    </div>
+  </section>
+
+  <!-- Intro — text + couple photo -->
+  <section class="py-24 px-6">
+    <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+      <div>
+        <p class="text-accent uppercase tracking-[0.2em] text-sm mb-3">
+          <span class="text-pl">Wesele w chmurach</span>
+          <span class="text-en hidden">Wedding in the clouds</span>
+          <span class="text-cs hidden">Svatba v oblacích</span>
+        </p>
+        <h2 class="font-heading text-4xl md:text-5xl font-bold text-primary mb-6">
+          <span class="text-pl">Idealne miejsce na przyjęcie weselne</span>
+          <span class="text-en hidden">The perfect wedding reception venue</span>
+          <span class="text-cs hidden">Ideální místo pro svatební hostinu</span>
+        </h2>
+        <p class="text-dark/70 leading-relaxed mb-6">
+          <span class="text-pl">Stara Stacja to wyjątkowa restauracja, położona na szczycie malowniczej Szyndzielni, z panoramicznym widokiem na Beskidy i miasto Bielsko-Białą. Profesjonalna obsługa, wspaniała kuchnia i świetnie zaprojektowana przestrzeń sprawiają, że jest to idealne miejsce na przyjęcie weselne.</span>
+          <span class="text-en hidden">Stara Stacja is a unique restaurant located at the summit of picturesque Szyndzielnia, with a panoramic view of the Beskid Mountains and Bielsko-Biała. Professional service, wonderful cuisine, and beautifully designed space make it the perfect venue for a wedding reception.</span>
+          <span class="text-cs hidden">Stara Stacja je výjimečná restaurace na vrcholu malebné Szyndzielnie s panoramatickým výhledem na Beskydy a město Bielsko-Bílá. Profesionální obsluha, skvělá kuchyně a krásně navržený prostor z ní činí ideální místo pro svatební hostinu.</span>
+        </p>
+        <p class="text-dark/70 leading-relaxed">
+          <span class="text-pl">Organizujemy również konferencje, szkolenia, spotkania firmowe i inne wydarzenia specjalne. Możemy dostosować każdy aspekt imprezy do Waszych potrzeb.</span>
+          <span class="text-en hidden">We also organize conferences, training sessions, corporate meetings, and other special events. We can customize every aspect of your event to your needs.</span>
+          <span class="text-cs hidden">Pořádáme také konference, školení, firemní setkání a další speciální akce. Každý aspekt události můžeme přizpůsobit vašim potřebám.</span>
+        </p>
+      </div>
+      <div class="relative">
+        <div class="aspect-[4/5] rounded-sm overflow-hidden">
+          <img src="/images/wedding/wedding-69.jpg" alt="Para młoda w sali Starej Stacji" class="w-full h-full object-cover" loading="lazy" />
+        </div>
+        <div class="absolute -bottom-6 left-0 sm:-left-6 bg-accent text-primary px-4 sm:px-6 py-3 sm:py-4 font-heading text-base sm:text-lg font-bold">
+          <span class="text-pl">do 120 gości</span>
+          <span class="text-en hidden">up to 120 guests</span>
+          <span class="text-cs hidden">až 120 hostů</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Photo strip — 3 images edge-to-edge -->
+  <section class="grid grid-cols-1 md:grid-cols-3 gap-1">
+    <div class="aspect-[4/3] overflow-hidden">
+      <img src="/images/wedding/wedding-31.jpg" alt="Dekoracja stołu weselnego" class="w-full h-full object-cover hover:scale-105 transition-transform duration-700" loading="lazy" />
+    </div>
+    <div class="aspect-[4/3] overflow-hidden">
+      <img src="/images/wedding/wedding-95.jpg" alt="Para młoda przy zabytkowym wagoniku" class="w-full h-full object-cover hover:scale-105 transition-transform duration-700" loading="lazy" />
+    </div>
+    <div class="aspect-[4/3] overflow-hidden">
+      <img src="/images/wedding/wedding-32.jpg" alt="Dekoracja florystyczna" class="w-full h-full object-cover hover:scale-105 transition-transform duration-700" loading="lazy" />
+    </div>
+  </section>
+
+  <!-- Space features — with photos -->
+  <section class="py-24 px-6 bg-primary text-white">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-center mb-16">
+        <p class="text-accent uppercase tracking-[0.2em] text-sm mb-3">
+          <span class="text-pl">Nasza przestrzeń</span>
+          <span class="text-en hidden">Our space</span>
+          <span class="text-cs hidden">Náš prostor</span>
+        </p>
+        <h2 class="font-heading text-4xl md:text-5xl font-bold">
+          <span class="text-pl">Co oferujemy</span>
+          <span class="text-en hidden">What we offer</span>
+          <span class="text-cs hidden">Co nabízíme</span>
+        </h2>
+      </div>
+
+      <!-- Feature 1: Hall — photo left, text right -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center mb-16">
+        <div class="aspect-[3/2] rounded-sm overflow-hidden">
+          <img src="/images/wedding/wedding-135.jpg" alt="Panorama sali weselnej" class="w-full h-full object-cover" loading="lazy" />
+        </div>
+        <div>
+          <h3 class="font-heading text-2xl font-semibold mb-4">
+            <span class="text-pl">Przestronna sala 300m²</span>
+            <span class="text-en hidden">Spacious 300m² hall</span>
+            <span class="text-cs hidden">Prostorný sál 300m²</span>
+          </h3>
+          <ul class="space-y-4 text-white/70 leading-relaxed">
+            <li class="flex gap-3">
+              <span class="text-accent mt-1 shrink-0">&bull;</span>
+              <span>
+                <span class="text-pl">Panoramiczny widok na góry i Bielsko-Białą, do 120 osób</span>
+                <span class="text-en hidden">Panoramic mountain and city views, up to 120 guests</span>
+                <span class="text-cs hidden">Panoramatický výhled na hory a Bielsko-Bílou, až 120 hostů</span>
+              </span>
+            </li>
+            <li class="flex gap-3">
+              <span class="text-accent mt-1 shrink-0">&bull;</span>
+              <span>
+                <span class="text-pl">Autentyczny klimat dawnej stacji kolejowej</span>
+                <span class="text-en hidden">Authentic atmosphere of a former railway station</span>
+                <span class="text-cs hidden">Autentická atmosféra bývalé železniční stanice</span>
+              </span>
+            </li>
+            <li class="flex gap-3">
+              <span class="text-accent mt-1 shrink-0">&bull;</span>
+              <span>
+                <span class="text-pl">Klimatyczny kominek idealny na jesienno-zimowe przyjęcia</span>
+                <span class="text-en hidden">Atmospheric fireplace perfect for autumn and winter receptions</span>
+                <span class="text-cs hidden">Atmosférický krb ideální pro podzimní a zimní oslavy</span>
+              </span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Feature 2: Gondola — text left, photo right -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center mb-16">
+        <div class="md:order-2 aspect-[3/2] rounded-sm overflow-hidden">
+          <img src="/images/wedding/wedding-114.jpg" alt="Para młoda przy gondoli kolejki linowej" class="w-full h-full object-cover" loading="lazy" />
+        </div>
+        <div class="md:order-1">
+          <h3 class="font-heading text-2xl font-semibold mb-4">
+            <span class="text-pl">Wyjątkowy charakter</span>
+            <span class="text-en hidden">Unique character</span>
+            <span class="text-cs hidden">Jedinečný charakter</span>
+          </h3>
+          <ul class="space-y-4 text-white/70 leading-relaxed">
+            <li class="flex gap-3">
+              <span class="text-accent mt-1 shrink-0">&bull;</span>
+              <span>
+                <span class="text-pl">Ekspozycja historycznych wagoników kolejki linowej z lat 1953–2016</span>
+                <span class="text-en hidden">Exhibition of historic cable car gondolas from 1953–2016</span>
+                <span class="text-cs hidden">Expozice historických kabinek lanovky z let 1953–2016</span>
+              </span>
+            </li>
+            <li class="flex gap-3">
+              <span class="text-accent mt-1 shrink-0">&bull;</span>
+              <span>
+                <span class="text-pl">Taras jako strefa chillout z plenerowym barem — możliwość wynajmu na wyłączność</span>
+                <span class="text-en hidden">Terrace as a chill-out zone with outdoor bar — available for exclusive rental</span>
+                <span class="text-cs hidden">Terasa jako chill-out zóna s venkovním barem — k pronájmu na výhradní použití</span>
+              </span>
+            </li>
+            <li class="flex gap-3">
+              <span class="text-accent mt-1 shrink-0">&bull;</span>
+              <span>
+                <span class="text-pl">Dodatkowa przestrzeń na ceremonię w plenerze</span>
+                <span class="text-en hidden">Additional space for an outdoor ceremony</span>
+                <span class="text-cs hidden">Další prostor pro obřad venku</span>
+              </span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Feature 3: Highlights row -->
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-8 text-center">
+        <div class="bg-white/5 p-8 rounded-sm">
+          <div class="w-14 h-14 mx-auto mb-4 rounded-full bg-accent/20 flex items-center justify-center">
+            <svg class="w-7 h-7 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8.25 18.75a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m3 0h6m-9 0H3.375a1.125 1.125 0 01-1.125-1.125V14.25m17.25 4.5a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m3 0H21M3.375 14.25h17.25M3.375 14.25A1.125 1.125 0 012.25 13.125V6.375A1.125 1.125 0 013.375 5.25h17.25A1.125 1.125 0 0121.75 6.375v6.75A1.125 1.125 0 0120.625 14.25" />
+            </svg>
+          </div>
+          <h3 class="font-heading text-lg font-semibold mb-2">
+            <span class="text-pl">Kolejka linowa w cenie</span>
+            <span class="text-en hidden">Cable car included</span>
+            <span class="text-cs hidden">Lanovka v ceně</span>
+          </h3>
+          <p class="text-white/60 text-sm">
+            <span class="text-pl">Przejazd w dwie strony dla wszystkich gości</span>
+            <span class="text-en hidden">Round-trip for all guests</span>
+            <span class="text-cs hidden">Zpáteční jízda pro všechny hosty</span>
+          </p>
+        </div>
+        <div class="bg-white/5 p-8 rounded-sm">
+          <div class="w-14 h-14 mx-auto mb-4 rounded-full bg-accent/20 flex items-center justify-center">
+            <svg class="w-7 h-7 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z" />
+            </svg>
+          </div>
+          <h3 class="font-heading text-lg font-semibold mb-2">
+            <span class="text-pl">Ceremonia w plenerze</span>
+            <span class="text-en hidden">Outdoor ceremony</span>
+            <span class="text-cs hidden">Obřad venku</span>
+          </h3>
+          <p class="text-white/60 text-sm">
+            <span class="text-pl">Przestrzeń na ślub pod gołym niebem</span>
+            <span class="text-en hidden">Space for an open-air wedding</span>
+            <span class="text-cs hidden">Prostor pro svatbu pod širým nebem</span>
+          </p>
+        </div>
+        <div class="bg-white/5 p-8 rounded-sm">
+          <div class="w-14 h-14 mx-auto mb-4 rounded-full bg-accent/20 flex items-center justify-center">
+            <svg class="w-7 h-7 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25" />
+            </svg>
+          </div>
+          <h3 class="font-heading text-lg font-semibold mb-2">
+            <span class="text-pl">Menu na każdą dietę</span>
+            <span class="text-en hidden">Menus for every diet</span>
+            <span class="text-cs hidden">Menu pro každou dietu</span>
+          </h3>
+          <p class="text-white/60 text-sm">
+            <span class="text-pl">Dostosowanie do różnych wymagań</span>
+            <span class="text-en hidden">Adapted to different requirements</span>
+            <span class="text-cs hidden">Přizpůsobení různým požadavkům</span>
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Menu packages -->
+  <section class="py-24 px-6">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-center mb-16">
+        <p class="text-accent uppercase tracking-[0.2em] text-sm mb-3">
+          <span class="text-pl">Przykładowe menu</span>
+          <span class="text-en hidden">Sample menus</span>
+          <span class="text-cs hidden">Ukázková menu</span>
+        </p>
+        <h2 class="font-heading text-4xl md:text-5xl font-bold text-primary mb-4">
+          <span class="text-pl">Pakiety weselne</span>
+          <span class="text-en hidden">Wedding packages</span>
+          <span class="text-cs hidden">Svatební balíčky</span>
+        </h2>
+        <p class="text-dark/50 max-w-2xl mx-auto">
+          <span class="text-pl">Możliwość dostosowania menu do różnego typu diet</span>
+          <span class="text-en hidden">Menus can be adapted to different dietary requirements</span>
+          <span class="text-cs hidden">Menu lze přizpůsobit různým typům diet</span>
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-10">
+        <!-- Package 1 -->
+        <div class="bg-white shadow-sm relative overflow-hidden">
+          <div class="h-48 overflow-hidden">
+            <img src="/images/wedding/wedding-62.jpg" alt="Stół weselny" class="w-full h-full object-cover" loading="lazy" />
+          </div>
+          <div class="p-8 lg:p-10">
+            <h3 class="font-heading text-2xl font-bold text-primary mb-1">
+              <span class="text-pl">"Ruszamy w Góry"</span>
+              <span class="text-en hidden">"Heading to the Mountains"</span>
+              <span class="text-cs hidden">"Vyrážíme do hor"</span>
+            </h3>
+            <p class="text-accent font-heading text-3xl font-bold mb-8">349 zł <span class="text-base font-normal text-dark/40">
+              <span class="text-pl">/ os.</span>
+              <span class="text-en hidden">/ person</span>
+              <span class="text-cs hidden">/ os.</span>
+            </span></p>
+
+            <div class="space-y-5 text-sm">
+              <div>
+                <h4 class="uppercase tracking-wider text-accent text-xs font-semibold mb-1">
+                  <span class="text-pl">Toast powitalny</span>
+                  <span class="text-en hidden">Welcome toast</span>
+                  <span class="text-cs hidden">Uvítací přípitek</span>
+                </h4>
+                <p class="text-dark/70">
+                  <span class="text-pl">Lampka prosecco</span>
+                  <span class="text-en hidden">Glass of prosecco</span>
+                  <span class="text-cs hidden">Sklenka prosecca</span>
+                </p>
+              </div>
+
+              <div>
+                <h4 class="uppercase tracking-wider text-accent text-xs font-semibold mb-1">
+                  <span class="text-pl">Uroczysty obiad</span>
+                  <span class="text-en hidden">Formal dinner</span>
+                  <span class="text-cs hidden">Slavnostní oběd</span>
+                </h4>
+                <ul class="text-dark/70 space-y-1">
+                  <li>
+                    <span class="text-pl">Austriacki bulion</span>
+                    <span class="text-en hidden">Austrian bouillon</span>
+                    <span class="text-cs hidden">Rakouský bujón</span>
+                  </li>
+                  <li>
+                    <span class="text-pl">Rolada z kurczaka z serem w sosie ziołowym z pieczonymi ziemniakami i surówką</span>
+                    <span class="text-en hidden">Chicken roulade with cheese in herb sauce, roasted potatoes and salad</span>
+                    <span class="text-cs hidden">Kuřecí roláda se sýrem v bylinkové omáčce s pečenými bramborami a salátem</span>
+                  </li>
+                </ul>
+              </div>
+
+              <div>
+                <h4 class="uppercase tracking-wider text-accent text-xs font-semibold mb-1">
+                  <span class="text-pl">Kolacja</span>
+                  <span class="text-en hidden">Supper</span>
+                  <span class="text-cs hidden">Večeře</span>
+                </h4>
+                <p class="text-dark/70">
+                  <span class="text-pl">Barszcz z krokietem</span>
+                  <span class="text-en hidden">Beetroot soup with croquette</span>
+                  <span class="text-cs hidden">Boršč s kroketou</span>
+                </p>
+              </div>
+
+              <div>
+                <h4 class="uppercase tracking-wider text-accent text-xs font-semibold mb-1">
+                  <span class="text-pl">Bufety</span>
+                  <span class="text-en hidden">Buffets</span>
+                  <span class="text-cs hidden">Bufety</span>
+                </h4>
+                <p class="text-dark/70">
+                  <span class="text-pl">Słodki bufet (3 porcje/os.) + bufet słonych przekąsek</span>
+                  <span class="text-en hidden">Sweet buffet (3 portions/person) + savory snacks buffet</span>
+                  <span class="text-cs hidden">Sladký bufet (3 porce/os.) + bufet slaných občerstvení</span>
+                </p>
+              </div>
+
+              <div>
+                <h4 class="uppercase tracking-wider text-accent text-xs font-semibold mb-1">
+                  <span class="text-pl">Napoje</span>
+                  <span class="text-en hidden">Beverages</span>
+                  <span class="text-cs hidden">Nápoje</span>
+                </h4>
+                <p class="text-dark/70">
+                  <span class="text-pl">Woda gaz/niegaz, 2 rodzaje soków, kawa i herbata</span>
+                  <span class="text-en hidden">Sparkling/still water, 2 types of juice, coffee and tea</span>
+                  <span class="text-cs hidden">Perlivá/neperlivá voda, 2 druhy džusů, káva a čaj</span>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Package 2 -->
+        <div class="bg-white shadow-sm relative overflow-hidden">
+          <div class="h-48 overflow-hidden">
+            <img src="/images/wedding/wedding-41.jpg" alt="Eleganckie nakrycie stołu" class="w-full h-full object-cover" loading="lazy" />
+          </div>
+          <div class="p-8 lg:p-10">
+            <h3 class="font-heading text-2xl font-bold text-primary mb-1">
+              <span class="text-pl">"Droga na Szczyt"</span>
+              <span class="text-en hidden">"Road to the Summit"</span>
+              <span class="text-cs hidden">"Cesta na vrchol"</span>
+            </h3>
+            <p class="text-accent font-heading text-3xl font-bold mb-8">429 zł <span class="text-base font-normal text-dark/40">
+              <span class="text-pl">/ os.</span>
+              <span class="text-en hidden">/ person</span>
+              <span class="text-cs hidden">/ os.</span>
+            </span></p>
+
+            <div class="space-y-5 text-sm">
+              <div>
+                <h4 class="uppercase tracking-wider text-accent text-xs font-semibold mb-1">
+                  <span class="text-pl">Toast powitalny</span>
+                  <span class="text-en hidden">Welcome toast</span>
+                  <span class="text-cs hidden">Uvítací přípitek</span>
+                </h4>
+                <p class="text-dark/70">
+                  <span class="text-pl">Lampka prosecco</span>
+                  <span class="text-en hidden">Glass of prosecco</span>
+                  <span class="text-cs hidden">Sklenka prosecca</span>
+                </p>
+              </div>
+
+              <div>
+                <h4 class="uppercase tracking-wider text-accent text-xs font-semibold mb-1">
+                  <span class="text-pl">Przystawka</span>
+                  <span class="text-en hidden">Appetizer</span>
+                  <span class="text-cs hidden">Předkrm</span>
+                </h4>
+                <p class="text-dark/70">
+                  <span class="text-pl">Gravlax z łososia</span>
+                  <span class="text-en hidden">Salmon gravlax</span>
+                  <span class="text-cs hidden">Gravlax z lososa</span>
+                </p>
+              </div>
+
+              <div>
+                <h4 class="uppercase tracking-wider text-accent text-xs font-semibold mb-1">
+                  <span class="text-pl">Uroczysty obiad</span>
+                  <span class="text-en hidden">Formal dinner</span>
+                  <span class="text-cs hidden">Slavnostní oběd</span>
+                </h4>
+                <ul class="text-dark/70 space-y-1">
+                  <li>
+                    <span class="text-pl">Krem z kalafiora i białej czekolady</span>
+                    <span class="text-en hidden">Cauliflower and white chocolate cream soup</span>
+                    <span class="text-cs hidden">Krém z květáku a bílé čokolády</span>
+                  </li>
+                  <li>
+                    <span class="text-pl">Konfitowana noga kaczki, gratin ziemniaczany i czerwona kapusta</span>
+                    <span class="text-en hidden">Duck leg confit, potato gratin and red cabbage</span>
+                    <span class="text-cs hidden">Konfitovaná kachní stehna, bramborový gratin a červené zelí</span>
+                  </li>
+                </ul>
+              </div>
+
+              <div>
+                <h4 class="uppercase tracking-wider text-accent text-xs font-semibold mb-1">
+                  <span class="text-pl">Kolacje</span>
+                  <span class="text-en hidden">Suppers</span>
+                  <span class="text-cs hidden">Večeře</span>
+                </h4>
+                <ul class="text-dark/70 space-y-1">
+                  <li>
+                    <span class="text-pl">I: Gulasz z wołowiną i grzybami</span>
+                    <span class="text-en hidden">I: Beef and mushroom stew</span>
+                    <span class="text-cs hidden">I: Hovězí guláš s houbami</span>
+                  </li>
+                  <li>
+                    <span class="text-pl">II: Filet z dorsza, purée z batata, sos maślany</span>
+                    <span class="text-en hidden">II: Cod fillet, sweet potato purée, butter sauce</span>
+                    <span class="text-cs hidden">II: Filé z tresky, batátové pyré, máslová omáčka</span>
+                  </li>
+                </ul>
+              </div>
+
+              <div>
+                <h4 class="uppercase tracking-wider text-accent text-xs font-semibold mb-1">
+                  <span class="text-pl">Bufety i napoje</span>
+                  <span class="text-en hidden">Buffets & beverages</span>
+                  <span class="text-cs hidden">Bufety a nápoje</span>
+                </h4>
+                <p class="text-dark/70">
+                  <span class="text-pl">Słodki bufet + bufet słonych przekąsek + napoje bezalkoholowe</span>
+                  <span class="text-en hidden">Sweet buffet + savory snacks buffet + non-alcoholic drinks</span>
+                  <span class="text-cs hidden">Sladký bufet + bufet slaných občerstvení + nealkoholické nápoje</span>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Extras — with floral photo -->
+  <section class="py-24 px-6 bg-cream-dark">
+    <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+      <div class="aspect-[4/5] rounded-sm overflow-hidden md:order-2">
+        <img src="/images/wedding/wedding-20.jpg" alt="Dekoracja florystyczna - róże" class="w-full h-full object-cover" loading="lazy" />
+      </div>
+      <div class="md:order-1">
+        <h2 class="font-heading text-3xl md:text-4xl font-bold text-primary mb-8">
+          <span class="text-pl">Dodatkowo</span>
+          <span class="text-en hidden">Extras</span>
+          <span class="text-cs hidden">Navíc</span>
+        </h2>
+        <div class="space-y-6">
+          <div class="flex gap-4">
+            <span class="text-accent font-heading text-2xl font-bold shrink-0 w-20 text-right">75 zł</span>
+            <div>
+              <h3 class="font-heading text-lg font-semibold text-primary">
+                <span class="text-pl">Pakiety alkoholowe</span>
+                <span class="text-en hidden">Alcohol packages</span>
+                <span class="text-cs hidden">Balíčky alkoholu</span>
+              </h3>
+              <p class="text-dark/60 text-sm">
+                <span class="text-pl">Od 75 zł/os. Możliwość pakietów premium.</span>
+                <span class="text-en hidden">From 75 PLN/person. Premium packages available.</span>
+                <span class="text-cs hidden">Od 75 PLN/os. K dispozici prémiové balíčky.</span>
+              </p>
+            </div>
+          </div>
+          <div class="flex gap-4">
+            <span class="text-accent font-heading text-2xl font-bold shrink-0 w-20 text-right">35 zł</span>
+            <div>
+              <h3 class="font-heading text-lg font-semibold text-primary">
+                <span class="text-pl">Napoje gazowane</span>
+                <span class="text-en hidden">Carbonated drinks</span>
+                <span class="text-cs hidden">Sycené nápoje</span>
+              </h3>
+              <p class="text-dark/60 text-sm">
+                <span class="text-pl">Pakiety od 35 zł/os.</span>
+                <span class="text-en hidden">Packages from 35 PLN/person.</span>
+                <span class="text-cs hidden">Balíčky od 35 PLN/os.</span>
+              </p>
+            </div>
+          </div>
+          <div class="flex gap-4">
+            <span class="text-accent font-heading text-2xl font-bold shrink-0 w-20 text-right">20 zł</span>
+            <div>
+              <h3 class="font-heading text-lg font-semibold text-primary">
+                <span class="text-pl">Tort weselny</span>
+                <span class="text-en hidden">Wedding cake</span>
+                <span class="text-cs hidden">Svatební dort</span>
+              </h3>
+              <p class="text-dark/60 text-sm">
+                <span class="text-pl">Smak i dekoracje do wyboru od 20 zł/os.</span>
+                <span class="text-en hidden">Flavor and decorations of your choice from 20 PLN/person.</span>
+                <span class="text-cs hidden">Příchuť a dekorace dle výběru od 20 PLN/os.</span>
+              </p>
+            </div>
+          </div>
+          <div class="flex gap-4">
+            <span class="text-accent text-2xl shrink-0 w-20 flex justify-end items-start pt-1">
+              <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 21a9.004 9.004 0 008.716-6.747M12 21a9.004 9.004 0 01-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 017.843 4.582M12 3a8.997 8.997 0 00-7.843 4.582m15.686 0A11.953 11.953 0 0112 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0121 12c0 .778-.099 1.533-.284 2.253m0 0A17.919 17.919 0 0112 16.5a17.92 17.92 0 01-8.716-2.247m0 0A8.966 8.966 0 013 12c0-1.264.26-2.467.73-3.557" />
+              </svg>
+            </span>
+            <div>
+              <h3 class="font-heading text-lg font-semibold text-primary">
+                <span class="text-pl">Aranżacja florystyczna</span>
+                <span class="text-en hidden">Floral arrangements</span>
+                <span class="text-cs hidden">Květinová výzdoba</span>
+              </h3>
+              <p class="text-dark/60 text-sm">
+                <span class="text-pl">Profesjonalna dekoracja sali i inne usługi.</span>
+                <span class="text-en hidden">Professional hall decoration and other services.</span>
+                <span class="text-cs hidden">Profesionální výzdoba sálu a další služby.</span>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Photo gallery — masonry-style grid -->
+  <section class="py-24 px-6">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-center mb-16">
+        <p class="text-accent uppercase tracking-[0.2em] text-sm mb-3">
+          <span class="text-pl">Galeria</span>
+          <span class="text-en hidden">Gallery</span>
+          <span class="text-cs hidden">Galerie</span>
+        </p>
+        <h2 class="font-heading text-4xl md:text-5xl font-bold text-primary">
+          <span class="text-pl">Jak to wygląda</span>
+          <span class="text-en hidden">See for yourself</span>
+          <span class="text-cs hidden">Podívejte se sami</span>
+        </h2>
+      </div>
+      <div class="grid grid-cols-2 md:grid-cols-3 gap-2 md:gap-3">
+        <div class="aspect-[4/3] overflow-hidden rounded-sm">
+          <img src="/images/wedding/wedding-158.jpg" alt="Pocałunek pary młodej przy barze" class="w-full h-full object-cover hover:scale-105 transition-transform duration-700" loading="lazy" />
+        </div>
+        <div class="aspect-[4/3] overflow-hidden rounded-sm md:col-span-2">
+          <img src="/images/wedding/wedding-135.jpg" alt="Widok na całą salę weselną" class="w-full h-full object-cover hover:scale-105 transition-transform duration-700" loading="lazy" />
+        </div>
+        <div class="aspect-[4/3] overflow-hidden rounded-sm md:col-span-2">
+          <img src="/images/wedding/wedding-95.jpg" alt="Para młoda przy zabytkowym wagoniku" class="w-full h-full object-cover hover:scale-105 transition-transform duration-700" loading="lazy" />
+        </div>
+        <div class="aspect-[4/3] overflow-hidden rounded-sm">
+          <img src="/images/wedding/wedding-20.jpg" alt="Bukiet kwiatów" class="w-full h-full object-cover hover:scale-105 transition-transform duration-700" loading="lazy" />
+        </div>
+        <div class="aspect-[4/3] overflow-hidden rounded-sm">
+          <img src="/images/wedding/wedding-65.jpg" alt="Bar restauracyjny" class="w-full h-full object-cover hover:scale-105 transition-transform duration-700" loading="lazy" />
+        </div>
+        <div class="aspect-[4/3] overflow-hidden rounded-sm">
+          <img src="/images/wedding/wedding-31.jpg" alt="Dekoracja stołu" class="w-full h-full object-cover hover:scale-105 transition-transform duration-700" loading="lazy" />
+        </div>
+        <div class="aspect-[4/3] overflow-hidden rounded-sm">
+          <img src="/images/wedding/wedding-41.jpg" alt="Detale nakrycia" class="w-full h-full object-cover hover:scale-105 transition-transform duration-700" loading="lazy" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact CTA — outdoor mountain photo -->
+  <section id="kontakt" class="relative py-32 px-6 overflow-hidden">
+    <div class="absolute inset-0 bg-[url('/images/wedding/wedding-208.jpg')] bg-cover bg-center md:bg-fixed"></div>
+    <div class="absolute inset-0 bg-gradient-to-t from-primary/90 via-dark/60 to-dark/30"></div>
+    <div class="relative z-10 max-w-3xl mx-auto text-center text-white">
+      <h2 class="font-heading text-4xl md:text-5xl font-bold mb-6">
+        <span class="text-pl">Zaplanuj swoje wesele</span>
+        <span class="text-en hidden">Plan your wedding</span>
+        <span class="text-cs hidden">Naplánujte si svatbu</span>
+      </h2>
+      <p class="text-white/70 text-lg mb-4">
+        <span class="text-pl">Skontaktuj się z naszą koordynatorką wesel</span>
+        <span class="text-en hidden">Contact our wedding coordinator</span>
+        <span class="text-cs hidden">Kontaktujte naši svatební koordinátorku</span>
+      </p>
+      <p class="text-white font-heading text-xl mb-1">Anna Ścieszka</p>
+      <p class="text-white/70 mb-8">
+        <a href="tel:+48602467956" class="hover:text-accent transition-colors">tel. 602 467 956</a>
+        &nbsp;&middot;&nbsp;
+        <a href="mailto:kontakt@theweddingday.com.pl" class="hover:text-accent transition-colors">kontakt@theweddingday.com.pl</a>
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="tel:+48602467956" class="px-8 py-4 bg-accent text-primary font-semibold uppercase tracking-wider text-sm hover:bg-accent-light transition-colors">
+          <span class="text-pl">Zadzwoń</span>
+          <span class="text-en hidden">Call now</span>
+          <span class="text-cs hidden">Zavolejte</span>
+        </a>
+        <a href="/Wesele-oferta.pdf" target="_blank" class="px-8 py-4 border-2 border-white/40 text-white font-semibold uppercase tracking-wider text-sm hover:bg-white/10 transition-colors">
+          <span class="text-pl">Pobierz ofertę PDF</span>
+          <span class="text-en hidden">Download PDF offer</span>
+          <span class="text-cs hidden">Stáhnout nabídku PDF</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <Footer />
+</Layout>
+
+<style>
+  @keyframes fade-in {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .animate-fade-in {
+    animation: fade-in 1s ease-out;
+  }
+</style>
