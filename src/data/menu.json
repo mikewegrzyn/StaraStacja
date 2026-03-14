@@ -3,19 +3,24 @@
     {
       "name": "Śniadania",
       "nameEn": "Breakfast",
+      "nameCs": "Snídaně",
       "items": [
         {
           "name": "Jajecznica z 3 jaj",
           "nameEn": "Scrambled Eggs (3 eggs)",
+          "nameCs": "Míchaná vejce (3 vejce)",
           "description": "chleb górek / cebula / oliwa ziołowa",
           "descriptionEn": "mountain bread / onion / herb olive oil",
+          "descriptionCs": "horský chléb / cibule / bylinný olivový olej",
           "price": "30"
         },
         {
           "name": "Śniadanie The Loop",
           "nameEn": "The Loop Breakfast",
+          "nameCs": "Snídaně The Loop",
           "description": "obwarzanek / mix sałat / szynka parmeńska / pomidory koktajlowe / ogórek zielony",
           "descriptionEn": "bagel / mixed greens / Parma ham / cherry tomatoes / cucumber",
+          "descriptionCs": "obwarzanek / směs salátů / parmská šunka / cherry rajčata / okurka",
           "price": "35"
         }
       ]
@@ -23,19 +28,24 @@
     {
       "name": "Sałatki",
       "nameEn": "Salads",
+      "nameCs": "Saláty",
       "items": [
         {
           "name": "Sałatka z burratą",
           "nameEn": "Burrata Salad",
+          "nameCs": "Salát s burratou",
           "description": "mix sałat / pomidory koktajlowe / ogórek zielony / sos musztardowo-miodowy",
           "descriptionEn": "mixed greens / cherry tomatoes / cucumber / honey mustard dressing",
+          "descriptionCs": "směs salátů / cherry rajčata / okurka / hořčicovo-medová zálivka",
           "price": "38"
         },
         {
           "name": "Sałatka z szynką parmeńską",
           "nameEn": "Parma Ham Salad",
+          "nameCs": "Salát s parmskou šunkou",
           "description": "mix sałat / pomidory koktajlowe / ogórek zielony / sos musztardowo-miodowy",
           "descriptionEn": "mixed greens / cherry tomatoes / cucumber / honey mustard dressing",
+          "descriptionCs": "směs salátů / cherry rajčata / okurka / hořčicovo-medová zálivka",
           "price": "38"
         }
       ]
@@ -43,19 +53,24 @@
     {
       "name": "Zupy",
       "nameEn": "Soups",
+      "nameCs": "Polévky",
       "items": [
         {
           "name": "Zupa cebulowa",
           "nameEn": "Onion Soup",
+          "nameCs": "Cibulová polévka",
           "description": "bulion mięsny / białe wino / gorgonzola",
           "descriptionEn": "meat broth / white wine / gorgonzola",
+          "descriptionCs": "masový vývar / bílé víno / gorgonzola",
           "price": "35"
         },
         {
           "name": "Gulasz tyrolski",
           "nameEn": "Tyrolean Goulash",
+          "nameCs": "Tyrolský guláš",
           "description": "kark wieprzowy / kwaśna śmietana / chleb górek",
           "descriptionEn": "pork neck / sour cream / mountain bread",
+          "descriptionCs": "vepřový krk / zakysaná smetana / horský chléb",
           "price": "45"
         }
       ]
@@ -63,47 +78,60 @@
     {
       "name": "Dania główne",
       "nameEn": "Main Courses",
+      "nameCs": "Hlavní jídla",
       "items": [
         {
           "name": "Schabowy smażony na smalcu",
           "nameEn": "Pork Schnitzel Fried in Lard",
+          "nameCs": "Vepřový řízek smažený na sádle",
           "description": "konfitowane ziemniaki / zasmażana kapusta kiszona / grzyby",
           "descriptionEn": "confit potatoes / sautéed sauerkraut / mushrooms",
+          "descriptionCs": "konfitované brambory / restované kyselé zelí / houby",
           "price": "59"
         },
         {
           "name": "Kurczak w panko",
           "nameEn": "Panko Chicken",
+          "nameCs": "Kuře v panko",
           "description": "konfitowane ziemniaki / karmelizowane marchew / sos musztardowo-miodowy",
           "descriptionEn": "confit potatoes / caramelized carrots / honey mustard sauce",
+          "descriptionCs": "konfitované brambory / karamelizovaná mrkev / hořčicovo-medová omáčka",
           "price": "58"
         },
         {
           "name": "Placki ziemniaczane z gulaszem",
           "nameEn": "Potato Pancakes with Goulash",
+          "nameCs": "Bramboráky s gulášem",
           "description": "karczek wieprzowy / kwaśna śmietana / parmezan",
           "descriptionEn": "pork neck / sour cream / parmesan",
+          "descriptionCs": "vepřový krk / zakysaná smetana / parmezán",
           "price": "52"
         },
         {
           "name": "Pieczony boczek",
           "nameEn": "Roasted Pork Belly",
+          "nameCs": "Pečený bůček",
           "description": "ciasto filo / sos śliwkowy / grillowana sałata rzymska",
           "descriptionEn": "filo pastry / plum sauce / grilled romaine lettuce",
+          "descriptionCs": "filo těsto / švestková omáčka / grilovaný římský salát",
           "price": "48"
         },
         {
           "name": "Pierogi ze szpinakiem i ricottą",
           "nameEn": "Dumplings with Spinach & Ricotta",
+          "nameCs": "Pierogi se špenátem a ricottou",
           "description": "majonez kraftowy / oliwa ziołowa / orzechy",
           "descriptionEn": "craft mayonnaise / herb olive oil / nuts",
+          "descriptionCs": "řemeslná majonéza / bylinný olivový olej / ořechy",
           "price": "45"
         },
         {
           "name": "Pierogi z gęsiną i truflą",
           "nameEn": "Dumplings with Goose & Truffle",
+          "nameCs": "Pierogi s husím masem a lanýžem",
           "description": "oliwa ziołowa / parmezan / sos z karmelizowanej cebuli",
           "descriptionEn": "herb olive oil / parmesan / caramelized onion sauce",
+          "descriptionCs": "bylinný olivový olej / parmezán / omáčka z karamelizované cibule",
           "price": "48"
         }
       ]
@@ -111,26 +139,33 @@
     {
       "name": "Dania dla dzieci",
       "nameEn": "Kids' Menu",
+      "nameCs": "Dětské menu",
       "items": [
         {
           "name": "Zupa pomidorowa",
           "nameEn": "Tomato Soup",
+          "nameCs": "Rajská polévka",
           "description": "pomidory pelati / mozzarella / grzanki",
           "descriptionEn": "pelati tomatoes / mozzarella / croutons",
+          "descriptionCs": "rajčata pelati / mozzarella / krutony",
           "price": "25"
         },
         {
           "name": "Lasagne",
           "nameEn": "Lasagne",
+          "nameCs": "Lasagne",
           "description": "mięso wieprzowe / pomidory pelati / bazylia",
           "descriptionEn": "pork / pelati tomatoes / basil",
+          "descriptionCs": "vepřové maso / rajčata pelati / bazalka",
           "price": "25"
         },
         {
           "name": "Kluseczki leniwe",
           "nameEn": "Lazy Dumplings",
+          "nameCs": "Líné knedlíky",
           "description": "sos owocowy / masło / bita śmietana",
           "descriptionEn": "fruit sauce / butter / whipped cream",
+          "descriptionCs": "ovocná omáčka / máslo / šlehačka",
           "price": "25"
         }
       ]
@@ -138,33 +173,42 @@
     {
       "name": "Desery",
       "nameEn": "Desserts",
+      "nameCs": "Dezerty",
       "items": [
         {
           "name": "Austriacki knedel",
           "nameEn": "Austrian Knödel",
+          "nameCs": "Rakouský knedlík",
           "description": "budyń waniliowy / liofilizowane owoce / powidła śliwkowe",
           "descriptionEn": "vanilla pudding / freeze-dried fruit / plum jam",
+          "descriptionCs": "vanilkový pudink / lyofilizované ovoce / švestkový lekvár",
           "price": "38"
         },
         {
           "name": "Pieczona gruszka",
           "nameEn": "Roasted Pear",
+          "nameCs": "Pečená hruška",
           "description": "orzechy / karmel / lody",
           "descriptionEn": "nuts / caramel / ice cream",
+          "descriptionCs": "ořechy / karamel / zmrzlina",
           "price": "28"
         },
         {
           "name": "Apfelstrudel",
           "nameEn": "Apfelstrudel",
+          "nameCs": "Jablečný štrúdl",
           "description": "sos owocowy / bita śmietana / lody",
           "descriptionEn": "fruit sauce / whipped cream / ice cream",
+          "descriptionCs": "ovocná omáčka / šlehačka / zmrzlina",
           "price": "32"
         },
         {
           "name": "Deser dnia",
           "nameEn": "Dessert of the Day",
+          "nameCs": "Dezert dne",
           "description": "zapytaj obsługę",
           "descriptionEn": "ask staff",
+          "descriptionCs": "zeptejte se obsluhy",
           "price": "25"
         }
       ]
@@ -172,63 +216,81 @@
     {
       "name": "Pizza",
       "nameEn": "Pizza",
+      "nameCs": "Pizza",
       "note": "Pizza dostępna tylko w weekendy",
       "noteEn": "Pizza available on weekends only",
+      "noteCs": "Pizza pouze o víkendech",
       "items": [
         {
           "name": "Buratina",
           "nameEn": "Buratina",
+          "nameCs": "Buratina",
           "description": "sos pomidorowy / rukola / pomidorki koktajlowe",
           "descriptionEn": "tomato sauce / arugula / cherry tomatoes",
+          "descriptionCs": "rajčatová omáčka / rukola / cherry rajčata",
           "price": "48"
         },
         {
           "name": "Parma",
           "nameEn": "Parma",
+          "nameCs": "Parma",
           "description": "sos pomidorowy / szynka parmeńska / rukola / pomidorki koktajlowe / parmezan",
           "descriptionEn": "tomato sauce / Parma ham / arugula / cherry tomatoes / parmesan",
+          "descriptionCs": "rajčatová omáčka / parmská šunka / rukola / cherry rajčata / parmezán",
           "price": "45"
         },
         {
           "name": "Salame Piccante",
           "nameEn": "Salame Piccante",
+          "nameCs": "Salame Piccante",
           "description": "sos pomidorowy / spinata piccante / peperoncino / bazylia / mozzarella",
           "descriptionEn": "tomato sauce / spinata piccante / peperoncino / basil / mozzarella",
+          "descriptionCs": "rajčatová omáčka / spinata piccante / peperoncino / bazalka / mozzarella",
           "price": "45"
         },
         {
           "name": "Capricciosa",
           "nameEn": "Capricciosa",
+          "nameCs": "Capricciosa",
           "description": "sos pomidorowy / szynka cotto / grzyby / bazylia / mozzarella",
           "descriptionEn": "tomato sauce / cooked ham / mushrooms / basil / mozzarella",
+          "descriptionCs": "rajčatová omáčka / dušená šunka / houby / bazalka / mozzarella",
           "price": "45"
         },
         {
           "name": "Margherita",
           "nameEn": "Margherita",
+          "nameCs": "Margherita",
           "description": "sos pomidorowy / mozzarella / bazylia",
           "descriptionEn": "tomato sauce / mozzarella / basil",
+          "descriptionCs": "rajčatová omáčka / mozzarella / bazalka",
           "price": "42"
         },
         {
           "name": "Tartufo",
           "nameEn": "Tartufo",
+          "nameCs": "Tartufo",
           "description": "sos truflowy / spinata piccante / mascarpone / szczypiorek / mozzarella",
           "descriptionEn": "truffle sauce / spinata piccante / mascarpone / chives / mozzarella",
+          "descriptionCs": "lanýžová omáčka / spinata piccante / mascarpone / pažitka / mozzarella",
           "price": "48"
         },
         {
           "name": "Tartufo wege",
           "nameEn": "Tartufo Veggie",
+          "nameCs": "Tartufo vege",
           "description": "sos truflowy / mascarpone / grzyby / szczypiorek / mozzarella",
           "descriptionEn": "truffle sauce / mascarpone / mushrooms / chives / mozzarella",
+          "descriptionCs": "lanýžová omáčka / mascarpone / houby / pažitka / mozzarella",
           "price": "45"
         },
         {
           "name": "Salame",
           "nameEn": "Salame",
+          "nameCs": "Salame",
           "description": "sos pomidorowy / salame napoli / oliwki / mozzarella / orzechy / bazylia",
           "descriptionEn": "tomato sauce / salame napoli / olives / mozzarella / nuts / basil",
+          "descriptionCs": "rajčatová omáčka / salame napoli / olivy / mozzarella / ořechy / bazalka",
           "price": "45"
         }
       ]
@@ -236,18 +298,20 @@
     {
       "name": "Piwa",
       "nameEn": "Beers",
+      "nameCs": "Piva",
       "items": [
         { "name": "Hoegaarden", "price": "25" },
         { "name": "Radegast", "price": "18" },
         { "name": "Holba", "price": "18" },
         { "name": "Litovel Dark Citron", "price": "18" },
-        { "name": "Piwo kraftowe butelka", "nameEn": "Craft beer bottle", "price": "20" },
-        { "name": "Piwo kraftowe bezalkoholowe butelka", "nameEn": "Non-alcoholic craft beer bottle", "price": "20" }
+        { "name": "Piwo kraftowe butelka", "nameEn": "Craft beer bottle", "nameCs": "Řemeslné pivo láhev", "price": "20" },
+        { "name": "Piwo kraftowe bezalkoholowe butelka", "nameEn": "Non-alcoholic craft beer bottle", "nameCs": "Nealkoholické řemeslné pivo láhev", "price": "20" }
       ]
     },
     {
       "name": "Spritz",
       "nameEn": "Spritz",
+      "nameCs": "Spritz",
       "items": [
         { "name": "Aperol spritz", "price": "38" },
         { "name": "Campari spritz", "price": "38" },
@@ -260,6 +324,7 @@
     {
       "name": "Alkohole",
       "nameEn": "Spirits",
+      "nameCs": "Destiláty",
       "items": [
         { "name": "Campari", "price": "22" },
         { "name": "Jagermeister", "price": "24" },
@@ -276,52 +341,55 @@
     {
       "name": "Alkohole na ciepło",
       "nameEn": "Hot Alcoholic Drinks",
+      "nameCs": "Teplé alkoholické nápoje",
       "items": [
-        { "name": "Herbata zimowa z rumem", "nameEn": "Winter Tea with Rum", "price": "38" },
-        { "name": "Grzane wino", "nameEn": "Mulled Wine", "price": "28" },
+        { "name": "Herbata zimowa z rumem", "nameEn": "Winter Tea with Rum", "nameCs": "Zimní čaj s rumem", "price": "38" },
+        { "name": "Grzane wino", "nameEn": "Mulled Wine", "nameCs": "Svařené víno", "price": "28" },
         { "name": "Irish coffee", "price": "28" },
         { "name": "Bombardino", "price": "39" },
-        { "name": "Wiśniówka na ciepło", "nameEn": "Hot Cherry Liqueur", "price": "32" },
-        { "name": "Wiśniówka", "nameEn": "Cherry Liqueur", "price": "25" }
+        { "name": "Wiśniówka na ciepło", "nameEn": "Hot Cherry Liqueur", "nameCs": "Teplý višňový likér", "price": "32" },
+        { "name": "Wiśniówka", "nameEn": "Cherry Liqueur", "nameCs": "Višňový likér", "price": "25" }
       ]
     },
     {
       "name": "Wina",
       "nameEn": "Wines",
+      "nameCs": "Vína",
       "items": [
-        { "name": "Prosecco by the glass", "price": "18" },
-        { "name": "Abtei Himmerod, Riesling", "description": "białe, półwytrawne, Niemcy", "descriptionEn": "white, semi-dry, Germany", "price": "17 / 170" },
-        { "name": "Chartron et Trebuchet Chablis", "description": "białe, wytrawne, Francja", "descriptionEn": "white, dry, France", "price": "25 / 250" },
-        { "name": "Friuli Grave, Sauvignon blanc", "description": "białe, wytrawne, Włochy", "descriptionEn": "white, dry, Italy", "price": "17 / 170" },
-        { "name": "Chianti Classico, Sangiovese", "description": "czerwone, wytrawne, Włochy", "descriptionEn": "red, dry, Italy", "price": "17 / 170" },
-        { "name": "Cascina Chicco, Barbera", "description": "czerwone, wytrawne, Włochy", "descriptionEn": "red, dry, Italy", "price": "17 / 170" },
-        { "name": "Domaine de la Baume, Syrah", "description": "czerwone, wytrawne, Francja", "descriptionEn": "red, dry, France", "price": "17 / 170" }
+        { "name": "Prosecco by the glass", "nameCs": "Prosecco na skleničku", "price": "18" },
+        { "name": "Abtei Himmerod, Riesling", "description": "białe, półwytrawne, Niemcy", "descriptionEn": "white, semi-dry, Germany", "descriptionCs": "bílé, polosuché, Německo", "price": "17 / 170" },
+        { "name": "Chartron et Trebuchet Chablis", "description": "białe, wytrawne, Francja", "descriptionEn": "white, dry, France", "descriptionCs": "bílé, suché, Francie", "price": "25 / 250" },
+        { "name": "Friuli Grave, Sauvignon blanc", "description": "białe, wytrawne, Włochy", "descriptionEn": "white, dry, Italy", "descriptionCs": "bílé, suché, Itálie", "price": "17 / 170" },
+        { "name": "Chianti Classico, Sangiovese", "description": "czerwone, wytrawne, Włochy", "descriptionEn": "red, dry, Italy", "descriptionCs": "červené, suché, Itálie", "price": "17 / 170" },
+        { "name": "Cascina Chicco, Barbera", "description": "czerwone, wytrawne, Włochy", "descriptionEn": "red, dry, Italy", "descriptionCs": "červené, suché, Itálie", "price": "17 / 170" },
+        { "name": "Domaine de la Baume, Syrah", "description": "czerwone, wytrawne, Francja", "descriptionEn": "red, dry, France", "descriptionCs": "červené, suché, Francie", "price": "17 / 170" }
       ]
     },
     {
       "name": "Kawa / Herbata / Napoje",
       "nameEn": "Coffee / Tea / Beverages",
+      "nameCs": "Káva / Čaj / Nápoje",
       "items": [
-        { "name": "Gorąca czekolada z bitą śmietaną", "nameEn": "Hot Chocolate with Whipped Cream", "price": "27" },
+        { "name": "Gorąca czekolada z bitą śmietaną", "nameEn": "Hot Chocolate with Whipped Cream", "nameCs": "Horká čokoláda se šlehačkou", "price": "27" },
         { "name": "Espresso", "price": "13" },
         { "name": "Doppio", "price": "16" },
         { "name": "Americano", "price": "16" },
         { "name": "Cappuccino", "price": "20" },
-        { "name": "Kawa biała", "nameEn": "Flat White", "price": "18" },
+        { "name": "Kawa biała", "nameEn": "Flat White", "nameCs": "Flat White", "price": "18" },
         { "name": "Latte", "price": "20" },
-        { "name": "Czarna ceylon", "nameEn": "Black Ceylon", "price": "16" },
+        { "name": "Czarna ceylon", "nameEn": "Black Ceylon", "nameCs": "Černý ceylon", "price": "16" },
         { "name": "Earl Grey", "price": "16" },
-        { "name": "Zielona", "nameEn": "Green", "price": "16" },
-        { "name": "Owocowa", "nameEn": "Fruit", "price": "16" },
-        { "name": "Miętowa", "nameEn": "Mint", "price": "16" },
-        { "name": "Zimowa", "nameEn": "Winter", "price": "25" },
+        { "name": "Zielona", "nameEn": "Green", "nameCs": "Zelený", "price": "16" },
+        { "name": "Owocowa", "nameEn": "Fruit", "nameCs": "Ovocný", "price": "16" },
+        { "name": "Miętowa", "nameEn": "Mint", "nameCs": "Mátový", "price": "16" },
+        { "name": "Zimowa", "nameEn": "Winter", "nameCs": "Zimní", "price": "25" },
         { "name": "Coca-Cola", "price": "14" },
         { "name": "Coca-Cola Zero", "price": "14" },
         { "name": "Fuzetea", "price": "14" },
         { "name": "Tonic", "price": "14" },
         { "name": "Sprite", "price": "14" },
-        { "name": "Woda gazowana / niegazowana", "nameEn": "Sparkling / Still Water", "price": "10" },
-        { "name": "Soki owocowe", "nameEn": "Fruit juices", "price": "14" }
+        { "name": "Woda gazowana / niegazowana", "nameEn": "Sparkling / Still Water", "nameCs": "Perlivá / Neperlivá voda", "price": "10" },
+        { "name": "Soki owocowe", "nameEn": "Fruit juices", "nameCs": "Ovocné džusy", "price": "14" }
       ]
     }
   ]
