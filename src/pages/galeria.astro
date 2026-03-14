@@ -4,21 +4,21 @@ import Nav from '../components/Nav.astro';
 import Footer from '../components/Footer.astro';
 
 const galleryItems = [
-  // === WIDOKI / VIEWS — the wow factor, mountain + building ===
+  // === WIDOKI / VIEWS ===
   { src: '/images/gallery/aerial-panorama.jpg', alt: 'Stara Stacja z lotu ptaka — panorama Szyndzielni', category: 'widoki', featured: true },
   { src: '/images/gallery/exterior-summer.jpg', alt: 'Restauracja latem — taras z widokiem na góry', category: 'widoki' },
   { src: '/images/gallery/aerial-winter.jpg', alt: 'Widok z drona — zimowy szczyt Szyndzielni', category: 'widoki' },
   { src: '/images/gallery/winter-path.jpg', alt: 'Zimowa ścieżka do restauracji', category: 'widoki' },
   { src: '/images/cablecar.jpg', alt: 'Kolejka linowa na Szyndzielnię', category: 'widoki' },
 
-  // === WNĘTRZE / INTERIOR — the space, character, gondola ===
+  // === WNĘTRZE / INTERIOR ===
   { src: '/images/gallery/gondola-interior.jpg', alt: 'Sala z zabytkową gondolą kolejki linowej', category: 'wnętrze', featured: true },
   { src: '/images/gallery/dining-hall.jpg', alt: 'Główna sala restauracji', category: 'wnętrze' },
   { src: '/images/gallery/table-setting.jpg', alt: 'Elegancka nakrycie stołu ze słonecznikami', category: 'wnętrze' },
   { src: '/images/gallery/chef-flambe.jpg', alt: 'Szef kuchni przy pracy — flambowanie', category: 'wnętrze' },
   { src: '/images/interior.jpg', alt: 'Wnętrze restauracji', category: 'wnętrze' },
 
-  // === KUCHNIA / FOOD — the dishes ===
+  // === KUCHNIA / FOOD ===
   { src: '/images/gallery/potato-pancakes.jpg', alt: 'Placki ziemniaczane z ziołowym sosem', category: 'kuchnia', featured: true },
   { src: '/images/gallery/pear-dessert.jpg', alt: 'Gruszka w kruszonkowej panierce z karmelem', category: 'kuchnia' },
   { src: '/images/gallery/pizza-margherita.jpg', alt: 'Pizza Margherita z pieca', category: 'kuchnia' },
@@ -31,7 +31,7 @@ const galleryItems = [
   { src: '/images/gallery/pulled-meat.jpg', alt: 'Duszone mięso z ziołami', category: 'kuchnia' },
   { src: '/images/gallery/schnitzel.jpg', alt: 'Tradycyjny kotlet schabowy', category: 'kuchnia' },
 
-  // === EVENTY / EVENTS — weddings, parties ===
+  // === EVENTY / EVENTS ===
   { src: '/images/gallery/wedding-setup.jpg', alt: 'Sala weselna — eleganckie nakrycie ze świeżymi kwiatami', category: 'eventy', featured: true },
   { src: '/images/gallery/festive-table.jpg', alt: 'Świąteczna dekoracja stołu', category: 'eventy' },
   { src: '/images/gallery/event-crowd.jpg', alt: 'Wydarzenie w restauracji — pełna sala gości', category: 'eventy' },
@@ -39,11 +39,11 @@ const galleryItems = [
 ];
 
 const categories = [
-  { id: 'wszystko', label: 'Wszystko' },
-  { id: 'widoki', label: 'Widoki' },
-  { id: 'wnętrze', label: 'Wnętrze' },
-  { id: 'kuchnia', label: 'Kuchnia' },
-  { id: 'eventy', label: 'Eventy' },
+  { id: 'wszystko', pl: 'Wszystko', en: 'All', cs: 'Vše' },
+  { id: 'widoki', pl: 'Widoki', en: 'Views', cs: 'Výhledy' },
+  { id: 'wnętrze', pl: 'Wnętrze', en: 'Interior', cs: 'Interiér' },
+  { id: 'kuchnia', pl: 'Kuchnia', en: 'Food', cs: 'Kuchyně' },
+  { id: 'eventy', pl: 'Eventy', en: 'Events', cs: 'Akce' },
 ];
 ---
 
@@ -53,8 +53,16 @@ const categories = [
   <section class="relative pt-32 pb-20 px-6 bg-primary text-white">
     <div class="max-w-4xl mx-auto text-center">
       <p class="text-accent-light uppercase tracking-[0.15em] sm:tracking-[0.3em] text-xs sm:text-sm mb-4">Stara Stacja</p>
-      <h1 class="font-heading text-4xl sm:text-5xl md:text-6xl font-bold mb-4">Galeria</h1>
-      <p class="text-white/60 max-w-xl mx-auto">Odkryj piękno Starej Stacji na szczycie Szyndzielni</p>
+      <h1 class="font-heading text-4xl sm:text-5xl md:text-6xl font-bold mb-4">
+        <span class="text-pl">Galeria</span>
+        <span class="text-en hidden">Gallery</span>
+        <span class="text-cs hidden">Galerie</span>
+      </h1>
+      <p class="text-white/60 max-w-xl mx-auto">
+        <span class="text-pl">Odkryj piękno Starej Stacji na szczycie Szyndzielni</span>
+        <span class="text-en hidden">Discover the beauty of Stara Stacja at the summit of Szyndzielnia</span>
+        <span class="text-cs hidden">Objevte krásu Staré Stanice na vrcholu Szyndzielnie</span>
+      </p>
     </div>
   </section>
 
@@ -69,7 +77,9 @@ const categories = [
             cat.id === 'wszystko' ? 'bg-primary text-white' : 'text-dark/50 hover:text-primary hover:bg-cream-dark',
           ]}
         >
-          {cat.label}
+          <span class="text-pl">{cat.pl}</span>
+          <span class="text-en hidden">{cat.en}</span>
+          <span class="text-cs hidden">{cat.cs}</span>
         </button>
       ))}
     </div>
@@ -111,15 +121,27 @@ const categories = [
     <div class="max-w-5xl mx-auto grid grid-cols-2 sm:grid-cols-4 gap-8 text-center">
       <div>
         <p class="font-heading text-3xl sm:text-4xl font-bold text-accent">1000m</p>
-        <p class="text-white/50 text-sm mt-1">n.p.m.</p>
+        <p class="text-white/50 text-sm mt-1">
+          <span class="text-pl">n.p.m.</span>
+          <span class="text-en hidden">a.s.l.</span>
+          <span class="text-cs hidden">n.m.</span>
+        </p>
       </div>
       <div>
         <p class="font-heading text-3xl sm:text-4xl font-bold text-accent">240</p>
-        <p class="text-white/50 text-sm mt-1">miejsc</p>
+        <p class="text-white/50 text-sm mt-1">
+          <span class="text-pl">miejsc</span>
+          <span class="text-en hidden">seats</span>
+          <span class="text-cs hidden">míst</span>
+        </p>
       </div>
       <div>
         <p class="font-heading text-3xl sm:text-4xl font-bold text-accent">120</p>
-        <p class="text-white/50 text-sm mt-1">na tarasie</p>
+        <p class="text-white/50 text-sm mt-1">
+          <span class="text-pl">na tarasie</span>
+          <span class="text-en hidden">on terrace</span>
+          <span class="text-cs hidden">na terase</span>
+        </p>
       </div>
       <div>
         <p class="font-heading text-3xl sm:text-4xl font-bold text-accent">360°</p>
@@ -131,7 +153,11 @@ const categories = [
   <!-- CTA for Instagram -->
   <section class="py-16 px-6 bg-cream-dark">
     <div class="max-w-3xl mx-auto text-center">
-      <p class="text-dark/60 mb-4">Więcej zdjęć znajdziesz na naszym Instagramie</p>
+      <p class="text-dark/60 mb-4">
+        <span class="text-pl">Więcej zdjęć znajdziesz na naszym Instagramie</span>
+        <span class="text-en hidden">Find more photos on our Instagram</span>
+        <span class="text-cs hidden">Více fotografií najdete na našem Instagramu</span>
+      </p>
       <a href="https://instagram.com/stara.stacja" target="_blank" rel="noopener" class="inline-block px-8 py-4 bg-primary text-white font-semibold uppercase tracking-wider text-sm hover:bg-primary-light transition-colors">
         @stara.stacja
       </a>
@@ -149,7 +175,6 @@ const categories = [
     btn.addEventListener('click', () => {
       const filter = (btn as HTMLElement).dataset.filter;
 
-      // Update active filter style
       filters.forEach((f) => {
         f.classList.remove('bg-primary', 'text-white');
         f.classList.add('text-dark/50');
@@ -157,7 +182,6 @@ const categories = [
       btn.classList.add('bg-primary', 'text-white');
       btn.classList.remove('text-dark/50');
 
-      // Filter items with fade animation
       items.forEach((item) => {
         const el = item as HTMLElement;
         if (filter === 'wszystko' || el.dataset.category === filter) {

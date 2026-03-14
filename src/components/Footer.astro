@@ -9,7 +9,9 @@ import info from '../data/info.json';
       <div>
         <h3 class="font-heading text-2xl font-bold mb-4">Stara Stacja</h3>
         <p class="text-accent-light/80 text-sm leading-relaxed max-w-xs">
-          {info.description}
+          <span class="text-pl">{info.description}</span>
+          <span class="text-en hidden">A unique restaurant at the summit of Mount Szyndzielnia in Bielsko-Biała. The perfect place for family dinners, gatherings with friends, and unforgettable events.</span>
+          <span class="text-cs hidden">Jedinečná restaurace na vrcholu hory Szyndzielnia v Bielsku-Bílé. Ideální místo pro rodinné obědy, setkání s přáteli a nezapomenutelné události.</span>
         </p>
         <div class="flex gap-4 mt-6">
           <a href={info.social.instagram} target="_blank" rel="noopener" aria-label="Instagram" class="text-accent-light/60 hover:text-accent transition-colors p-2 -m-2 min-w-[44px] min-h-[44px] flex items-center justify-center">
@@ -23,7 +25,11 @@ import info from '../data/info.json';
 
       <!-- Contact -->
       <div>
-        <h4 class="font-heading text-lg font-semibold mb-4 text-accent">Kontakt</h4>
+        <h4 class="font-heading text-lg font-semibold mb-4 text-accent">
+          <span class="text-pl">Kontakt</span>
+          <span class="text-en hidden">Contact</span>
+          <span class="text-cs hidden">Kontakt</span>
+        </h4>
         <ul class="space-y-2 text-sm text-accent-light/80">
           <li>{info.address.street}</li>
           <li>{info.address.city}</li>
@@ -38,14 +44,26 @@ import info from '../data/info.json';
 
       <!-- Hours -->
       <div>
-        <h4 class="font-heading text-lg font-semibold mb-4 text-accent">Godziny otwarcia</h4>
+        <h4 class="font-heading text-lg font-semibold mb-4 text-accent">
+          <span class="text-pl">Godziny otwarcia</span>
+          <span class="text-en hidden">Opening Hours</span>
+          <span class="text-cs hidden">Otevírací doba</span>
+        </h4>
         <ul class="space-y-2 text-sm text-accent-light/80">
           <li class="flex justify-between max-w-xs">
-            <span>Poniedziałek</span>
+            <span>
+              <span class="text-pl">Poniedziałek</span>
+              <span class="text-en hidden">Monday</span>
+              <span class="text-cs hidden">Pondělí</span>
+            </span>
             <span>{info.hours.monday}</span>
           </li>
           <li class="flex justify-between max-w-xs">
-            <span>Wtorek – Niedziela</span>
+            <span>
+              <span class="text-pl">Wtorek – Niedziela</span>
+              <span class="text-en hidden">Tuesday – Sunday</span>
+              <span class="text-cs hidden">Úterý – Neděle</span>
+            </span>
             <span>{info.hours.tuesday_sunday}</span>
           </li>
         </ul>
@@ -53,7 +71,11 @@ import info from '../data/info.json';
     </div>
 
     <div class="border-t border-accent-light/20 mt-12 pt-8 text-center text-xs text-accent-light/50">
-      <p>&copy; {new Date().getFullYear()} Stara Stacja. Wszystkie prawa zastrzeżone.</p>
+      <p>
+        <span class="text-pl">&copy; {new Date().getFullYear()} Stara Stacja. Wszystkie prawa zastrzeżone.</span>
+        <span class="text-en hidden">&copy; {new Date().getFullYear()} Stara Stacja. All rights reserved.</span>
+        <span class="text-cs hidden">&copy; {new Date().getFullYear()} Stara Stacja. Všechna práva vyhrazena.</span>
+      </p>
     </div>
   </div>
 </footer>

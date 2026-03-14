@@ -23,21 +23,28 @@ function slugify(name: string) {
     <div class="max-w-4xl mx-auto text-center">
       <p class="text-accent-light uppercase tracking-[0.15em] sm:tracking-[0.3em] text-xs sm:text-sm mb-4">Stara Stacja</p>
       <h1 class="font-heading text-4xl sm:text-5xl md:text-6xl font-bold mb-4">Menu</h1>
-      <p class="text-white/60 max-w-xl mx-auto">Smaki Podbeskidzia w nowoczesnym wydaniu</p>
+      <p class="text-white/60 max-w-xl mx-auto">
+        <span class="text-pl">Smaki Podbeskidzia w nowoczesnym wydaniu</span>
+        <span class="text-en hidden">Flavors of Podbeskidzie in a modern style</span>
+        <span class="text-cs hidden">Chutě Podbeskydí v moderním stylu</span>
+      </p>
     </div>
   </section>
 
-  <!-- Language toggle + section tabs -->
+  <!-- Section tabs -->
   <div class="sticky top-20 z-40 bg-cream/95 backdrop-blur-sm border-b border-cream-dark">
-    <div class="max-w-4xl mx-auto px-6 py-4 flex items-center justify-between">
+    <div class="max-w-4xl mx-auto px-6 py-4 flex items-center justify-center">
       <div class="flex gap-2">
-        <button id="tab-food" class="menu-tab text-xs uppercase tracking-widest font-medium text-accent border-b-2 border-accent px-3 py-2 min-h-[44px]">Kuchnia</button>
-        <button id="tab-drinks" class="menu-tab text-xs uppercase tracking-widest font-medium text-dark/40 hover:text-accent px-3 py-2 min-h-[44px]">Napoje</button>
-      </div>
-      <div class="flex gap-2">
-        <button data-lang="pl" class="lang-btn text-xs font-semibold px-4 py-2 min-w-[44px] min-h-[44px] bg-primary text-white rounded-full">PL</button>
-        <button data-lang="en" class="lang-btn text-xs font-semibold px-4 py-2 min-w-[44px] min-h-[44px] bg-cream-dark text-dark/50 rounded-full hover:bg-primary hover:text-white transition-colors">EN</button>
-        <button data-lang="cs" class="lang-btn text-xs font-semibold px-4 py-2 min-w-[44px] min-h-[44px] bg-cream-dark text-dark/50 rounded-full hover:bg-primary hover:text-white transition-colors">CZ</button>
+        <button id="tab-food" class="menu-tab text-xs uppercase tracking-widest font-medium text-accent border-b-2 border-accent px-3 py-2 min-h-[44px]">
+          <span class="text-pl">Kuchnia</span>
+          <span class="text-en hidden">Food</span>
+          <span class="text-cs hidden">Kuchyně</span>
+        </button>
+        <button id="tab-drinks" class="menu-tab text-xs uppercase tracking-widest font-medium text-dark/40 hover:text-accent px-3 py-2 min-h-[44px]">
+          <span class="text-pl">Napoje</span>
+          <span class="text-en hidden">Drinks</span>
+          <span class="text-cs hidden">Nápoje</span>
+        </button>
       </div>
     </div>
   </div>
@@ -130,7 +137,11 @@ function slugify(name: string) {
   <!-- Menu images download -->
   <section class="py-16 px-6 bg-cream-dark">
     <div class="max-w-4xl mx-auto text-center">
-      <h2 class="font-heading text-2xl font-bold text-primary mb-6">Menu do pobrania</h2>
+      <h2 class="font-heading text-2xl font-bold text-primary mb-6">
+        <span class="text-pl">Menu do pobrania</span>
+        <span class="text-en hidden">Downloadable menu</span>
+        <span class="text-cs hidden">Menu ke stažení</span>
+      </h2>
       <div class="flex flex-wrap gap-4 justify-center">
         <a href="/images/menu1-pl.png" target="_blank" class="px-6 py-3 bg-primary text-white text-sm uppercase tracking-wider hover:bg-primary-light transition-colors">Menu PL (1)</a>
         <a href="/images/menu2-pl.png" target="_blank" class="px-6 py-3 bg-primary text-white text-sm uppercase tracking-wider hover:bg-primary-light transition-colors">Napoje PL</a>
@@ -163,34 +174,4 @@ function slugify(name: string) {
 
   tabFood?.addEventListener('click', () => activateTab(tabFood, sectionFood!, tabDrinks!, sectionDrinks!));
   tabDrinks?.addEventListener('click', () => activateTab(tabDrinks, sectionDrinks!, tabFood!, sectionFood!));
-
-  // Language toggle
-  const langBtns = document.querySelectorAll('.lang-btn');
-  const langs = ['pl', 'en', 'cs'];
-
-  langBtns.forEach((btn) => {
-    btn.addEventListener('click', () => {
-      const lang = (btn as HTMLElement).dataset.lang;
-
-      // Update button styles
-      langBtns.forEach((b) => {
-        b.classList.remove('bg-primary', 'text-white');
-        b.classList.add('bg-cream-dark', 'text-dark/50');
-      });
-      btn.classList.add('bg-primary', 'text-white');
-      btn.classList.remove('bg-cream-dark', 'text-dark/50');
-
-      // Show/hide text spans
-      langs.forEach((l) => {
-        const els = document.querySelectorAll(`.text-${l}`);
-        els.forEach((el) => {
-          if (l === lang) {
-            el.classList.remove('hidden');
-          } else {
-            el.classList.add('hidden');
-          }
-        });
-      });
-    });
-  });
 </script>

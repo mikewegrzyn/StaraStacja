@@ -11,8 +11,16 @@ import info from '../data/info.json';
   <section class="relative pt-32 pb-20 px-6 bg-primary text-white">
     <div class="max-w-4xl mx-auto text-center">
       <p class="text-accent-light uppercase tracking-[0.15em] sm:tracking-[0.3em] text-xs sm:text-sm mb-4">Stara Stacja</p>
-      <h1 class="font-heading text-5xl md:text-6xl font-bold mb-4">Rezerwacje</h1>
-      <p class="text-white/60 max-w-xl mx-auto">Zarezerwuj stolik z widokiem na Beskidy</p>
+      <h1 class="font-heading text-5xl md:text-6xl font-bold mb-4">
+        <span class="text-pl">Rezerwacje</span>
+        <span class="text-en hidden">Reservations</span>
+        <span class="text-cs hidden">Rezervace</span>
+      </h1>
+      <p class="text-white/60 max-w-xl mx-auto">
+        <span class="text-pl">Zarezerwuj stolik z widokiem na Beskidy</span>
+        <span class="text-en hidden">Book a table with a view of the Beskid Mountains</span>
+        <span class="text-cs hidden">Rezervujte si stůl s výhledem na Beskydy</span>
+      </p>
     </div>
   </section>
 
@@ -21,10 +29,15 @@ import info from '../data/info.json';
 
       <!-- Info side -->
       <div>
-        <h2 class="font-heading text-3xl font-bold text-primary mb-6">Jak zarezerwować?</h2>
+        <h2 class="font-heading text-3xl font-bold text-primary mb-6">
+          <span class="text-pl">Jak zarezerwować?</span>
+          <span class="text-en hidden">How to book?</span>
+          <span class="text-cs hidden">Jak rezervovat?</span>
+        </h2>
         <p class="text-dark/60 leading-relaxed mb-8">
-          Rezerwacji można dokonać telefonicznie lub mailowo. Dla grup powyżej 10 osób
-          prosimy o kontakt z wyprzedzeniem — przygotujemy specjalną ofertę.
+          <span class="text-pl">Rezerwacji można dokonać telefonicznie lub mailowo. Dla grup powyżej 10 osób prosimy o kontakt z wyprzedzeniem — przygotujemy specjalną ofertę.</span>
+          <span class="text-en hidden">Reservations can be made by phone or email. For groups of more than 10 people, please contact us in advance — we'll prepare a special offer.</span>
+          <span class="text-cs hidden">Rezervaci lze provést telefonicky nebo e-mailem. Pro skupiny nad 10 osob nás prosím kontaktujte předem — připravíme speciální nabídku.</span>
         </p>
 
         <div class="space-y-6 mb-10">
@@ -35,7 +48,11 @@ import info from '../data/info.json';
               </svg>
             </div>
             <div>
-              <h3 class="font-heading text-lg font-semibold text-primary">Telefon</h3>
+              <h3 class="font-heading text-lg font-semibold text-primary">
+                <span class="text-pl">Telefon</span>
+                <span class="text-en hidden">Phone</span>
+                <span class="text-cs hidden">Telefon</span>
+              </h3>
               <a href={`tel:${info.phone}`} class="text-dark/60 hover:text-accent transition-colors">{info.phone}</a>
             </div>
           </div>
@@ -49,26 +66,58 @@ import info from '../data/info.json';
             <div>
               <h3 class="font-heading text-lg font-semibold text-primary">Email</h3>
               <a href={`mailto:${info.email}`} class="text-dark/60 hover:text-accent transition-colors">{info.email}</a>
-              <p class="text-sm text-dark/40 mt-1">Temat: "Stara Stacja — rezerwacja"</p>
+              <p class="text-sm text-dark/40 mt-1">
+                <span class="text-pl">Temat: "Stara Stacja — rezerwacja"</span>
+                <span class="text-en hidden">Subject: "Stara Stacja — reservation"</span>
+                <span class="text-cs hidden">Předmět: "Stara Stacja — rezervace"</span>
+              </p>
             </div>
           </div>
         </div>
 
         <!-- Capacity info -->
         <div class="bg-primary text-white p-8 rounded-sm">
-          <h3 class="font-heading text-xl font-semibold mb-4 text-accent">Pojemność</h3>
+          <h3 class="font-heading text-xl font-semibold mb-4 text-accent">
+            <span class="text-pl">Pojemność</span>
+            <span class="text-en hidden">Capacity</span>
+            <span class="text-cs hidden">Kapacita</span>
+          </h3>
           <ul class="space-y-3 text-sm">
             <li class="flex justify-between">
-              <span class="text-white/70">Wewnątrz</span>
-              <span class="font-semibold">{info.capacity.indoor} miejsc</span>
+              <span class="text-white/70">
+                <span class="text-pl">Wewnątrz</span>
+                <span class="text-en hidden">Indoor</span>
+                <span class="text-cs hidden">Uvnitř</span>
+              </span>
+              <span class="font-semibold">
+                <span class="text-pl">{info.capacity.indoor} miejsc</span>
+                <span class="text-en hidden">{info.capacity.indoor} seats</span>
+                <span class="text-cs hidden">{info.capacity.indoor} míst</span>
+              </span>
             </li>
             <li class="flex justify-between">
-              <span class="text-white/70">Taras</span>
-              <span class="font-semibold">{info.capacity.terrace} miejsc</span>
+              <span class="text-white/70">
+                <span class="text-pl">Taras</span>
+                <span class="text-en hidden">Terrace</span>
+                <span class="text-cs hidden">Terasa</span>
+              </span>
+              <span class="font-semibold">
+                <span class="text-pl">{info.capacity.terrace} miejsc</span>
+                <span class="text-en hidden">{info.capacity.terrace} seats</span>
+                <span class="text-cs hidden">{info.capacity.terrace} míst</span>
+              </span>
             </li>
             <li class="flex justify-between border-t border-white/10 pt-3">
-              <span class="text-white/70">Łącznie</span>
-              <span class="font-semibold text-accent">{info.capacity.total} miejsc</span>
+              <span class="text-white/70">
+                <span class="text-pl">Łącznie</span>
+                <span class="text-en hidden">Total</span>
+                <span class="text-cs hidden">Celkem</span>
+              </span>
+              <span class="font-semibold text-accent">
+                <span class="text-pl">{info.capacity.total} miejsc</span>
+                <span class="text-en hidden">{info.capacity.total} seats</span>
+                <span class="text-cs hidden">{info.capacity.total} míst</span>
+              </span>
             </li>
           </ul>
         </div>
@@ -76,10 +125,18 @@ import info from '../data/info.json';
 
       <!-- Contact form -->
       <div class="bg-white p-8 lg:p-10 shadow-sm">
-        <h2 class="font-heading text-2xl font-bold text-primary mb-6">Formularz rezerwacji</h2>
+        <h2 class="font-heading text-2xl font-bold text-primary mb-6">
+          <span class="text-pl">Formularz rezerwacji</span>
+          <span class="text-en hidden">Reservation form</span>
+          <span class="text-cs hidden">Rezervační formulář</span>
+        </h2>
         <form id="reservation-form" class="space-y-5">
           <div>
-            <label for="name" class="block text-sm font-medium text-dark/70 mb-1">Imię i nazwisko</label>
+            <label for="name" class="block text-sm font-medium text-dark/70 mb-1">
+              <span class="text-pl">Imię i nazwisko</span>
+              <span class="text-en hidden">Full name</span>
+              <span class="text-cs hidden">Jméno a příjmení</span>
+            </label>
             <input type="text" id="name" name="name" required
               class="w-full px-4 py-3 border border-cream-dark bg-cream/50 focus:border-accent focus:outline-none transition-colors" />
           </div>
@@ -89,21 +146,35 @@ import info from '../data/info.json';
               class="w-full px-4 py-3 border border-cream-dark bg-cream/50 focus:border-accent focus:outline-none transition-colors" />
           </div>
           <div>
-            <label for="phone" class="block text-sm font-medium text-dark/70 mb-1">Telefon</label>
+            <label for="phone" class="block text-sm font-medium text-dark/70 mb-1">
+              <span class="text-pl">Telefon</span>
+              <span class="text-en hidden">Phone</span>
+              <span class="text-cs hidden">Telefon</span>
+            </label>
             <input type="tel" id="phone" name="phone"
               class="w-full px-4 py-3 border border-cream-dark bg-cream/50 focus:border-accent focus:outline-none transition-colors" />
           </div>
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div>
-              <label for="date" class="block text-sm font-medium text-dark/70 mb-1">Data</label>
+              <label for="date" class="block text-sm font-medium text-dark/70 mb-1">
+                <span class="text-pl">Data</span>
+                <span class="text-en hidden">Date</span>
+                <span class="text-cs hidden">Datum</span>
+              </label>
               <input type="date" id="date" name="date" required
                 class="w-full px-4 py-3 border border-cream-dark bg-cream/50 focus:border-accent focus:outline-none transition-colors" />
             </div>
             <div>
-              <label for="guests" class="block text-sm font-medium text-dark/70 mb-1">Liczba gości</label>
+              <label for="guests" class="block text-sm font-medium text-dark/70 mb-1">
+                <span class="text-pl">Liczba gości</span>
+                <span class="text-en hidden">Number of guests</span>
+                <span class="text-cs hidden">Počet hostů</span>
+              </label>
               <select id="guests" name="guests" required
                 class="w-full px-4 py-3 border border-cream-dark bg-cream/50 focus:border-accent focus:outline-none transition-colors">
-                <option value="">Wybierz</option>
+                <option value="">
+                  --
+                </option>
                 <option value="1-2">1–2</option>
                 <option value="3-4">3–4</option>
                 <option value="5-8">5–8</option>
@@ -113,16 +184,26 @@ import info from '../data/info.json';
             </div>
           </div>
           <div>
-            <label for="message" class="block text-sm font-medium text-dark/70 mb-1">Uwagi</label>
+            <label for="message" class="block text-sm font-medium text-dark/70 mb-1">
+              <span class="text-pl">Uwagi</span>
+              <span class="text-en hidden">Notes</span>
+              <span class="text-cs hidden">Poznámky</span>
+            </label>
             <textarea id="message" name="message" rows="3"
               class="w-full px-4 py-3 border border-cream-dark bg-cream/50 focus:border-accent focus:outline-none transition-colors resize-none"
-              placeholder="Np. rezerwacja kolejki linowej, okazja specjalna..."></textarea>
+              placeholder=""></textarea>
           </div>
           <button type="submit"
             class="w-full py-4 bg-accent text-primary font-semibold uppercase tracking-wider text-sm hover:bg-accent-light transition-colors">
-            Wyślij rezerwację
+            <span class="text-pl">Wyślij rezerwację</span>
+            <span class="text-en hidden">Send reservation</span>
+            <span class="text-cs hidden">Odeslat rezervaci</span>
           </button>
-          <p class="text-xs text-dark/40 text-center">Potwierdzenie rezerwacji wyślemy mailem lub telefonicznie.</p>
+          <p class="text-xs text-dark/40 text-center">
+            <span class="text-pl">Potwierdzenie rezerwacji wyślemy mailem lub telefonicznie.</span>
+            <span class="text-en hidden">We'll confirm your reservation by email or phone.</span>
+            <span class="text-cs hidden">Potvrzení rezervace vám zašleme e-mailem nebo telefonicky.</span>
+          </p>
         </form>
       </div>
     </div>
@@ -131,14 +212,20 @@ import info from '../data/info.json';
   <!-- Events CTA -->
   <section class="py-20 px-6 bg-cream-dark">
     <div class="max-w-4xl mx-auto text-center">
-      <h2 class="font-heading text-3xl md:text-4xl font-bold text-primary mb-4">Organizujesz wydarzenie?</h2>
+      <h2 class="font-heading text-3xl md:text-4xl font-bold text-primary mb-4">
+        <span class="text-pl">Organizujesz wydarzenie?</span>
+        <span class="text-en hidden">Organizing an event?</span>
+        <span class="text-cs hidden">Pořádáte akci?</span>
+      </h2>
       <p class="text-dark/60 max-w-2xl mx-auto mb-8">
-        Wesela, konferencje, szkolenia, spotkania firmowe — pomożemy zorganizować
-        niezapomniane wydarzenie na szczycie Szyndzielni. Możemy również zorganizować
-        rezerwację kolejki linowej w elastycznych godzinach.
+        <span class="text-pl">Wesela, konferencje, szkolenia, spotkania firmowe — pomożemy zorganizować niezapomniane wydarzenie na szczycie Szyndzielni. Możemy również zorganizować rezerwację kolejki linowej w elastycznych godzinach.</span>
+        <span class="text-en hidden">Weddings, conferences, training sessions, corporate meetings — we'll help you organize an unforgettable event at the summit of Szyndzielnia. We can also arrange cable car reservations at flexible hours.</span>
+        <span class="text-cs hidden">Svatby, konference, školení, firemní setkání — pomůžeme vám zorganizovat nezapomenutelnou akci na vrcholu Szyndzielnie. Můžeme také zajistit rezervaci lanovky v flexibilních hodinách.</span>
       </p>
       <a href="/kontakt" class="inline-block px-10 py-4 bg-primary text-white font-semibold uppercase tracking-wider text-sm hover:bg-primary-light transition-colors">
-        Skontaktuj się z nami
+        <span class="text-pl">Skontaktuj się z nami</span>
+        <span class="text-en hidden">Contact us</span>
+        <span class="text-cs hidden">Kontaktujte nás</span>
       </a>
     </div>
   </section>

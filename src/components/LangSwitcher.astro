@@ -1,0 +1,57 @@
+---
+// Global language switcher — renders PL/EN/CZ pills and handles switching + persistence
+---
+
+<div class="flex gap-1.5">
+  <button data-lang="pl" class="lang-btn text-[10px] font-bold px-2.5 py-1 min-w-[36px] min-h-[36px] sm:min-w-[40px] sm:min-h-[40px] rounded-full transition-colors bg-white text-primary">PL</button>
+  <button data-lang="en" class="lang-btn text-[10px] font-bold px-2.5 py-1 min-w-[36px] min-h-[36px] sm:min-w-[40px] sm:min-h-[40px] rounded-full transition-colors bg-white/20 text-white/70 hover:bg-white/30">EN</button>
+  <button data-lang="cs" class="lang-btn text-[10px] font-bold px-2.5 py-1 min-w-[36px] min-h-[36px] sm:min-w-[40px] sm:min-h-[40px] rounded-full transition-colors bg-white/20 text-white/70 hover:bg-white/30">CZ</button>
+</div>
+
+<script>
+  const LANGS = ['pl', 'en', 'cs'];
+
+  function setLang(lang: string) {
+    // Update buttons
+    document.querySelectorAll('.lang-btn').forEach((btn) => {
+      const el = btn as HTMLElement;
+      if (el.dataset.lang === lang) {
+        el.classList.add('bg-white', 'text-primary');
+        el.classList.remove('bg-white/20', 'text-white/70', 'bg-cream-dark', 'text-dark/50');
+      } else {
+        el.classList.remove('bg-white', 'text-primary');
+        el.classList.add('bg-white/20', 'text-white/70');
+      }
+    });
+
+    // Show/hide text spans
+    LANGS.forEach((l) => {
+      document.querySelectorAll(`.text-${l}`).forEach((el) => {
+        if (l === lang) {
+          el.classList.remove('hidden');
+        } else {
+          el.classList.add('hidden');
+        }
+      });
+    });
+
+    // Persist
+    localStorage.setItem('stara-stacja-lang', lang);
+
+    // Update html lang attribute
+    document.documentElement.lang = lang === 'cs' ? 'cs' : lang === 'en' ? 'en' : 'pl';
+  }
+
+  // Bind click handlers
+  document.querySelectorAll('.lang-btn').forEach((btn) => {
+    btn.addEventListener('click', () => {
+      setLang((btn as HTMLElement).dataset.lang || 'pl');
+    });
+  });
+
+  // Restore saved language
+  const saved = localStorage.getItem('stara-stacja-lang');
+  if (saved && LANGS.includes(saved)) {
+    setLang(saved);
+  }
+</script>

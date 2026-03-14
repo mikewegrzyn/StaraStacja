@@ -1,12 +1,14 @@
 ---
+import LangSwitcher from './LangSwitcher.astro';
+
 const currentPath = Astro.url.pathname;
 
 const links = [
-  { href: '/', label: 'Strona główna' },
-  { href: '/menu', label: 'Menu' },
-  { href: '/galeria', label: 'Galeria' },
-  { href: '/rezerwacje', label: 'Rezerwacje' },
-  { href: '/kontakt', label: 'Kontakt' },
+  { href: '/', pl: 'Strona główna', en: 'Home', cs: 'Domů' },
+  { href: '/menu', pl: 'Menu', en: 'Menu', cs: 'Menu' },
+  { href: '/galeria', pl: 'Galeria', en: 'Gallery', cs: 'Galerie' },
+  { href: '/rezerwacje', pl: 'Rezerwacje', en: 'Reservations', cs: 'Rezervace' },
+  { href: '/kontakt', pl: 'Kontakt', en: 'Contact', cs: 'Kontakt' },
 ];
 ---
 
@@ -19,32 +21,40 @@ const links = [
     </a>
 
     <!-- Desktop nav -->
-    <ul class="hidden md:flex items-center gap-10">
-      {links.map((link) => (
-        <li>
-          <a
-            href={link.href}
-            class:list={[
-              'text-base uppercase tracking-widest transition-colors duration-200 hover:text-accent py-2 px-1',
-              currentPath === link.href ? 'text-accent' : 'text-white',
-            ]}
-          >
-            {link.label}
-          </a>
-        </li>
-      ))}
-    </ul>
+    <div class="hidden md:flex items-center gap-8">
+      <ul class="flex items-center gap-10">
+        {links.map((link) => (
+          <li>
+            <a
+              href={link.href}
+              class:list={[
+                'text-base uppercase tracking-widest transition-colors duration-200 hover:text-accent py-2 px-1',
+                currentPath === link.href ? 'text-accent' : 'text-white',
+              ]}
+            >
+              <span class="text-pl">{link.pl}</span>
+              <span class="text-en hidden">{link.en}</span>
+              <span class="text-cs hidden">{link.cs}</span>
+            </a>
+          </li>
+        ))}
+      </ul>
+      <LangSwitcher />
+    </div>
 
-    <!-- Mobile hamburger -->
-    <button
-      id="mobile-toggle"
-      class="md:hidden text-white focus:outline-none p-2 -mr-2 min-w-[44px] min-h-[44px] flex items-center justify-center"
-      aria-label="Otwórz menu"
-    >
-      <svg class="w-9 h-9" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path id="hamburger-icon" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-      </svg>
-    </button>
+    <!-- Mobile: lang switcher + hamburger -->
+    <div class="md:hidden flex items-center gap-3">
+      <LangSwitcher />
+      <button
+        id="mobile-toggle"
+        class="text-white focus:outline-none p-2 -mr-2 min-w-[44px] min-h-[44px] flex items-center justify-center"
+        aria-label="Otwórz menu"
+      >
+        <svg class="w-9 h-9" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path id="hamburger-icon" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+      </button>
+    </div>
   </div>
 
   <!-- Mobile menu -->
@@ -59,7 +69,9 @@ const links = [
               currentPath === link.href ? 'text-accent' : 'text-white',
             ]}
           >
-            {link.label}
+            <span class="text-pl">{link.pl}</span>
+            <span class="text-en hidden">{link.en}</span>
+            <span class="text-cs hidden">{link.cs}</span>
           </a>
         </li>
       ))}
