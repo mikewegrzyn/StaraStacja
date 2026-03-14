@@ -10,8 +10,24 @@ import info from '../data/info.json';
 
   <!-- Hero -->
   <section class="relative h-screen flex items-center justify-center overflow-hidden">
+    <!-- Static fallback (loads first, always visible on mobile) -->
     <div class="absolute inset-0 bg-gradient-to-br from-primary via-primary-light to-accent/40"></div>
     <div class="absolute inset-0 bg-[url('/images/hero.jpg')] bg-cover bg-[center_40%] bg-no-repeat"></div>
+
+    <!-- Video background (desktop only, fades in when loaded) -->
+    <video
+      id="hero-video"
+      class="absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-1000 hidden md:block"
+      autoplay
+      muted
+      loop
+      playsinline
+      preload="auto"
+      poster="/images/hero.jpg"
+    >
+      <source src="/images/hero-bg.mp4" type="video/mp4" />
+    </video>
+
     <div class="absolute inset-0 bg-dark-overlay"></div>
 
     <div class="relative z-10 text-center text-white px-6 max-w-4xl">
@@ -126,7 +142,7 @@ import info from '../data/info.json';
 
   <!-- CTA -->
   <section class="relative py-32 px-6 overflow-hidden">
-    <div class="absolute inset-0 bg-[url('/images/cablecar.jpg')] bg-cover bg-center md:bg-fixed"></div>
+    <div class="absolute inset-0 bg-[url('/images/cablecar.jpg')] bg-cover bg-[center_94%] md:bg-fixed"></div>
     <div class="absolute inset-0 bg-dark-overlay"></div>
     <div class="relative z-10 max-w-3xl mx-auto text-center text-white">
       <h2 class="font-heading text-4xl md:text-5xl font-bold mb-6">Zarezerwuj stolik</h2>
@@ -157,3 +173,18 @@ import info from '../data/info.json';
     animation: fade-in 1s ease-out;
   }
 </style>
+
+<script>
+  const video = document.getElementById('hero-video') as HTMLVideoElement;
+  if (video) {
+    video.addEventListener('canplaythrough', () => {
+      video.classList.remove('opacity-0');
+      video.classList.add('opacity-100');
+    });
+    // Fallback if event already fired
+    if (video.readyState >= 4) {
+      video.classList.remove('opacity-0');
+      video.classList.add('opacity-100');
+    }
+  }
+</script>
