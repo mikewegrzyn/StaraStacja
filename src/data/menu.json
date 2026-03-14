@@ -9,7 +9,7 @@
           "name": "Jajecznica z 3 jaj",
           "nameEn": "Scrambled Eggs (3 eggs)",
           "nameCs": "Míchaná vejce (3 vejce)",
-          "description": "chleb górek / cebula / oliwa ziołowa",
+          "description": "chleb górski / cebula / oliwa ziołowa",
           "descriptionEn": "mountain bread / onion / herb olive oil",
           "descriptionCs": "horský chléb / cibule / bylinný olivový olej",
           "price": "30"
@@ -68,7 +68,7 @@
           "name": "Gulasz tyrolski",
           "nameEn": "Tyrolean Goulash",
           "nameCs": "Tyrolský guláš",
-          "description": "kark wieprzowy / kwaśna śmietana / chleb górek",
+          "description": "kark wieprzowy / kwaśna śmietana / chleb górski",
           "descriptionEn": "pork neck / sour cream / mountain bread",
           "descriptionCs": "vepřový krk / zakysaná smetana / horský chléb",
           "price": "45"

@@ -9,7 +9,7 @@
 
 | Danie | Opis | Cena |
 |-------|------|------|
-| Jajecznica z 3 jaj | chleb górek / cebula / oliwa ziołowa | 30 zł |
+| Jajecznica z 3 jaj | chleb górski / cebula / oliwa ziołowa | 30 zł |
 | Śniadanie The Loop | obwarzanek / mix sałat / szynka parmeńska / pomidory koktajlowe / ogórek zielony | 35 zł |
 
 ## SAŁATKI / Salads
@@ -24,7 +24,7 @@
 | Danie | Opis | Cena |
 |-------|------|------|
 | Zupa cebulowa | bulion mięsny / białe wino / gorgonzola | 35 zł |
-| Gulasz tyrolski | kark wieprzowy / kwaśna śmietana / chleb górek | 45 zł |
+| Gulasz tyrolski | kark wieprzowy / kwaśna śmietana / chleb górski | 45 zł |
 
 ## DANIA GŁÓWNE / Main Courses
 
