@@ -18,75 +18,94 @@ function slugify(name: string) {
 <Layout title="Menu — Stara Stacja" description="Menu restauracji Stara Stacja na szczycie Szyndzielni. Kuchnia regionalna i europejska.">
   <Nav />
 
-  <!-- Page header -->
-  <section class="relative pt-32 pb-20 px-6 bg-primary text-white">
-    <div class="max-w-4xl mx-auto text-center">
-      <p class="text-accent-light uppercase tracking-[0.15em] sm:tracking-[0.3em] text-xs sm:text-sm mb-4">Stara Stacja</p>
-      <h1 class="font-heading text-4xl sm:text-5xl md:text-6xl font-bold mb-4">Menu</h1>
-      <p class="text-white/60 max-w-xl mx-auto">
+  <!-- Hero — cinematic with parallax -->
+  <section class="relative h-[70vh] min-h-[500px] flex items-center justify-center overflow-hidden">
+    <div class="absolute inset-0 bg-[url('/images/gallery/dining-hall.jpg')] bg-cover bg-center scale-105" id="menu-hero-bg"></div>
+    <div class="absolute inset-0 bg-gradient-to-b from-primary/50 via-primary/30 to-primary"></div>
+
+    <!-- Grain overlay -->
+    <div class="absolute inset-0 opacity-[0.03]" style="background-image: url('data:image/svg+xml,%3Csvg viewBox=%220 0 256 256%22 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cfilter id=%22noise%22%3E%3CfeTurbulence type=%22fractalNoise%22 baseFrequency=%220.9%22 numOctaves=%224%22 stitchTiles=%22stitch%22/%3E%3C/filter%3E%3Crect width=%22100%25%22 height=%22100%25%22 filter=%22url(%23noise)%22/%3E%3C/svg%3E');"></div>
+
+    <div class="relative z-10 text-center text-white px-6 max-w-4xl">
+      <div class="w-px h-16 bg-accent/40 mx-auto mb-8 reveal-line"></div>
+      <p class="text-accent-light uppercase tracking-[0.3em] text-xs sm:text-sm mb-6 reveal-up">Stara Stacja &middot; 1000 m n.p.m.</p>
+      <h1 class="font-heading text-5xl sm:text-6xl md:text-7xl font-bold mb-6 reveal-up reveal-delay-1">Menu</h1>
+      <p class="text-lg md:text-xl font-light text-white/60 max-w-lg mx-auto reveal-up reveal-delay-2">
         <span class="text-pl">Smaki Podbeskidzia w nowoczesnym wydaniu</span>
         <span class="text-en hidden">Flavors of Podbeskidzie in a modern style</span>
         <span class="text-cs hidden">Chutě Podbeskydí v moderním stylu</span>
       </p>
     </div>
+
+    <div class="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
+      <svg class="w-6 h-6 text-white/40" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+      </svg>
+    </div>
   </section>
 
-  <!-- Section tabs -->
+  <!-- Sticky tab bar -->
   <div class="sticky top-20 z-40 bg-cream/95 backdrop-blur-sm border-b border-cream-dark">
-    <div class="max-w-4xl mx-auto px-6 py-4 flex items-center justify-center">
-      <div class="flex gap-2">
-        <button id="tab-food" class="menu-tab text-xs uppercase tracking-widest font-medium text-accent border-b-2 border-accent px-3 py-2 min-h-[44px]">
+    <div class="max-w-4xl mx-auto px-6 py-0 flex items-center justify-center">
+      <div class="flex gap-0">
+        <button id="tab-food" class="menu-tab relative text-xs uppercase tracking-[0.2em] font-semibold text-accent px-5 py-4 min-h-[44px] transition-colors">
           <span class="text-pl">Kuchnia</span>
           <span class="text-en hidden">Food</span>
           <span class="text-cs hidden">Kuchyně</span>
+          <span class="tab-indicator absolute bottom-0 left-0 w-full h-0.5 bg-accent"></span>
         </button>
-        <button id="tab-drinks" class="menu-tab text-xs uppercase tracking-widest font-medium text-dark/40 hover:text-accent px-3 py-2 min-h-[44px]">
+        <button id="tab-drinks" class="menu-tab relative text-xs uppercase tracking-[0.2em] font-semibold text-dark/30 hover:text-dark/60 px-5 py-4 min-h-[44px] transition-colors">
           <span class="text-pl">Napoje</span>
           <span class="text-en hidden">Drinks</span>
           <span class="text-cs hidden">Nápoje</span>
+          <span class="tab-indicator absolute bottom-0 left-0 w-full h-0.5 bg-accent scale-x-0 transition-transform duration-300"></span>
         </button>
       </div>
     </div>
   </div>
 
   <!-- Food section -->
-  <section id="section-food" class="py-16 px-6">
+  <section id="section-food" class="py-24 px-6">
     <div class="max-w-3xl mx-auto">
-      {food.map((category) => (
-        <div id={slugify(category.name)} class="mb-16 scroll-mt-32">
-          <div class="flex items-baseline gap-4 mb-8">
-            <h2 class="font-heading text-3xl font-bold text-primary">
+      {food.map((category, catIndex) => (
+        <div id={slugify(category.name)} class="mb-20 last:mb-0 scroll-mt-32 scroll-reveal">
+          <!-- Category header -->
+          <div class="mb-10">
+            <div class="flex items-center gap-4 mb-3">
+              <span class="w-8 h-px bg-accent/40"></span>
+              <span class="text-accent uppercase tracking-[0.25em] text-[10px] font-semibold">{category.nameEn}</span>
+            </div>
+            <h2 class="font-heading text-3xl md:text-4xl font-bold text-primary">
               <span class="text-pl">{category.name}</span>
               <span class="text-en hidden">{category.nameEn}</span>
               <span class="text-cs hidden">{category.nameCs}</span>
             </h2>
-            <span class="text-sm text-dark/30 uppercase tracking-wider text-pl">{category.nameEn}</span>
           </div>
           {category.note && (
-            <p class="text-sm text-accent italic mb-6">
+            <p class="text-sm text-accent/80 italic mb-8 pl-12 border-l-2 border-accent/20">
               <span class="text-pl">{category.note}</span>
               <span class="text-en hidden">{category.noteEn}</span>
               <span class="text-cs hidden">{category.noteCs}</span>
             </p>
           )}
-          <div class="space-y-6">
+          <div class="space-y-0">
             {category.items.map((item) => (
-              <div class="group flex justify-between items-start gap-4 pb-6 border-b border-cream-dark last:border-0">
-                <div class="flex-1">
-                  <h3 class="font-heading text-lg font-semibold text-primary group-hover:text-accent transition-colors">
+              <div class="group py-5 border-b border-cream-dark/70 last:border-0">
+                <div class="flex justify-between items-baseline gap-4">
+                  <h3 class="font-heading text-lg font-semibold text-primary group-hover:text-accent transition-colors duration-300">
                     <span class="text-pl">{item.name}</span>
                     <span class="text-en hidden">{item.nameEn || item.name}</span>
                     <span class="text-cs hidden">{item.nameCs || item.name}</span>
                   </h3>
-                  {item.description && (
-                    <p class="text-sm text-dark/50 mt-1 leading-relaxed">
-                      <span class="text-pl">{item.description}</span>
-                      <span class="text-en hidden">{item.descriptionEn || item.description}</span>
-                      <span class="text-cs hidden">{item.descriptionCs || item.description}</span>
-                    </p>
-                  )}
+                  <span class="text-accent font-heading text-lg font-bold whitespace-nowrap">{item.price} <span class="text-xs font-normal text-dark/30">zł</span></span>
                 </div>
-                <span class="text-accent font-semibold whitespace-nowrap">{item.price} zł</span>
+                {item.description && (
+                  <p class="text-sm text-dark/40 mt-1.5 leading-relaxed">
+                    <span class="text-pl">{item.description}</span>
+                    <span class="text-en hidden">{item.descriptionEn || item.description}</span>
+                    <span class="text-cs hidden">{item.descriptionCs || item.description}</span>
+                  </p>
+                )}
               </div>
             ))}
           </div>
@@ -96,36 +115,42 @@ function slugify(name: string) {
   </section>
 
   <!-- Drinks section -->
-  <section id="section-drinks" class="py-16 px-6 hidden">
+  <section id="section-drinks" class="py-24 px-6 hidden">
     <div class="max-w-3xl mx-auto">
       {drinks.map((category) => (
-        <div id={slugify(category.name)} class="mb-16 scroll-mt-32">
-          <div class="flex items-baseline gap-4 mb-8">
-            <h2 class="font-heading text-3xl font-bold text-primary">
+        <div id={slugify(category.name)} class="mb-20 last:mb-0 scroll-mt-32 scroll-reveal">
+          <!-- Category header -->
+          <div class="mb-10">
+            <div class="flex items-center gap-4 mb-3">
+              <span class="w-8 h-px bg-accent/40"></span>
+              <span class="text-accent uppercase tracking-[0.25em] text-[10px] font-semibold">{category.nameEn}</span>
+            </div>
+            <h2 class="font-heading text-3xl md:text-4xl font-bold text-primary">
               <span class="text-pl">{category.name}</span>
               <span class="text-en hidden">{category.nameEn}</span>
               <span class="text-cs hidden">{category.nameCs}</span>
             </h2>
-            <span class="text-sm text-dark/30 uppercase tracking-wider text-pl">{category.nameEn}</span>
           </div>
-          <div class="space-y-4">
+          <div class="space-y-0">
             {category.items.map((item) => (
-              <div class="group flex justify-between items-start gap-4 pb-4 border-b border-cream-dark last:border-0">
-                <div class="flex-1">
-                  <h3 class="font-heading text-base font-semibold text-primary group-hover:text-accent transition-colors">
-                    <span class="text-pl">{item.name}</span>
-                    <span class="text-en hidden">{item.nameEn || item.name}</span>
-                    <span class="text-cs hidden">{item.nameCs || item.name}</span>
-                  </h3>
-                  {item.description && (
-                    <p class="text-xs text-dark/40 mt-0.5">
-                      <span class="text-pl">{item.description}</span>
-                      <span class="text-en hidden">{item.descriptionEn || item.description}</span>
-                      <span class="text-cs hidden">{item.descriptionCs || item.description}</span>
-                    </p>
-                  )}
+              <div class="group py-4 border-b border-cream-dark/70 last:border-0">
+                <div class="flex justify-between items-baseline gap-4">
+                  <div class="flex-1">
+                    <h3 class="font-heading text-base font-semibold text-primary group-hover:text-accent transition-colors duration-300">
+                      <span class="text-pl">{item.name}</span>
+                      <span class="text-en hidden">{item.nameEn || item.name}</span>
+                      <span class="text-cs hidden">{item.nameCs || item.name}</span>
+                    </h3>
+                    {item.description && (
+                      <p class="text-xs text-dark/35 mt-1">
+                        <span class="text-pl">{item.description}</span>
+                        <span class="text-en hidden">{item.descriptionEn || item.description}</span>
+                        <span class="text-cs hidden">{item.descriptionCs || item.description}</span>
+                      </p>
+                    )}
+                  </div>
+                  <span class="text-accent font-heading font-bold whitespace-nowrap">{item.price} <span class="text-xs font-normal text-dark/30">zł</span></span>
                 </div>
-                <span class="text-accent font-semibold whitespace-nowrap text-sm">{item.price} zł</span>
               </div>
             ))}
           </div>
@@ -134,27 +159,85 @@ function slugify(name: string) {
     </div>
   </section>
 
-  <!-- Menu images download -->
-  <section class="py-16 px-6 bg-cream-dark">
-    <div class="max-w-4xl mx-auto text-center">
-      <h2 class="font-heading text-2xl font-bold text-primary mb-6">
-        <span class="text-pl">Menu do pobrania</span>
-        <span class="text-en hidden">Downloadable menu</span>
-        <span class="text-cs hidden">Menu ke stažení</span>
-      </h2>
-      <div class="flex flex-wrap gap-4 justify-center">
-        <a href="/images/menu1-pl.png" target="_blank" class="px-6 py-3 bg-primary text-white text-sm uppercase tracking-wider hover:bg-primary-light transition-colors">PL 1</a>
-        <a href="/images/menu2-pl.png" target="_blank" class="px-6 py-3 bg-primary text-white text-sm uppercase tracking-wider hover:bg-primary-light transition-colors">PL 2</a>
-        <a href="/images/menu3-pl.png" target="_blank" class="px-6 py-3 bg-primary text-white text-sm uppercase tracking-wider hover:bg-primary-light transition-colors">PL 3</a>
-        <a href="/images/menu1-en.png" target="_blank" class="px-6 py-3 bg-accent text-primary text-sm uppercase tracking-wider hover:bg-accent-light transition-colors">EN 1</a>
-        <a href="/images/menu2-en.png" target="_blank" class="px-6 py-3 bg-accent text-primary text-sm uppercase tracking-wider hover:bg-accent-light transition-colors">EN 2</a>
-        <a href="/images/menu3-en.png" target="_blank" class="px-6 py-3 bg-accent text-primary text-sm uppercase tracking-wider hover:bg-accent-light transition-colors">EN 3</a>
+  <!-- Divider photo strip -->
+  <section class="relative h-80 sm:h-96 overflow-hidden">
+    <div class="absolute inset-0 bg-[url('/images/gallery/chef-flambe.jpg')] bg-cover bg-[center_30%]" id="menu-strip-bg"></div>
+    <div class="absolute inset-0 bg-gradient-to-r from-primary/70 via-primary/30 to-primary/70"></div>
+    <div class="absolute inset-0 opacity-[0.03]" style="background-image: url('data:image/svg+xml,%3Csvg viewBox=%220 0 256 256%22 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cfilter id=%22noise%22%3E%3CfeTurbulence type=%22fractalNoise%22 baseFrequency=%220.9%22 numOctaves=%224%22 stitchTiles=%22stitch%22/%3E%3C/filter%3E%3Crect width=%22100%25%22 height=%22100%25%22 filter=%22url(%23noise)%22/%3E%3C/svg%3E');"></div>
+  </section>
+
+  <!-- Menu download -->
+  <section class="py-24 px-6 bg-cream-dark">
+    <div class="max-w-4xl mx-auto scroll-reveal">
+      <div class="text-center mb-12">
+        <div class="w-px h-10 bg-accent/30 mx-auto mb-6"></div>
+        <p class="text-accent uppercase tracking-[0.25em] text-xs mb-4">PDF</p>
+        <h2 class="font-heading text-3xl md:text-4xl font-bold text-primary">
+          <span class="text-pl">Menu <span class="italic text-accent">do pobrania</span></span>
+          <span class="text-en hidden">Downloadable <span class="italic text-accent">menu</span></span>
+          <span class="text-cs hidden">Menu <span class="italic text-accent">ke stažení</span></span>
+        </h2>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-xl mx-auto">
+        <!-- PL downloads -->
+        <div class="bg-white p-6 text-center">
+          <p class="text-primary/40 uppercase tracking-[0.2em] text-[10px] font-semibold mb-4">Polski</p>
+          <div class="flex gap-3 justify-center">
+            <a href="/images/menu1-pl.png" target="_blank" class="flex-1 py-3 bg-primary text-white text-xs uppercase tracking-wider hover:bg-primary-light transition-colors font-semibold">1</a>
+            <a href="/images/menu2-pl.png" target="_blank" class="flex-1 py-3 bg-primary text-white text-xs uppercase tracking-wider hover:bg-primary-light transition-colors font-semibold">2</a>
+            <a href="/images/menu3-pl.png" target="_blank" class="flex-1 py-3 bg-primary text-white text-xs uppercase tracking-wider hover:bg-primary-light transition-colors font-semibold">3</a>
+          </div>
+        </div>
+
+        <!-- EN downloads -->
+        <div class="bg-white p-6 text-center">
+          <p class="text-primary/40 uppercase tracking-[0.2em] text-[10px] font-semibold mb-4">English</p>
+          <div class="flex gap-3 justify-center">
+            <a href="/images/menu1-en.png" target="_blank" class="flex-1 py-3 bg-accent text-primary text-xs uppercase tracking-wider hover:bg-accent-light transition-colors font-semibold">1</a>
+            <a href="/images/menu2-en.png" target="_blank" class="flex-1 py-3 bg-accent text-primary text-xs uppercase tracking-wider hover:bg-accent-light transition-colors font-semibold">2</a>
+            <a href="/images/menu3-en.png" target="_blank" class="flex-1 py-3 bg-accent text-primary text-xs uppercase tracking-wider hover:bg-accent-light transition-colors font-semibold">3</a>
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
   <Footer />
 </Layout>
+
+<style>
+  @keyframes grow-line {
+    from { height: 0; opacity: 0; }
+    to { height: 4rem; opacity: 1; }
+  }
+
+  .reveal-line {
+    animation: grow-line 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+
+  .reveal-up {
+    animation: reveal-up 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    opacity: 0;
+  }
+  .reveal-delay-1 { animation-delay: 0.15s; }
+  .reveal-delay-2 { animation-delay: 0.3s; }
+
+  @keyframes reveal-up {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .scroll-reveal {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .scroll-reveal.revealed {
+    opacity: 1;
+    transform: translateY(0);
+  }
+</style>
 
 <script>
   // Section tabs
@@ -164,14 +247,47 @@ function slugify(name: string) {
   const sectionDrinks = document.getElementById('section-drinks');
 
   function activateTab(tab: HTMLElement, section: HTMLElement, otherTab: HTMLElement, otherSection: HTMLElement) {
-    tab.classList.add('text-accent', 'border-b-2', 'border-accent');
-    tab.classList.remove('text-dark/40');
-    otherTab.classList.remove('text-accent', 'border-b-2', 'border-accent');
-    otherTab.classList.add('text-dark/40');
+    // Active tab
+    tab.classList.add('text-accent');
+    tab.classList.remove('text-dark/30');
+    tab.querySelector('.tab-indicator')?.classList.remove('scale-x-0');
+
+    // Inactive tab
+    otherTab.classList.remove('text-accent');
+    otherTab.classList.add('text-dark/30');
+    otherTab.querySelector('.tab-indicator')?.classList.add('scale-x-0');
+
+    // Sections
     section.classList.remove('hidden');
     otherSection.classList.add('hidden');
+
+    // Re-observe scroll-reveals in the newly shown section
+    section.querySelectorAll('.scroll-reveal:not(.revealed)').forEach((el) => observer.observe(el));
   }
 
   tabFood?.addEventListener('click', () => activateTab(tabFood, sectionFood!, tabDrinks!, sectionDrinks!));
   tabDrinks?.addEventListener('click', () => activateTab(tabDrinks, sectionDrinks!, tabFood!, sectionFood!));
+
+  // Scroll reveal
+  const reveals = document.querySelectorAll('.scroll-reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('revealed');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1 });
+  reveals.forEach((el) => observer.observe(el));
+
+  // Subtle parallax on hero
+  const heroBg = document.getElementById('menu-hero-bg');
+  if (heroBg && window.innerWidth > 768) {
+    window.addEventListener('scroll', () => {
+      const y = window.scrollY;
+      if (y < window.innerHeight) {
+        heroBg.style.transform = `scale(1.05) translateY(${y * 0.15}px)`;
+      }
+    }, { passive: true });
+  }
 </script>

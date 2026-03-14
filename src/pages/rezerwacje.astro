@@ -8,15 +8,21 @@ import info from '../data/info.json';
 <Layout title="Rezerwacje — Stara Stacja" description="Zarezerwuj stolik w restauracji Stara Stacja na szczycie Szyndzielni.">
   <Nav />
 
-  <section class="relative pt-32 pb-20 px-6 bg-primary text-white">
-    <div class="max-w-4xl mx-auto text-center">
-      <p class="text-accent-light uppercase tracking-[0.15em] sm:tracking-[0.3em] text-xs sm:text-sm mb-4">Stara Stacja</p>
-      <h1 class="font-heading text-5xl md:text-6xl font-bold mb-4">
+  <!-- Hero -->
+  <section class="relative h-[60vh] min-h-[400px] flex items-center justify-center overflow-hidden">
+    <div class="absolute inset-0 bg-[url('/images/gallery/table-setting.jpg')] bg-cover bg-center scale-105" id="rez-hero-bg"></div>
+    <div class="absolute inset-0 bg-gradient-to-b from-primary/50 via-primary/30 to-primary"></div>
+    <div class="absolute inset-0 opacity-[0.03]" style="background-image: url('data:image/svg+xml,%3Csvg viewBox=%220 0 256 256%22 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cfilter id=%22noise%22%3E%3CfeTurbulence type=%22fractalNoise%22 baseFrequency=%220.9%22 numOctaves=%224%22 stitchTiles=%22stitch%22/%3E%3C/filter%3E%3Crect width=%22100%25%22 height=%22100%25%22 filter=%22url(%23noise)%22/%3E%3C/svg%3E');"></div>
+
+    <div class="relative z-10 text-center text-white px-6 max-w-4xl">
+      <div class="w-px h-16 bg-accent/40 mx-auto mb-8 reveal-line"></div>
+      <p class="text-accent-light uppercase tracking-[0.3em] text-xs sm:text-sm mb-6 reveal-up">Stara Stacja</p>
+      <h1 class="font-heading text-5xl sm:text-6xl md:text-7xl font-bold mb-6 reveal-up reveal-delay-1">
         <span class="text-pl">Rezerwacje</span>
         <span class="text-en hidden">Reservations</span>
         <span class="text-cs hidden">Rezervace</span>
       </h1>
-      <p class="text-white/60 max-w-xl mx-auto">
+      <p class="text-lg font-light text-white/60 max-w-lg mx-auto reveal-up reveal-delay-2">
         <span class="text-pl">Zarezerwuj stolik z widokiem na Beskidy</span>
         <span class="text-en hidden">Book a table with a view of the Beskid Mountains</span>
         <span class="text-cs hidden">Rezervujte si stůl s výhledem na Beskydy</span>
@@ -24,15 +30,17 @@ import info from '../data/info.json';
     </div>
   </section>
 
-  <section class="py-20 px-6">
-    <div class="max-w-5xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16">
+  <!-- Main content -->
+  <section class="py-16 sm:py-24 px-4 sm:px-6">
+    <div class="max-w-5xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
 
       <!-- Info side -->
-      <div>
-        <h2 class="font-heading text-3xl font-bold text-primary mb-6">
-          <span class="text-pl">Jak zarezerwować?</span>
-          <span class="text-en hidden">How to book?</span>
-          <span class="text-cs hidden">Jak rezervovat?</span>
+      <div class="scroll-reveal">
+        <div class="w-12 h-px bg-accent mb-6"></div>
+        <h2 class="font-heading text-3xl sm:text-4xl font-bold text-primary mb-6">
+          <span class="text-pl">Jak <span class="italic text-accent">zarezerwować</span>?</span>
+          <span class="text-en hidden">How to <span class="italic text-accent">book</span>?</span>
+          <span class="text-cs hidden">Jak <span class="italic text-accent">rezervovat</span>?</span>
         </h2>
         <p class="text-dark/60 leading-relaxed mb-8">
           <span class="text-pl">Rezerwacji można dokonać telefonicznie lub mailowo. Dla grup powyżej 10 osób prosimy o kontakt z wyprzedzeniem — przygotujemy specjalną ofertę.</span>
@@ -40,192 +48,205 @@ import info from '../data/info.json';
           <span class="text-cs hidden">Rezervaci lze provést telefonicky nebo e-mailem. Pro skupiny nad 10 osob nás prosím kontaktujte předem — připravíme speciální nabídku.</span>
         </p>
 
-        <div class="space-y-6 mb-10">
-          <div class="flex items-start gap-4">
-            <div class="w-12 h-12 rounded-full bg-accent/10 flex items-center justify-center shrink-0">
+        <!-- Contact methods -->
+        <div class="space-y-5 mb-10">
+          <a href={`tel:${info.phone}`} class="flex items-center gap-4 p-4 bg-cream-dark/50 border-l-2 border-accent/30 hover:border-accent transition-colors group">
+            <div class="w-10 h-10 bg-accent/10 flex items-center justify-center shrink-0">
               <svg class="w-5 h-5 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
               </svg>
             </div>
             <div>
-              <h3 class="font-heading text-lg font-semibold text-primary">
+              <p class="text-[10px] uppercase tracking-[0.2em] text-dark/30 font-semibold mb-0.5">
                 <span class="text-pl">Telefon</span>
                 <span class="text-en hidden">Phone</span>
                 <span class="text-cs hidden">Telefon</span>
-              </h3>
-              <a href={`tel:${info.phone}`} class="text-dark/60 hover:text-accent transition-colors">{info.phone}</a>
+              </p>
+              <p class="text-primary font-heading font-semibold group-hover:text-accent transition-colors">{info.phone}</p>
             </div>
-          </div>
+          </a>
 
-          <div class="flex items-start gap-4">
-            <div class="w-12 h-12 rounded-full bg-accent/10 flex items-center justify-center shrink-0">
+          <a href={`mailto:${info.email}`} class="flex items-center gap-4 p-4 bg-cream-dark/50 border-l-2 border-accent/30 hover:border-accent transition-colors group">
+            <div class="w-10 h-10 bg-accent/10 flex items-center justify-center shrink-0">
               <svg class="w-5 h-5 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
               </svg>
             </div>
             <div>
-              <h3 class="font-heading text-lg font-semibold text-primary">Email</h3>
-              <a href={`mailto:${info.email}`} class="text-dark/60 hover:text-accent transition-colors">{info.email}</a>
-              <p class="text-sm text-dark/40 mt-1">
-                <span class="text-pl">Temat: "Stara Stacja — rezerwacja"</span>
-                <span class="text-en hidden">Subject: "Stara Stacja — reservation"</span>
-                <span class="text-cs hidden">Předmět: "Stara Stacja — rezervace"</span>
-              </p>
+              <p class="text-[10px] uppercase tracking-[0.2em] text-dark/30 font-semibold mb-0.5">Email</p>
+              <p class="text-primary font-heading font-semibold group-hover:text-accent transition-colors break-all">{info.email}</p>
             </div>
-          </div>
+          </a>
         </div>
 
-        <!-- Capacity info -->
-        <div class="bg-primary text-white p-8 rounded-sm">
-          <h3 class="font-heading text-xl font-semibold mb-4 text-accent">
-            <span class="text-pl">Pojemność</span>
-            <span class="text-en hidden">Capacity</span>
-            <span class="text-cs hidden">Kapacita</span>
-          </h3>
-          <ul class="space-y-3 text-sm">
-            <li class="flex justify-between">
-              <span class="text-white/70">
+        <!-- Capacity card -->
+        <div class="bg-primary text-white p-6 sm:p-8 scroll-reveal">
+          <div class="flex items-center gap-3 mb-5">
+            <span class="w-8 h-px bg-accent/40"></span>
+            <p class="text-accent uppercase tracking-[0.25em] text-[10px] font-semibold">
+              <span class="text-pl">Pojemność</span>
+              <span class="text-en hidden">Capacity</span>
+              <span class="text-cs hidden">Kapacita</span>
+            </p>
+          </div>
+          <div class="space-y-3 text-sm">
+            <div class="flex justify-between py-2">
+              <span class="text-white/60">
                 <span class="text-pl">Wewnątrz</span>
                 <span class="text-en hidden">Indoor</span>
                 <span class="text-cs hidden">Uvnitř</span>
               </span>
-              <span class="font-semibold">
-                <span class="text-pl">{info.capacity.indoor} miejsc</span>
-                <span class="text-en hidden">{info.capacity.indoor} seats</span>
-                <span class="text-cs hidden">{info.capacity.indoor} míst</span>
+              <span class="font-heading font-bold text-lg">
+                <span class="text-pl">{info.capacity.indoor} <span class="text-xs font-normal text-white/40">miejsc</span></span>
+                <span class="text-en hidden">{info.capacity.indoor} <span class="text-xs font-normal text-white/40">seats</span></span>
+                <span class="text-cs hidden">{info.capacity.indoor} <span class="text-xs font-normal text-white/40">míst</span></span>
               </span>
-            </li>
-            <li class="flex justify-between">
-              <span class="text-white/70">
+            </div>
+            <div class="flex justify-between py-2">
+              <span class="text-white/60">
                 <span class="text-pl">Taras</span>
                 <span class="text-en hidden">Terrace</span>
                 <span class="text-cs hidden">Terasa</span>
               </span>
-              <span class="font-semibold">
-                <span class="text-pl">{info.capacity.terrace} miejsc</span>
-                <span class="text-en hidden">{info.capacity.terrace} seats</span>
-                <span class="text-cs hidden">{info.capacity.terrace} míst</span>
+              <span class="font-heading font-bold text-lg">
+                <span class="text-pl">{info.capacity.terrace} <span class="text-xs font-normal text-white/40">miejsc</span></span>
+                <span class="text-en hidden">{info.capacity.terrace} <span class="text-xs font-normal text-white/40">seats</span></span>
+                <span class="text-cs hidden">{info.capacity.terrace} <span class="text-xs font-normal text-white/40">míst</span></span>
               </span>
-            </li>
-            <li class="flex justify-between border-t border-white/10 pt-3">
-              <span class="text-white/70">
+            </div>
+            <div class="flex justify-between py-2 border-t border-white/10 pt-3">
+              <span class="text-white/60">
                 <span class="text-pl">Łącznie</span>
                 <span class="text-en hidden">Total</span>
                 <span class="text-cs hidden">Celkem</span>
               </span>
-              <span class="font-semibold text-accent">
-                <span class="text-pl">{info.capacity.total} miejsc</span>
-                <span class="text-en hidden">{info.capacity.total} seats</span>
-                <span class="text-cs hidden">{info.capacity.total} míst</span>
+              <span class="font-heading font-bold text-lg text-accent">
+                <span class="text-pl">{info.capacity.total} <span class="text-xs font-normal text-accent/60">miejsc</span></span>
+                <span class="text-en hidden">{info.capacity.total} <span class="text-xs font-normal text-accent/60">seats</span></span>
+                <span class="text-cs hidden">{info.capacity.total} <span class="text-xs font-normal text-accent/60">míst</span></span>
               </span>
-            </li>
-          </ul>
+            </div>
+          </div>
         </div>
       </div>
 
-      <!-- Contact form -->
-      <div class="bg-white p-8 lg:p-10 shadow-sm">
-        <h2 class="font-heading text-2xl font-bold text-primary mb-6">
-          <span class="text-pl">Formularz rezerwacji</span>
-          <span class="text-en hidden">Reservation form</span>
-          <span class="text-cs hidden">Rezervační formulář</span>
-        </h2>
-        <form id="reservation-form" class="space-y-5">
-          <div>
-            <label for="name" class="block text-sm font-medium text-dark/70 mb-1">
-              <span class="text-pl">Imię i nazwisko</span>
-              <span class="text-en hidden">Full name</span>
-              <span class="text-cs hidden">Jméno a příjmení</span>
-            </label>
-            <input type="text" id="name" name="name" required
-              class="w-full px-4 py-3 border border-cream-dark bg-cream/50 focus:border-accent focus:outline-none transition-colors" />
+      <!-- Reservation form -->
+      <div class="scroll-reveal">
+        <div class="bg-white p-6 sm:p-8 lg:p-10 shadow-sm border-t-2 border-accent/30">
+          <div class="flex items-center gap-3 mb-6">
+            <span class="w-8 h-px bg-accent/40"></span>
+            <p class="text-accent uppercase tracking-[0.25em] text-[10px] font-semibold">
+              <span class="text-pl">Formularz</span>
+              <span class="text-en hidden">Form</span>
+              <span class="text-cs hidden">Formulář</span>
+            </p>
           </div>
-          <div>
-            <label for="email" class="block text-sm font-medium text-dark/70 mb-1">Email</label>
-            <input type="email" id="email" name="email" required
-              class="w-full px-4 py-3 border border-cream-dark bg-cream/50 focus:border-accent focus:outline-none transition-colors" />
-          </div>
-          <div>
-            <label for="phone" class="block text-sm font-medium text-dark/70 mb-1">
-              <span class="text-pl">Telefon</span>
-              <span class="text-en hidden">Phone</span>
-              <span class="text-cs hidden">Telefon</span>
-            </label>
-            <input type="tel" id="phone" name="phone"
-              class="w-full px-4 py-3 border border-cream-dark bg-cream/50 focus:border-accent focus:outline-none transition-colors" />
-          </div>
-          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <h2 class="font-heading text-2xl sm:text-3xl font-bold text-primary mb-8">
+            <span class="text-pl">Rezerwacja <span class="italic text-accent">stolika</span></span>
+            <span class="text-en hidden">Table <span class="italic text-accent">reservation</span></span>
+            <span class="text-cs hidden">Rezervace <span class="italic text-accent">stolu</span></span>
+          </h2>
+          <form id="reservation-form" class="space-y-5">
             <div>
-              <label for="date" class="block text-sm font-medium text-dark/70 mb-1">
-                <span class="text-pl">Data</span>
-                <span class="text-en hidden">Date</span>
-                <span class="text-cs hidden">Datum</span>
+              <label for="name" class="block text-[11px] uppercase tracking-[0.15em] font-semibold text-dark/40 mb-2">
+                <span class="text-pl">Imię i nazwisko</span>
+                <span class="text-en hidden">Full name</span>
+                <span class="text-cs hidden">Jméno a příjmení</span>
               </label>
-              <input type="date" id="date" name="date" required
-                class="w-full px-4 py-3 border border-cream-dark bg-cream/50 focus:border-accent focus:outline-none transition-colors" />
+              <input type="text" id="name" name="name" required
+                class="w-full px-4 py-3.5 border border-cream-dark bg-cream/30 focus:border-accent focus:outline-none transition-colors text-sm" />
             </div>
             <div>
-              <label for="guests" class="block text-sm font-medium text-dark/70 mb-1">
-                <span class="text-pl">Liczba gości</span>
-                <span class="text-en hidden">Number of guests</span>
-                <span class="text-cs hidden">Počet hostů</span>
-              </label>
-              <select id="guests" name="guests" required
-                class="w-full px-4 py-3 border border-cream-dark bg-cream/50 focus:border-accent focus:outline-none transition-colors">
-                <option value="">
-                  --
-                </option>
-                <option value="1-2">1–2</option>
-                <option value="3-4">3–4</option>
-                <option value="5-8">5–8</option>
-                <option value="9-15">9–15</option>
-                <option value="16+">16+</option>
-              </select>
+              <label for="email" class="block text-[11px] uppercase tracking-[0.15em] font-semibold text-dark/40 mb-2">Email</label>
+              <input type="email" id="email" name="email" required
+                class="w-full px-4 py-3.5 border border-cream-dark bg-cream/30 focus:border-accent focus:outline-none transition-colors text-sm" />
             </div>
-          </div>
-          <div>
-            <label for="message" class="block text-sm font-medium text-dark/70 mb-1">
-              <span class="text-pl">Uwagi</span>
-              <span class="text-en hidden">Notes</span>
-              <span class="text-cs hidden">Poznámky</span>
-            </label>
-            <textarea id="message" name="message" rows="3"
-              class="w-full px-4 py-3 border border-cream-dark bg-cream/50 focus:border-accent focus:outline-none transition-colors resize-none"
-              placeholder=""></textarea>
-          </div>
-          <button type="submit"
-            class="w-full py-4 bg-accent text-primary font-semibold uppercase tracking-wider text-sm hover:bg-accent-light transition-colors">
-            <span class="text-pl">Wyślij rezerwację</span>
-            <span class="text-en hidden">Send reservation</span>
-            <span class="text-cs hidden">Odeslat rezervaci</span>
-          </button>
-          <p class="text-xs text-dark/40 text-center">
-            <span class="text-pl">Potwierdzenie rezerwacji wyślemy mailem lub telefonicznie.</span>
-            <span class="text-en hidden">We'll confirm your reservation by email or phone.</span>
-            <span class="text-cs hidden">Potvrzení rezervace vám zašleme e-mailem nebo telefonicky.</span>
-          </p>
-        </form>
+            <div>
+              <label for="phone" class="block text-[11px] uppercase tracking-[0.15em] font-semibold text-dark/40 mb-2">
+                <span class="text-pl">Telefon</span>
+                <span class="text-en hidden">Phone</span>
+                <span class="text-cs hidden">Telefon</span>
+              </label>
+              <input type="tel" id="phone" name="phone"
+                class="w-full px-4 py-3.5 border border-cream-dark bg-cream/30 focus:border-accent focus:outline-none transition-colors text-sm" />
+            </div>
+            <div class="grid grid-cols-2 gap-4">
+              <div>
+                <label for="date" class="block text-[11px] uppercase tracking-[0.15em] font-semibold text-dark/40 mb-2">
+                  <span class="text-pl">Data</span>
+                  <span class="text-en hidden">Date</span>
+                  <span class="text-cs hidden">Datum</span>
+                </label>
+                <input type="date" id="date" name="date" required
+                  class="w-full px-4 py-3.5 border border-cream-dark bg-cream/30 focus:border-accent focus:outline-none transition-colors text-sm" />
+              </div>
+              <div>
+                <label for="guests" class="block text-[11px] uppercase tracking-[0.15em] font-semibold text-dark/40 mb-2">
+                  <span class="text-pl">Goście</span>
+                  <span class="text-en hidden">Guests</span>
+                  <span class="text-cs hidden">Hosté</span>
+                </label>
+                <select id="guests" name="guests" required
+                  class="w-full px-4 py-3.5 border border-cream-dark bg-cream/30 focus:border-accent focus:outline-none transition-colors text-sm">
+                  <option value="">--</option>
+                  <option value="1-2">1–2</option>
+                  <option value="3-4">3–4</option>
+                  <option value="5-8">5–8</option>
+                  <option value="9-15">9–15</option>
+                  <option value="16+">16+</option>
+                </select>
+              </div>
+            </div>
+            <div>
+              <label for="message" class="block text-[11px] uppercase tracking-[0.15em] font-semibold text-dark/40 mb-2">
+                <span class="text-pl">Uwagi</span>
+                <span class="text-en hidden">Notes</span>
+                <span class="text-cs hidden">Poznámky</span>
+              </label>
+              <textarea id="message" name="message" rows="3"
+                class="w-full px-4 py-3.5 border border-cream-dark bg-cream/30 focus:border-accent focus:outline-none transition-colors resize-none text-sm"
+                placeholder=""></textarea>
+            </div>
+            <button type="submit"
+              class="w-full py-4 bg-accent text-primary font-semibold uppercase tracking-wider text-sm hover:bg-accent-light transition-colors min-h-[48px]">
+              <span class="text-pl">Wyślij rezerwację</span>
+              <span class="text-en hidden">Send reservation</span>
+              <span class="text-cs hidden">Odeslat rezervaci</span>
+            </button>
+            <p class="text-xs text-dark/35 text-center">
+              <span class="text-pl">Potwierdzenie rezerwacji wyślemy mailem lub telefonicznie.</span>
+              <span class="text-en hidden">We'll confirm your reservation by email or phone.</span>
+              <span class="text-cs hidden">Potvrzení rezervace vám zašleme e-mailem nebo telefonicky.</span>
+            </p>
+          </form>
+        </div>
       </div>
     </div>
   </section>
 
   <!-- Events CTA -->
-  <section class="py-20 px-6 bg-cream-dark">
-    <div class="max-w-4xl mx-auto text-center">
-      <h2 class="font-heading text-3xl md:text-4xl font-bold text-primary mb-4">
-        <span class="text-pl">Organizujesz wydarzenie?</span>
-        <span class="text-en hidden">Organizing an event?</span>
-        <span class="text-cs hidden">Pořádáte akci?</span>
+  <section class="relative py-24 sm:py-32 px-6 overflow-hidden">
+    <div class="absolute inset-0 bg-[url('/images/gallery/event-crowd.jpg')] bg-cover bg-center"></div>
+    <div class="absolute inset-0 bg-gradient-to-t from-primary/95 via-primary/70 to-primary/40"></div>
+    <div class="absolute inset-0 opacity-[0.03]" style="background-image: url('data:image/svg+xml,%3Csvg viewBox=%220 0 256 256%22 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cfilter id=%22noise%22%3E%3CfeTurbulence type=%22fractalNoise%22 baseFrequency=%220.9%22 numOctaves=%224%22 stitchTiles=%22stitch%22/%3E%3C/filter%3E%3Crect width=%22100%25%22 height=%22100%25%22 filter=%22url(%23noise)%22/%3E%3C/svg%3E');"></div>
+
+    <div class="relative z-10 max-w-3xl mx-auto text-center scroll-reveal">
+      <div class="w-px h-10 bg-accent/40 mx-auto mb-6"></div>
+      <h2 class="font-heading text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4">
+        <span class="text-pl">Organizujesz <span class="italic text-accent">wydarzenie</span>?</span>
+        <span class="text-en hidden">Organizing an <span class="italic text-accent">event</span>?</span>
+        <span class="text-cs hidden">Pořádáte <span class="italic text-accent">akci</span>?</span>
       </h2>
-      <p class="text-dark/60 max-w-2xl mx-auto mb-8">
-        <span class="text-pl">Wesela, konferencje, szkolenia, spotkania firmowe — pomożemy zorganizować niezapomniane wydarzenie na szczycie Szyndzielni. Możemy również zorganizować rezerwację kolejki linowej w elastycznych godzinach.</span>
-        <span class="text-en hidden">Weddings, conferences, training sessions, corporate meetings — we'll help you organize an unforgettable event at the summit of Szyndzielnia. We can also arrange cable car reservations at flexible hours.</span>
-        <span class="text-cs hidden">Svatby, konference, školení, firemní setkání — pomůžeme vám zorganizovat nezapomenutelnou akci na vrcholu Szyndzielnie. Můžeme také zajistit rezervaci lanovky v flexibilních hodinách.</span>
+      <p class="text-white/50 max-w-2xl mx-auto mb-8 text-sm sm:text-base leading-relaxed">
+        <span class="text-pl">Wesela, konferencje, szkolenia, spotkania firmowe — pomożemy zorganizować niezapomniane wydarzenie na szczycie Szyndzielni.</span>
+        <span class="text-en hidden">Weddings, conferences, training sessions, corporate meetings — we'll help you organize an unforgettable event at the summit of Szyndzielnia.</span>
+        <span class="text-cs hidden">Svatby, konference, školení, firemní setkání — pomůžeme vám zorganizovat nezapomenutelnou akci na vrcholu Szyndzielnie.</span>
       </p>
-      <a href="/eventy" class="inline-block px-10 py-4 bg-primary text-white font-semibold uppercase tracking-wider text-sm hover:bg-primary-light transition-colors">
+      <a href="/eventy" class="group inline-flex items-center gap-3 px-8 sm:px-10 py-4 bg-accent text-primary font-semibold uppercase tracking-wider text-sm hover:bg-accent-light transition-colors min-h-[48px]">
         <span class="text-pl">Zobacz ofertę eventową</span>
         <span class="text-en hidden">See events offer</span>
         <span class="text-cs hidden">Zobrazit nabídku akcí</span>
+        <svg class="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
       </a>
     </div>
   </section>
@@ -233,9 +254,59 @@ import info from '../data/info.json';
   <Footer />
 </Layout>
 
-<script>
-  const form = document.getElementById('reservation-form') as HTMLFormElement;
+<style>
+  @keyframes grow-line {
+    from { height: 0; opacity: 0; }
+    to { height: 4rem; opacity: 1; }
+  }
+  .reveal-line { animation: grow-line 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
 
+  .reveal-up {
+    animation: reveal-up 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    opacity: 0;
+  }
+  .reveal-delay-1 { animation-delay: 0.15s; }
+  .reveal-delay-2 { animation-delay: 0.3s; }
+
+  @keyframes reveal-up {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .scroll-reveal {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .scroll-reveal.revealed { opacity: 1; transform: translateY(0); }
+</style>
+
+<script>
+  // Scroll reveal
+  const reveals = document.querySelectorAll('.scroll-reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('revealed');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1 });
+  reveals.forEach((el) => observer.observe(el));
+
+  // Parallax hero (desktop only)
+  const heroBg = document.getElementById('rez-hero-bg');
+  if (heroBg && window.innerWidth > 768) {
+    window.addEventListener('scroll', () => {
+      const y = window.scrollY;
+      if (y < window.innerHeight) {
+        heroBg.style.transform = `scale(1.05) translateY(${y * 0.15}px)`;
+      }
+    }, { passive: true });
+  }
+
+  // Reservation form
+  const form = document.getElementById('reservation-form') as HTMLFormElement;
   form?.addEventListener('submit', (e) => {
     e.preventDefault();
 

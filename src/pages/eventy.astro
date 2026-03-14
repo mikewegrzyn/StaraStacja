@@ -7,160 +7,295 @@ import Footer from '../components/Footer.astro';
 <Layout title="Eventy — Stara Stacja" description="Wesela, komunie i inne wydarzenia na szczycie Szyndzielni. Sala na 120 osób z panoramicznym widokiem na Beskidy.">
   <Nav />
 
-  <!-- Hero -->
-  <section class="relative pt-32 pb-20 px-6 bg-primary text-white">
-    <div class="max-w-4xl mx-auto text-center">
-      <p class="text-accent-light uppercase tracking-[0.15em] sm:tracking-[0.3em] text-xs sm:text-sm mb-4">Stara Stacja</p>
-      <h1 class="font-heading text-5xl md:text-6xl font-bold mb-4">
-        <span class="text-pl">Eventy i Uroczystości</span>
-        <span class="text-en hidden">Events & Celebrations</span>
-        <span class="text-cs hidden">Akce a Oslavy</span>
+  <!-- Hero — cinematic split with parallax feel -->
+  <section class="relative h-screen flex items-center justify-center overflow-hidden">
+    <div class="absolute inset-0 bg-[url('/images/wedding/wedding-158.jpg')] bg-cover bg-center scale-105" id="eventy-hero-bg"></div>
+    <div class="absolute inset-0 bg-gradient-to-b from-primary/40 via-primary/20 to-primary"></div>
+
+    <!-- Decorative grain overlay -->
+    <div class="absolute inset-0 opacity-[0.03]" style="background-image: url('data:image/svg+xml,%3Csvg viewBox=%220 0 256 256%22 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cfilter id=%22noise%22%3E%3CfeTurbulence type=%22fractalNoise%22 baseFrequency=%220.9%22 numOctaves=%224%22 stitchTiles=%22stitch%22/%3E%3C/filter%3E%3Crect width=%22100%25%22 height=%22100%25%22 filter=%22url(%23noise)%22/%3E%3C/svg%3E');"></div>
+
+    <div class="relative z-10 text-center text-white px-6 max-w-4xl">
+      <!-- Decorative line -->
+      <div class="w-px h-16 bg-accent/40 mx-auto mb-8 reveal-line"></div>
+      <p class="text-accent-light uppercase tracking-[0.3em] text-xs sm:text-sm mb-6 reveal-up">Stara Stacja &middot; 1000 m n.p.m.</p>
+      <h1 class="font-heading text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold mb-6 reveal-up reveal-delay-1">
+        <span class="text-pl">Eventy<br/><span class="text-accent italic font-normal text-[0.6em]">i Uroczystości</span></span>
+        <span class="text-en hidden">Events<br/><span class="text-accent italic font-normal text-[0.6em]">& Celebrations</span></span>
+        <span class="text-cs hidden">Akce<br/><span class="text-accent italic font-normal text-[0.6em]">a Oslavy</span></span>
       </h1>
-      <p class="text-white/60 max-w-xl mx-auto">
-        <span class="text-pl">Niezapomniane wydarzenia na 1000 metrów nad poziomem morza</span>
-        <span class="text-en hidden">Unforgettable events at 1,000 meters above sea level</span>
-        <span class="text-cs hidden">Nezapomenutelné akce v 1 000 metrech nad mořem</span>
+      <p class="text-lg md:text-xl font-light text-white/60 max-w-lg mx-auto mb-12 reveal-up reveal-delay-2">
+        <span class="text-pl">Niezapomniane wydarzenia na szczycie Szyndzielni</span>
+        <span class="text-en hidden">Unforgettable events at the summit of Szyndzielnia</span>
+        <span class="text-cs hidden">Nezapomenutelné akce na vrcholu Szyndzielnie</span>
       </p>
+      <div class="reveal-up reveal-delay-3">
+        <a href="#wydarzenia" class="group inline-flex items-center gap-3 text-accent uppercase tracking-[0.2em] text-sm font-semibold hover:gap-4 transition-all">
+          <span class="text-pl">Odkryj możliwości</span>
+          <span class="text-en hidden">Discover possibilities</span>
+          <span class="text-cs hidden">Objevte možnosti</span>
+          <svg class="w-5 h-5 rotate-90" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg>
+        </a>
+      </div>
+    </div>
+
+    <div class="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
+      <svg class="w-6 h-6 text-white/40" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+      </svg>
     </div>
   </section>
 
-  <!-- Event cards -->
-  <section class="py-24 px-6">
+  <!-- Event cards — editorial asymmetric layout -->
+  <section id="wydarzenia" class="py-32 px-6">
     <div class="max-w-6xl mx-auto">
-      <div class="text-center mb-16">
-        <h2 class="font-heading text-3xl md:text-4xl font-bold text-primary mb-4">
-          <span class="text-pl">Wybierz typ wydarzenia</span>
-          <span class="text-en hidden">Choose your event</span>
-          <span class="text-cs hidden">Vyberte si typ akce</span>
+      <!-- Section intro -->
+      <div class="max-w-2xl mb-20 scroll-reveal">
+        <div class="w-12 h-px bg-accent mb-6"></div>
+        <h2 class="font-heading text-4xl md:text-5xl font-bold text-primary mb-6">
+          <span class="text-pl">Wybierz swój <span class="italic text-accent">wyjątkowy</span> dzień</span>
+          <span class="text-en hidden">Choose your <span class="italic text-accent">special</span> day</span>
+          <span class="text-cs hidden">Vyberte si svůj <span class="italic text-accent">výjimečný</span> den</span>
         </h2>
-        <p class="text-dark/60 max-w-2xl mx-auto">
+        <p class="text-dark/50 leading-relaxed">
           <span class="text-pl">Profesjonalna obsługa, wspaniała kuchnia i wyjątkowa przestrzeń dawnej stacji kolejki linowej — idealne miejsce na każdą uroczystość.</span>
           <span class="text-en hidden">Professional service, wonderful cuisine, and the unique space of a former cable car station — the perfect venue for any celebration.</span>
           <span class="text-cs hidden">Profesionální obsluha, skvělá kuchyně a jedinečný prostor bývalé stanice lanovky — ideální místo pro jakoukoli oslavu.</span>
         </p>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-        <!-- Wesela -->
-        <a href="/wesela" class="group relative overflow-hidden rounded-sm aspect-[4/3]">
-          <div class="absolute inset-0 bg-[url('/images/wedding/wedding-79.jpg')] bg-cover bg-center group-hover:scale-105 transition-transform duration-700"></div>
-          <div class="absolute inset-0 bg-gradient-to-t from-primary/90 via-primary/40 to-transparent"></div>
-          <div class="absolute inset-0 flex flex-col justify-end p-8 md:p-10">
-            <p class="text-accent uppercase tracking-[0.2em] text-xs mb-2">Stara Stacja Weddings</p>
-            <h3 class="font-heading text-3xl md:text-4xl font-bold text-white mb-3">
-              <span class="text-pl">Wesela</span>
-              <span class="text-en hidden">Weddings</span>
-              <span class="text-cs hidden">Svatby</span>
-            </h3>
-            <p class="text-white/70 text-sm mb-4 max-w-md">
-              <span class="text-pl">Sala na 120 osób, ceremonia w plenerze, historyczne wagoniki, kolejka linowa w cenie. Pakiety od 349 zł/os.</span>
-              <span class="text-en hidden">Hall for 120 guests, outdoor ceremony, historic gondolas, cable car included. Packages from 349 PLN/person.</span>
-              <span class="text-cs hidden">Sál pro 120 hostů, obřad venku, historické kabinky, lanovka v ceně. Balíčky od 349 PLN/os.</span>
-            </p>
-            <span class="inline-flex items-center text-accent font-semibold uppercase tracking-wider text-sm group-hover:gap-3 gap-2 transition-all">
-              <span class="text-pl">Zobacz ofertę</span>
-              <span class="text-en hidden">View offer</span>
-              <span class="text-cs hidden">Zobrazit nabídku</span>
-              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg>
-            </span>
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+        <!-- Card 1: Wesela -->
+        <a href="/wesela" class="group block scroll-reveal">
+          <div class="relative overflow-hidden rounded-sm h-full flex flex-col">
+            <div class="aspect-[16/10] overflow-hidden">
+              <img src="/images/wedding/wedding-79.jpg" alt="Wesele w Starej Stacji" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000" loading="lazy" />
+            </div>
+            <div class="bg-primary p-8 md:p-10 flex flex-col justify-center flex-1">
+              <p class="text-accent uppercase tracking-[0.25em] text-xs mb-4">Stara Stacja Weddings</p>
+              <h3 class="font-heading text-3xl md:text-4xl font-bold text-white mb-4">
+                <span class="text-pl">Wesela</span>
+                <span class="text-en hidden">Weddings</span>
+                <span class="text-cs hidden">Svatby</span>
+              </h3>
+              <div class="w-10 h-px bg-accent/40 mb-5"></div>
+              <p class="text-white/50 text-sm leading-relaxed mb-8">
+                <span class="text-pl">Sala na 120 osób, ceremonia w plenerze, historyczne wagoniki kolejki linowej, przejazd kolejką w cenie.</span>
+                <span class="text-en hidden">Hall for 120 guests, outdoor ceremony, historic cable car gondolas, cable car ride included.</span>
+                <span class="text-cs hidden">Sál pro 120 hostů, obřad venku, historické kabinky lanovky, jízda lanovkou v ceně.</span>
+              </p>
+              <div class="flex items-center justify-between mt-auto">
+                <span class="text-accent font-heading text-lg">
+                  <span class="text-pl">od 349 zł/os.</span>
+                  <span class="text-en hidden">from 349 PLN/pp</span>
+                  <span class="text-cs hidden">od 349 PLN/os.</span>
+                </span>
+                <span class="inline-flex items-center text-white/40 group-hover:text-accent group-hover:gap-3 gap-2 transition-all text-sm uppercase tracking-wider">
+                  <span class="text-pl">Oferta</span>
+                  <span class="text-en hidden">Offer</span>
+                  <span class="text-cs hidden">Nabídka</span>
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
+                </span>
+              </div>
+            </div>
           </div>
         </a>
 
-        <!-- Komunie -->
-        <a href="/komunie" class="group relative overflow-hidden rounded-sm aspect-[4/3]">
-          <div class="absolute inset-0 bg-[url('/images/wedding/wedding-31.jpg')] bg-cover bg-center group-hover:scale-105 transition-transform duration-700"></div>
-          <div class="absolute inset-0 bg-gradient-to-t from-primary/90 via-primary/40 to-transparent"></div>
-          <div class="absolute inset-0 flex flex-col justify-end p-8 md:p-10">
-            <p class="text-accent uppercase tracking-[0.2em] text-xs mb-2">Stara Stacja</p>
-            <h3 class="font-heading text-3xl md:text-4xl font-bold text-white mb-3">
-              <span class="text-pl">Komunie</span>
-              <span class="text-en hidden">First Communions</span>
-              <span class="text-cs hidden">První svaté přijímání</span>
-            </h3>
-            <p class="text-white/70 text-sm mb-4 max-w-md">
-              <span class="text-pl">Menu serwowane lub szwedzki stół, dania dla dzieci i dorosłych, patera ciast i owoców. Od 180 zł/os.</span>
-              <span class="text-en hidden">Served menu or buffet, meals for children and adults, cake and fruit platters. From 180 PLN/person.</span>
-              <span class="text-cs hidden">Servírované menu nebo švédský stůl, jídla pro děti i dospělé, mísa dortů a ovoce. Od 180 PLN/os.</span>
-            </p>
-            <span class="inline-flex items-center text-accent font-semibold uppercase tracking-wider text-sm group-hover:gap-3 gap-2 transition-all">
-              <span class="text-pl">Zobacz ofertę</span>
-              <span class="text-en hidden">View offer</span>
-              <span class="text-cs hidden">Zobrazit nabídku</span>
-              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg>
-            </span>
+        <!-- Card 2: Komunie -->
+        <a href="/komunie" class="group block scroll-reveal">
+          <div class="relative overflow-hidden rounded-sm h-full flex flex-col">
+            <div class="aspect-[16/10] overflow-hidden">
+              <img src="/images/wedding/wedding-31.jpg" alt="Przyjęcie komunijne" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000" loading="lazy" />
+            </div>
+            <div class="bg-cream-dark p-8 md:p-10 flex flex-col justify-center flex-1">
+              <p class="text-accent uppercase tracking-[0.25em] text-xs mb-4">Stara Stacja</p>
+              <h3 class="font-heading text-3xl md:text-4xl font-bold text-primary mb-4">
+                <span class="text-pl">Komunie</span>
+                <span class="text-en hidden">Communions</span>
+                <span class="text-cs hidden">Přijímání</span>
+              </h3>
+              <div class="w-10 h-px bg-accent/40 mb-5"></div>
+              <p class="text-dark/50 text-sm leading-relaxed mb-8">
+                <span class="text-pl">Menu serwowane lub szwedzki stół, oddzielne dania dla dzieci i dorosłych, patera ciast i owoców.</span>
+                <span class="text-en hidden">Served menu or buffet, separate meals for children and adults, cake and fruit platters.</span>
+                <span class="text-cs hidden">Servírované menu nebo švédský stůl, oddělená jídla pro děti a dospělé, mísa dortů a ovoce.</span>
+              </p>
+              <div class="flex items-center justify-between mt-auto">
+                <span class="text-accent font-heading text-lg">
+                  <span class="text-pl">od 180 zł/os.</span>
+                  <span class="text-en hidden">from 180 PLN/pp</span>
+                  <span class="text-cs hidden">od 180 PLN/os.</span>
+                </span>
+                <span class="inline-flex items-center text-dark/30 group-hover:text-accent group-hover:gap-3 gap-2 transition-all text-sm uppercase tracking-wider">
+                  <span class="text-pl">Oferta</span>
+                  <span class="text-en hidden">Offer</span>
+                  <span class="text-cs hidden">Nabídka</span>
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
+                </span>
+              </div>
+            </div>
           </div>
         </a>
       </div>
     </div>
   </section>
 
-  <!-- Why us -->
-  <section class="py-24 px-6 bg-primary text-white">
-    <div class="max-w-6xl mx-auto">
-      <div class="text-center mb-16">
-        <h2 class="font-heading text-3xl md:text-4xl font-bold">
-          <span class="text-pl">Dlaczego Stara Stacja?</span>
-          <span class="text-en hidden">Why Stara Stacja?</span>
-          <span class="text-cs hidden">Proč Stará Stacja?</span>
-        </h2>
-      </div>
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 text-center">
-        <div>
-          <p class="font-heading text-4xl font-bold text-accent mb-2">300m²</p>
-          <p class="text-white/60 text-sm">
-            <span class="text-pl">Sala z panoramicznym widokiem</span>
-            <span class="text-en hidden">Hall with panoramic views</span>
-            <span class="text-cs hidden">Sál s panoramatickým výhledem</span>
+  <!-- Stats bar — horizontal with accent dividers -->
+  <section class="py-20 bg-primary overflow-hidden">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="grid grid-cols-2 lg:grid-cols-4 gap-0">
+        <div class="text-center py-8 lg:py-0 lg:border-r border-white/10 scroll-reveal">
+          <p class="font-heading text-5xl md:text-6xl font-bold text-accent mb-1 stat-number" data-target="300">0</p>
+          <p class="text-white/40 text-xs uppercase tracking-[0.2em]">
+            <span class="text-pl">m² sali</span>
+            <span class="text-en hidden">m² hall</span>
+            <span class="text-cs hidden">m² sálu</span>
           </p>
         </div>
-        <div>
-          <p class="font-heading text-4xl font-bold text-accent mb-2">120</p>
-          <p class="text-white/60 text-sm">
-            <span class="text-pl">Miejsc wewnątrz</span>
-            <span class="text-en hidden">Indoor seats</span>
-            <span class="text-cs hidden">Míst uvnitř</span>
+        <div class="text-center py-8 lg:py-0 lg:border-r border-white/10 scroll-reveal">
+          <p class="font-heading text-5xl md:text-6xl font-bold text-accent mb-1 stat-number" data-target="120">0</p>
+          <p class="text-white/40 text-xs uppercase tracking-[0.2em]">
+            <span class="text-pl">Miejsc</span>
+            <span class="text-en hidden">Seats</span>
+            <span class="text-cs hidden">Míst</span>
           </p>
         </div>
-        <div>
-          <p class="font-heading text-4xl font-bold text-accent mb-2">1000m</p>
-          <p class="text-white/60 text-sm">
-            <span class="text-pl">Nad poziomem morza</span>
-            <span class="text-en hidden">Above sea level</span>
-            <span class="text-cs hidden">Nad mořem</span>
+        <div class="text-center py-8 lg:py-0 lg:border-r border-white/10 scroll-reveal">
+          <p class="font-heading text-5xl md:text-6xl font-bold text-accent mb-1 stat-number" data-target="1000">0</p>
+          <p class="text-white/40 text-xs uppercase tracking-[0.2em]">
+            <span class="text-pl">m n.p.m.</span>
+            <span class="text-en hidden">m a.s.l.</span>
+            <span class="text-cs hidden">m n. m.</span>
           </p>
         </div>
-        <div>
-          <p class="font-heading text-4xl font-bold text-accent mb-2">1953</p>
-          <p class="text-white/60 text-sm">
-            <span class="text-pl">Rok powstania stacji</span>
-            <span class="text-en hidden">Year the station was built</span>
-            <span class="text-cs hidden">Rok založení stanice</span>
+        <div class="text-center py-8 lg:py-0 scroll-reveal">
+          <p class="font-heading text-5xl md:text-6xl font-bold text-accent mb-1 stat-number" data-target="1953">0</p>
+          <p class="text-white/40 text-xs uppercase tracking-[0.2em]">
+            <span class="text-pl">Rok powstania</span>
+            <span class="text-en hidden">Year built</span>
+            <span class="text-cs hidden">Rok založení</span>
           </p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Other events -->
-  <section class="py-24 px-6">
-    <div class="max-w-4xl mx-auto text-center">
-      <h2 class="font-heading text-3xl md:text-4xl font-bold text-primary mb-4">
-        <span class="text-pl">Inne wydarzenia</span>
-        <span class="text-en hidden">Other events</span>
-        <span class="text-cs hidden">Další akce</span>
-      </h2>
-      <p class="text-dark/60 max-w-2xl mx-auto mb-10">
-        <span class="text-pl">Organizujemy również konferencje, szkolenia, spotkania firmowe i inne uroczystości. Możemy dostosować ofertę do Waszych potrzeb i zorganizować transport kolejką linową.</span>
-        <span class="text-en hidden">We also organize conferences, training sessions, corporate meetings, and other celebrations. We can tailor our offer to your needs and arrange cable car transport.</span>
-        <span class="text-cs hidden">Pořádáme také konference, školení, firemní setkání a další oslavy. Nabídku přizpůsobíme vašim potřebám a zajistíme dopravu lanovkou.</span>
+  <!-- Other events — elegant CTA -->
+  <section class="py-32 px-6">
+    <div class="max-w-4xl mx-auto text-center scroll-reveal">
+      <div class="w-px h-12 bg-accent/30 mx-auto mb-8"></div>
+      <p class="text-accent uppercase tracking-[0.25em] text-xs mb-6">
+        <span class="text-pl">Konferencje &middot; Szkolenia &middot; Spotkania firmowe</span>
+        <span class="text-en hidden">Conferences &middot; Training &middot; Corporate meetings</span>
+        <span class="text-cs hidden">Konference &middot; Školení &middot; Firemní setkání</span>
       </p>
-      <a href="/kontakt" class="inline-block px-10 py-4 bg-primary text-white font-semibold uppercase tracking-wider text-sm hover:bg-primary-light transition-colors">
+      <h2 class="font-heading text-4xl md:text-5xl font-bold text-primary mb-6">
+        <span class="text-pl">Inne <span class="italic text-accent">wydarzenia</span></span>
+        <span class="text-en hidden">Other <span class="italic text-accent">events</span></span>
+        <span class="text-cs hidden">Další <span class="italic text-accent">akce</span></span>
+      </h2>
+      <p class="text-dark/50 max-w-2xl mx-auto mb-12 leading-relaxed">
+        <span class="text-pl">Możemy dostosować ofertę do Waszych potrzeb i zorganizować transport kolejką linową dla gości.</span>
+        <span class="text-en hidden">We can tailor our offer to your needs and arrange cable car transport for guests.</span>
+        <span class="text-cs hidden">Nabídku přizpůsobíme vašim potřebám a zajistíme dopravu lanovkou pro hosty.</span>
+      </p>
+      <a href="/kontakt" class="group inline-flex items-center gap-3 px-10 py-4 bg-primary text-white font-semibold uppercase tracking-wider text-sm hover:bg-primary-light transition-colors">
         <span class="text-pl">Skontaktuj się z nami</span>
         <span class="text-en hidden">Contact us</span>
         <span class="text-cs hidden">Kontaktujte nás</span>
+        <svg class="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
       </a>
     </div>
   </section>
 
   <Footer />
 </Layout>
+
+<style>
+  @keyframes fade-in {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .animate-fade-in {
+    animation: fade-in 1s ease-out;
+  }
+
+  /* Reveal animations */
+  .reveal-line {
+    animation: grow-line 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+  @keyframes grow-line {
+    from { height: 0; opacity: 0; }
+    to { height: 4rem; opacity: 1; }
+  }
+
+  .reveal-up {
+    animation: reveal-up 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    opacity: 0;
+  }
+  .reveal-delay-1 { animation-delay: 0.15s; }
+  .reveal-delay-2 { animation-delay: 0.3s; }
+  .reveal-delay-3 { animation-delay: 0.45s; }
+
+  @keyframes reveal-up {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  /* Scroll reveal */
+  .scroll-reveal {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .scroll-reveal.revealed {
+    opacity: 1;
+    transform: translateY(0);
+  }
+</style>
+
+<script>
+  // Scroll reveal
+  const reveals = document.querySelectorAll('.scroll-reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('revealed');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.15 });
+  reveals.forEach((el) => observer.observe(el));
+
+  // Stat counter animation
+  const statObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        const el = entry.target as HTMLElement;
+        const target = parseInt(el.dataset.target || '0');
+        const duration = 1500;
+        const start = performance.now();
+        const animate = (now: number) => {
+          const progress = Math.min((now - start) / duration, 1);
+          const eased = 1 - Math.pow(1 - progress, 3);
+          el.textContent = Math.floor(eased * target).toString();
+          if (progress < 1) requestAnimationFrame(animate);
+        };
+        requestAnimationFrame(animate);
+        statObserver.unobserve(el);
+      }
+    });
+  }, { threshold: 0.5 });
+  document.querySelectorAll('.stat-number').forEach((el) => statObserver.observe(el));
+
+  // Subtle parallax on hero
+  const heroBg = document.getElementById('eventy-hero-bg');
+  if (heroBg && window.innerWidth > 768) {
+    window.addEventListener('scroll', () => {
+      const y = window.scrollY;
+      if (y < window.innerHeight) {
+        heroBg.style.transform = `scale(1.05) translateY(${y * 0.15}px)`;
+      }
+    }, { passive: true });
+  }
+</script>

@@ -35,7 +35,6 @@ const galleryItems = [
   { src: '/images/gallery/wedding-setup.jpg', alt: 'Sala weselna — eleganckie nakrycie ze świeżymi kwiatami', altEn: 'Wedding hall — elegant setting with fresh flowers', altCs: 'Svatební sál — elegantní prostírání s čerstvými květinami', category: 'eventy', featured: true },
   { src: '/images/gallery/festive-table.jpg', alt: 'Świąteczna dekoracja stołu', altEn: 'Festive table decoration', altCs: 'Slavnostní dekorace stolu', category: 'eventy' },
   { src: '/images/gallery/event-crowd.jpg', alt: 'Wydarzenie w restauracji — pełna sala gości', altEn: 'Restaurant event — full house', altCs: 'Akce v restauraci — plný sál hostů', category: 'eventy' },
-  { src: '/images/gallery/herring-buffet.jpg', alt: 'Catering — śledzie i zimne przekąski', altEn: 'Catering — herring and cold appetizers', altCs: 'Catering — sledě a studené předkrmy', category: 'eventy' },
 ];
 
 const categories = [
@@ -50,15 +49,21 @@ const categories = [
 <Layout title="Galeria — Stara Stacja" description="Zdjęcia restauracji Stara Stacja — widoki z góry Szyndzielnia, wnętrza, dania i eventy.">
   <Nav />
 
-  <section class="relative pt-32 pb-20 px-6 bg-primary text-white">
-    <div class="max-w-4xl mx-auto text-center">
-      <p class="text-accent-light uppercase tracking-[0.15em] sm:tracking-[0.3em] text-xs sm:text-sm mb-4">Stara Stacja</p>
-      <h1 class="font-heading text-4xl sm:text-5xl md:text-6xl font-bold mb-4">
+  <!-- Hero -->
+  <section class="relative h-[60vh] min-h-[400px] flex items-center justify-center overflow-hidden">
+    <div class="absolute inset-0 bg-[url('/images/gallery/aerial-panorama.jpg')] bg-cover bg-center scale-105" id="galeria-hero-bg"></div>
+    <div class="absolute inset-0 bg-gradient-to-b from-primary/50 via-primary/30 to-primary"></div>
+    <div class="absolute inset-0 opacity-[0.03]" style="background-image: url('data:image/svg+xml,%3Csvg viewBox=%220 0 256 256%22 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cfilter id=%22noise%22%3E%3CfeTurbulence type=%22fractalNoise%22 baseFrequency=%220.9%22 numOctaves=%224%22 stitchTiles=%22stitch%22/%3E%3C/filter%3E%3Crect width=%22100%25%22 height=%22100%25%22 filter=%22url(%23noise)%22/%3E%3C/svg%3E');"></div>
+
+    <div class="relative z-10 text-center text-white px-6 max-w-4xl">
+      <div class="w-px h-16 bg-accent/40 mx-auto mb-8 reveal-line"></div>
+      <p class="text-accent-light uppercase tracking-[0.3em] text-xs sm:text-sm mb-6 reveal-up">Stara Stacja &middot; 1000 m n.p.m.</p>
+      <h1 class="font-heading text-5xl sm:text-6xl md:text-7xl font-bold mb-6 reveal-up reveal-delay-1">
         <span class="text-pl">Galeria</span>
         <span class="text-en hidden">Gallery</span>
         <span class="text-cs hidden">Galerie</span>
       </h1>
-      <p class="text-white/60 max-w-xl mx-auto">
+      <p class="text-lg font-light text-white/60 max-w-lg mx-auto reveal-up reveal-delay-2">
         <span class="text-pl">Odkryj piękno Starej Stacji na szczycie Szyndzielni</span>
         <span class="text-en hidden">Discover the beauty of Stara Stacja at the summit of Szyndzielnia</span>
         <span class="text-cs hidden">Objevte krásu Staré Stanice na vrcholu Szyndzielnie</span>
@@ -68,13 +73,13 @@ const categories = [
 
   <!-- Category filter -->
   <div class="sticky top-20 z-40 bg-cream/95 backdrop-blur-sm border-b border-cream-dark">
-    <div class="max-w-6xl mx-auto px-6 py-3 flex gap-2 sm:gap-4 justify-center flex-wrap">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 py-3 flex gap-1.5 sm:gap-2 justify-center flex-wrap">
       {categories.map((cat) => (
         <button
           data-filter={cat.id}
           class:list={[
-            'gallery-filter text-xs uppercase tracking-widest transition-all font-medium cursor-pointer px-4 py-2 min-h-[44px] rounded-full',
-            cat.id === 'wszystko' ? 'bg-primary text-white' : 'text-dark/50 hover:text-primary hover:bg-cream-dark',
+            'gallery-filter text-[11px] sm:text-xs uppercase tracking-[0.15em] transition-all font-semibold cursor-pointer px-3 sm:px-4 py-2.5 min-h-[44px]',
+            cat.id === 'wszystko' ? 'bg-primary text-white' : 'text-dark/40 hover:text-primary',
           ]}
         >
           <span class="text-pl">{cat.pl}</span>
@@ -86,9 +91,9 @@ const categories = [
   </div>
 
   <!-- Gallery grid -->
-  <section class="py-12 sm:py-16 px-4 sm:px-6 bg-cream">
+  <section class="py-8 sm:py-12 px-2 sm:px-6 bg-cream">
     <div class="max-w-7xl mx-auto">
-      <div id="gallery-grid" class="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-2 sm:gap-3">
+      <div id="gallery-grid" class="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-1.5 sm:gap-3">
         {galleryItems.map((item, i) => (
           <a
             href={item.src}
@@ -121,49 +126,53 @@ const categories = [
   </section>
 
   <!-- Stats bar -->
-  <section class="py-12 px-6 bg-primary text-white">
-    <div class="max-w-5xl mx-auto grid grid-cols-2 sm:grid-cols-4 gap-8 text-center">
-      <div>
-        <p class="font-heading text-3xl sm:text-4xl font-bold text-accent">1000m</p>
-        <p class="text-white/50 text-sm mt-1">
-          <span class="text-pl">n.p.m.</span>
-          <span class="text-en hidden">a.s.l.</span>
-          <span class="text-cs hidden">n.m.</span>
-        </p>
-      </div>
-      <div>
-        <p class="font-heading text-3xl sm:text-4xl font-bold text-accent">240</p>
-        <p class="text-white/50 text-sm mt-1">
-          <span class="text-pl">miejsc</span>
-          <span class="text-en hidden">seats</span>
-          <span class="text-cs hidden">míst</span>
-        </p>
-      </div>
-      <div>
-        <p class="font-heading text-3xl sm:text-4xl font-bold text-accent">120</p>
-        <p class="text-white/50 text-sm mt-1">
-          <span class="text-pl">na tarasie</span>
-          <span class="text-en hidden">on terrace</span>
-          <span class="text-cs hidden">na terase</span>
-        </p>
-      </div>
-      <div>
-        <p class="font-heading text-3xl sm:text-4xl font-bold text-accent">360°</p>
-        <p class="text-white/50 text-sm mt-1">panorama</p>
+  <section class="py-16 bg-primary overflow-hidden">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="grid grid-cols-2 lg:grid-cols-4 gap-0">
+        <div class="text-center py-6 lg:py-0 lg:border-r border-white/10 scroll-reveal">
+          <p class="font-heading text-4xl sm:text-5xl font-bold text-accent mb-1 stat-number" data-target="1000">0</p>
+          <p class="text-white/40 text-xs uppercase tracking-[0.2em]">
+            <span class="text-pl">m n.p.m.</span>
+            <span class="text-en hidden">m a.s.l.</span>
+            <span class="text-cs hidden">m n. m.</span>
+          </p>
+        </div>
+        <div class="text-center py-6 lg:py-0 lg:border-r border-white/10 scroll-reveal">
+          <p class="font-heading text-4xl sm:text-5xl font-bold text-accent mb-1 stat-number" data-target="240">0</p>
+          <p class="text-white/40 text-xs uppercase tracking-[0.2em]">
+            <span class="text-pl">miejsc</span>
+            <span class="text-en hidden">seats</span>
+            <span class="text-cs hidden">míst</span>
+          </p>
+        </div>
+        <div class="text-center py-6 lg:py-0 lg:border-r border-white/10 scroll-reveal">
+          <p class="font-heading text-4xl sm:text-5xl font-bold text-accent mb-1 stat-number" data-target="120">0</p>
+          <p class="text-white/40 text-xs uppercase tracking-[0.2em]">
+            <span class="text-pl">na tarasie</span>
+            <span class="text-en hidden">on terrace</span>
+            <span class="text-cs hidden">na terase</span>
+          </p>
+        </div>
+        <div class="text-center py-6 lg:py-0 scroll-reveal">
+          <p class="font-heading text-4xl sm:text-5xl font-bold text-accent mb-1">360°</p>
+          <p class="text-white/40 text-xs uppercase tracking-[0.2em]">panorama</p>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- CTA for Instagram -->
-  <section class="py-16 px-6 bg-cream-dark">
-    <div class="max-w-3xl mx-auto text-center">
-      <p class="text-dark/60 mb-4">
+  <!-- Instagram CTA -->
+  <section class="py-20 px-6 bg-cream-dark">
+    <div class="max-w-3xl mx-auto text-center scroll-reveal">
+      <div class="w-px h-10 bg-accent/30 mx-auto mb-6"></div>
+      <p class="text-dark/50 mb-6">
         <span class="text-pl">Więcej zdjęć znajdziesz na naszym Instagramie</span>
         <span class="text-en hidden">Find more photos on our Instagram</span>
         <span class="text-cs hidden">Více fotografií najdete na našem Instagramu</span>
       </p>
-      <a href="https://instagram.com/stara.stacja" target="_blank" rel="noopener" class="inline-block px-8 py-4 bg-primary text-white font-semibold uppercase tracking-wider text-sm hover:bg-primary-light transition-colors">
+      <a href="https://instagram.com/stara.stacja" target="_blank" rel="noopener" class="group inline-flex items-center gap-3 px-8 py-4 bg-primary text-white font-semibold uppercase tracking-wider text-sm hover:bg-primary-light transition-colors">
         @stara.stacja
+        <svg class="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
       </a>
     </div>
   </section>
@@ -171,7 +180,35 @@ const categories = [
   <Footer />
 </Layout>
 
+<style>
+  @keyframes grow-line {
+    from { height: 0; opacity: 0; }
+    to { height: 4rem; opacity: 1; }
+  }
+  .reveal-line { animation: grow-line 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
+
+  .reveal-up {
+    animation: reveal-up 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    opacity: 0;
+  }
+  .reveal-delay-1 { animation-delay: 0.15s; }
+  .reveal-delay-2 { animation-delay: 0.3s; }
+
+  @keyframes reveal-up {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .scroll-reveal {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .scroll-reveal.revealed { opacity: 1; transform: translateY(0); }
+</style>
+
 <script>
+  // Filters
   const filters = document.querySelectorAll('.gallery-filter');
   const items = document.querySelectorAll('.gallery-item');
 
@@ -181,10 +218,10 @@ const categories = [
 
       filters.forEach((f) => {
         f.classList.remove('bg-primary', 'text-white');
-        f.classList.add('text-dark/50');
+        f.classList.add('text-dark/40');
       });
       btn.classList.add('bg-primary', 'text-white');
-      btn.classList.remove('text-dark/50');
+      btn.classList.remove('text-dark/40');
 
       items.forEach((item) => {
         const el = item as HTMLElement;
@@ -200,4 +237,48 @@ const categories = [
       });
     });
   });
+
+  // Scroll reveal
+  const reveals = document.querySelectorAll('.scroll-reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('revealed');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.15 });
+  reveals.forEach((el) => observer.observe(el));
+
+  // Stat counter animation
+  const statObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        const el = entry.target as HTMLElement;
+        const target = parseInt(el.dataset.target || '0');
+        const duration = 1500;
+        const start = performance.now();
+        const animate = (now: number) => {
+          const progress = Math.min((now - start) / duration, 1);
+          const eased = 1 - Math.pow(1 - progress, 3);
+          el.textContent = Math.floor(eased * target).toString();
+          if (progress < 1) requestAnimationFrame(animate);
+        };
+        requestAnimationFrame(animate);
+        statObserver.unobserve(el);
+      }
+    });
+  }, { threshold: 0.5 });
+  document.querySelectorAll('.stat-number').forEach((el) => statObserver.observe(el));
+
+  // Parallax hero (desktop only)
+  const heroBg = document.getElementById('galeria-hero-bg');
+  if (heroBg && window.innerWidth > 768) {
+    window.addEventListener('scroll', () => {
+      const y = window.scrollY;
+      if (y < window.innerHeight) {
+        heroBg.style.transform = `scale(1.05) translateY(${y * 0.15}px)`;
+      }
+    }, { passive: true });
+  }
 </script>

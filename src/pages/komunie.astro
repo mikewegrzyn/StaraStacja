@@ -8,164 +8,221 @@ import info from '../data/info.json';
 <Layout title="Komunie — Stara Stacja" description="Przyjęcie komunijne na szczycie Szyndzielni. Menu serwowane lub szwedzki stół, dania dla dzieci i dorosłych. Od 180 zł/os.">
   <Nav />
 
-  <!-- Hero -->
-  <section class="relative pt-32 pb-20 px-6 bg-primary text-white">
-    <div class="max-w-4xl mx-auto text-center">
-      <p class="text-accent-light uppercase tracking-[0.15em] sm:tracking-[0.3em] text-xs sm:text-sm mb-4">Stara Stacja</p>
-      <h1 class="font-heading text-5xl md:text-6xl font-bold mb-4">
-        <span class="text-pl">Komunia na Szyndzielni</span>
-        <span class="text-en hidden">First Communion at Szyndzielnia</span>
-        <span class="text-cs hidden">Svaté přijímání na Szyndzielni</span>
+  <!-- Hero — cinematic with parallax -->
+  <section class="relative h-[85vh] min-h-[600px] flex items-center justify-center overflow-hidden">
+    <div class="absolute inset-0 bg-[url('/images/wedding/wedding-62.jpg')] bg-cover bg-center scale-105" id="komunie-hero-bg"></div>
+    <div class="absolute inset-0 bg-gradient-to-b from-primary/50 via-primary/30 to-primary"></div>
+
+    <!-- Grain overlay -->
+    <div class="absolute inset-0 opacity-[0.03]" style="background-image: url('data:image/svg+xml,%3Csvg viewBox=%220 0 256 256%22 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cfilter id=%22noise%22%3E%3CfeTurbulence type=%22fractalNoise%22 baseFrequency=%220.9%22 numOctaves=%224%22 stitchTiles=%22stitch%22/%3E%3C/filter%3E%3Crect width=%22100%25%22 height=%22100%25%22 filter=%22url(%23noise)%22/%3E%3C/svg%3E');"></div>
+
+    <div class="relative z-10 text-center text-white px-6 max-w-4xl">
+      <div class="w-px h-16 bg-accent/40 mx-auto mb-8 reveal-line"></div>
+      <p class="text-accent-light uppercase tracking-[0.3em] text-xs sm:text-sm mb-6 reveal-up">Stara Stacja &middot; Szyndzielnia</p>
+      <h1 class="font-heading text-5xl sm:text-6xl md:text-7xl font-bold mb-6 reveal-up reveal-delay-1">
+        <span class="text-pl">Komunia<br/><span class="text-accent italic font-normal text-[0.55em]">na Szyndzielni</span></span>
+        <span class="text-en hidden">First Communion<br/><span class="text-accent italic font-normal text-[0.55em]">at Szyndzielnia</span></span>
+        <span class="text-cs hidden">Svaté přijímání<br/><span class="text-accent italic font-normal text-[0.55em]">na Szyndzielni</span></span>
       </h1>
-      <p class="text-white/60 max-w-xl mx-auto">
+      <p class="text-lg md:text-xl font-light text-white/60 max-w-lg mx-auto mb-12 reveal-up reveal-delay-2">
         <span class="text-pl">Zorganizuj najbardziej wyjątkową komunię na szczycie góry</span>
-        <span class="text-en hidden">Organize the most special communion celebration at the mountain top</span>
+        <span class="text-en hidden">Organize the most special communion at the mountain summit</span>
         <span class="text-cs hidden">Uspořádejte nejzvláštnější přijímání na vrcholu hory</span>
       </p>
+      <div class="reveal-up reveal-delay-3">
+        <a href="#oferta" class="group inline-flex items-center gap-3 text-accent uppercase tracking-[0.2em] text-sm font-semibold hover:gap-4 transition-all">
+          <span class="text-pl">Zobacz ofertę</span>
+          <span class="text-en hidden">See offer</span>
+          <span class="text-cs hidden">Zobrazit nabídku</span>
+          <svg class="w-5 h-5 rotate-90" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg>
+        </a>
+      </div>
+    </div>
+
+    <div class="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
+      <svg class="w-6 h-6 text-white/40" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+      </svg>
     </div>
   </section>
 
-  <!-- Intro with photo -->
-  <section class="py-24 px-6">
-    <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
-      <div>
-        <p class="text-accent uppercase tracking-[0.2em] text-sm mb-3">
+  <!-- Intro — editorial asymmetric layout -->
+  <section id="oferta" class="py-32 px-6">
+    <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-5 gap-12 md:gap-16 items-center">
+      <div class="md:col-span-3 scroll-reveal">
+        <div class="w-12 h-px bg-accent mb-6"></div>
+        <p class="text-accent uppercase tracking-[0.2em] text-xs mb-4">
           <span class="text-pl">Przyjęcie komunijne</span>
           <span class="text-en hidden">Communion reception</span>
           <span class="text-cs hidden">Hostina po přijímání</span>
         </p>
-        <h2 class="font-heading text-4xl font-bold text-primary mb-6">
-          <span class="text-pl">Wyjątkowe miejsce na wyjątkowy dzień</span>
-          <span class="text-en hidden">A special place for a special day</span>
-          <span class="text-cs hidden">Výjimečné místo pro výjimečný den</span>
+        <h2 class="font-heading text-4xl md:text-5xl font-bold text-primary mb-6">
+          <span class="text-pl">Wyjątkowe miejsce<br/>na <span class="italic text-accent">wyjątkowy</span> dzień</span>
+          <span class="text-en hidden">A special place<br/>for a <span class="italic text-accent">special</span> day</span>
+          <span class="text-cs hidden">Výjimečné místo<br/>pro <span class="italic text-accent">výjimečný</span> den</span>
         </h2>
-        <p class="text-dark/70 leading-relaxed mb-6">
+        <p class="text-dark/60 leading-relaxed mb-6">
           <span class="text-pl">Stara Stacja to górna stacja kolejki linowej na Szyndzielnię, położona na 1000 m n.p.m. z panoramicznym widokiem na Beskidy. Profesjonalna obsługa, domowa kuchnia i niepowtarzalny klimat dawnej stacji kolejowej to idealne tło dla rodzinnego przyjęcia komunijnego.</span>
           <span class="text-en hidden">Stara Stacja is the upper cable car station on Szyndzielnia, situated at 1,000 m a.s.l. with panoramic Beskid views. Professional service, homestyle cuisine, and the unique atmosphere of a former railway station create the perfect backdrop for a family communion reception.</span>
           <span class="text-cs hidden">Stara Stacja je horní stanice lanovky na Szyndzielnii, v nadmořské výšce 1 000 m s panoramatickým výhledem na Beskydy. Profesionální obsluha, domácí kuchyně a jedinečná atmosféra bývalé železniční stanice tvoří ideální kulisu pro rodinnou hostinu po přijímání.</span>
         </p>
-        <p class="text-dark/70 leading-relaxed">
+        <p class="text-dark/60 leading-relaxed">
           <span class="text-pl">Oferujemy dwa rodzaje menu — serwowane lub w formie szwedzkiego stołu — z oddzielnym menu dla dzieci. Możemy pomóc z organizacją biletów na kolejkę linową oraz zamówieniem tortu.</span>
           <span class="text-en hidden">We offer two types of menu — served or buffet-style — with a separate children's menu. We can help arrange cable car tickets and order a cake.</span>
           <span class="text-cs hidden">Nabízíme dva typy menu — servírované nebo formou švédského stolu — s odděleným dětským menu. Pomůžeme s organizací lístků na lanovku a objednáním dortu.</span>
         </p>
       </div>
-      <div class="relative">
-        <div class="aspect-[4/5] rounded-sm overflow-hidden">
-          <img src="/images/wedding/wedding-62.jpg" alt="Wnętrze Starej Stacji — nakryty stół" class="w-full h-full object-cover" loading="lazy" />
-        </div>
-        <div class="absolute -bottom-6 left-0 sm:-left-6 bg-accent text-primary px-4 sm:px-6 py-3 sm:py-4 font-heading text-base sm:text-lg font-bold">
-          <span class="text-pl">od 180 zł/os.</span>
-          <span class="text-en hidden">from 180 PLN/pp</span>
-          <span class="text-cs hidden">od 180 PLN/os.</span>
+      <div class="md:col-span-2 scroll-reveal">
+        <div class="relative">
+          <div class="aspect-[3/4] overflow-hidden">
+            <img src="/images/wedding/wedding-31.jpg" alt="Wnętrze Starej Stacji — nakryty stół" class="w-full h-full object-cover" loading="lazy" />
+          </div>
+          <!-- Price badge -->
+          <div class="absolute -bottom-5 -left-4 sm:-left-6 bg-accent text-primary px-6 py-4 font-heading text-lg font-bold shadow-lg">
+            <span class="text-pl">od 180 zł/os.</span>
+            <span class="text-en hidden">from 180 PLN/pp</span>
+            <span class="text-cs hidden">od 180 PLN/os.</span>
+          </div>
+          <!-- Decorative corner -->
+          <div class="absolute -top-3 -right-3 w-16 h-16 border-t-2 border-r-2 border-accent/30"></div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Menu packages -->
-  <section class="py-24 px-6 bg-cream-dark">
+  <!-- Menu packages — two dramatic cards -->
+  <section class="py-32 px-6 bg-cream-dark relative">
+    <!-- Subtle decorative background -->
+    <div class="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-accent/20 to-transparent"></div>
+
     <div class="max-w-6xl mx-auto">
-      <div class="text-center mb-16">
-        <p class="text-accent uppercase tracking-[0.2em] text-sm mb-3">
+      <div class="text-center mb-20 scroll-reveal">
+        <div class="w-px h-12 bg-accent/30 mx-auto mb-8"></div>
+        <p class="text-accent uppercase tracking-[0.25em] text-xs mb-4">
           <span class="text-pl">Menu komunijne</span>
           <span class="text-en hidden">Communion menu</span>
           <span class="text-cs hidden">Menu k přijímání</span>
         </p>
         <h2 class="font-heading text-4xl md:text-5xl font-bold text-primary">
-          <span class="text-pl">Dwa warianty do wyboru</span>
-          <span class="text-en hidden">Two options to choose from</span>
-          <span class="text-cs hidden">Dvě varianty na výběr</span>
+          <span class="text-pl">Dwa warianty <span class="italic text-accent">do wyboru</span></span>
+          <span class="text-en hidden">Two options <span class="italic text-accent">to choose</span></span>
+          <span class="text-cs hidden">Dvě varianty <span class="italic text-accent">na výběr</span></span>
         </h2>
       </div>
 
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-10">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-10">
+
         <!-- Menu Serwowane -->
-        <div class="bg-white shadow-sm relative overflow-hidden">
-          <div class="h-3 bg-accent"></div>
+        <div class="bg-white relative overflow-hidden group scroll-reveal menu-card">
+          <!-- Accent top line with animation -->
+          <div class="h-1 bg-accent w-0 group-hover:w-full transition-all duration-700 absolute top-0 left-0"></div>
+          <div class="h-1 bg-accent/30 w-full"></div>
+
           <div class="p-8 lg:p-10">
-            <h3 class="font-heading text-2xl font-bold text-primary mb-1">
-              <span class="text-pl">Menu Serwowane</span>
-              <span class="text-en hidden">Served Menu</span>
-              <span class="text-cs hidden">Servírované menu</span>
-            </h3>
-            <p class="text-accent font-heading text-3xl font-bold mb-8">230 zł <span class="text-base font-normal text-dark/40">
-              <span class="text-pl">/ os.</span>
-              <span class="text-en hidden">/ person</span>
-              <span class="text-cs hidden">/ os.</span>
-            </span></p>
+            <!-- Header -->
+            <div class="flex items-start justify-between mb-8">
+              <div>
+                <p class="text-accent uppercase tracking-[0.2em] text-[10px] mb-2">Premium</p>
+                <h3 class="font-heading text-2xl font-bold text-primary">
+                  <span class="text-pl">Menu Serwowane</span>
+                  <span class="text-en hidden">Served Menu</span>
+                  <span class="text-cs hidden">Servírované menu</span>
+                </h3>
+              </div>
+              <div class="text-right">
+                <p class="text-accent font-heading text-3xl font-bold">230 zł</p>
+                <p class="text-dark/30 text-xs uppercase tracking-wider">
+                  <span class="text-pl">/ os.</span>
+                  <span class="text-en hidden">/ person</span>
+                  <span class="text-cs hidden">/ os.</span>
+                </p>
+              </div>
+            </div>
+
+            <div class="w-full h-px bg-cream-dark mb-8"></div>
 
             <div class="space-y-6 text-sm">
-              <div>
-                <h4 class="uppercase tracking-wider text-accent text-xs font-semibold mb-2">
+              <div class="menu-item">
+                <h4 class="uppercase tracking-wider text-accent text-[11px] font-semibold mb-2 flex items-center gap-2">
+                  <span class="w-4 h-px bg-accent/40"></span>
                   <span class="text-pl">Zupa</span>
                   <span class="text-en hidden">Soup</span>
                   <span class="text-cs hidden">Polévka</span>
                 </h4>
-                <p class="text-dark/70">
+                <p class="text-dark/60 leading-relaxed pl-6">
                   <span class="text-pl">Aromatyczny rosół domowy długo gotowany na mięsie i warzywach, klarowny, podawany z makaronem i świeżą natką.</span>
                   <span class="text-en hidden">Aromatic homemade broth, slow-cooked with meat and vegetables, clear, served with noodles and fresh herbs.</span>
                   <span class="text-cs hidden">Aromatický domácí vývar, dlouho vařený na mase a zelenině, čirý, podávaný s nudlemi a čerstvými bylinkami.</span>
                 </p>
               </div>
 
-              <div>
-                <h4 class="uppercase tracking-wider text-accent text-xs font-semibold mb-2">
+              <div class="menu-item">
+                <h4 class="uppercase tracking-wider text-accent text-[11px] font-semibold mb-2 flex items-center gap-2">
+                  <span class="w-4 h-px bg-accent/40"></span>
                   <span class="text-pl">Danie główne (dla dorosłych)</span>
                   <span class="text-en hidden">Main course (adults)</span>
                   <span class="text-cs hidden">Hlavní chod (pro dospělé)</span>
                 </h4>
-                <p class="text-dark/70">
+                <p class="text-dark/60 leading-relaxed pl-6">
                   <span class="text-pl">Soczysty kawał mięsa wieprzowego w chrupiącej panierce podawany z ziemniakami ziołowymi oraz świeżą, sezonową surówką.</span>
                   <span class="text-en hidden">Juicy pork cutlet in crispy breading served with herbed potatoes and fresh seasonal salad.</span>
                   <span class="text-cs hidden">Šťavnatý vepřový řízek v křupavém obalu podávaný s bylinkovanými bramborami a čerstvým sezonním salátem.</span>
                 </p>
               </div>
 
-              <div>
-                <h4 class="uppercase tracking-wider text-accent text-xs font-semibold mb-2">
+              <div class="menu-item">
+                <h4 class="uppercase tracking-wider text-accent text-[11px] font-semibold mb-2 flex items-center gap-2">
+                  <span class="w-4 h-px bg-accent/40"></span>
                   <span class="text-pl">Danie dla dzieci</span>
                   <span class="text-en hidden">Children's menu</span>
                   <span class="text-cs hidden">Dětské menu</span>
                 </h4>
-                <ul class="text-dark/70 space-y-1">
-                  <li>
-                    <span class="text-pl">Zupa pomidorowa z chrupiącymi grzankami — łagodna i kremowa</span>
-                    <span class="text-en hidden">Tomato soup with crispy croutons — mild and creamy</span>
-                    <span class="text-cs hidden">Rajčatová polévka s křupavými krutony — jemná a krémová</span>
+                <ul class="text-dark/60 space-y-1.5 pl-6">
+                  <li class="flex items-start gap-2">
+                    <span class="text-accent/40 mt-2 shrink-0">&#8226;</span>
+                    <span>
+                      <span class="text-pl">Zupa pomidorowa z chrupiącymi grzankami — łagodna i kremowa</span>
+                      <span class="text-en hidden">Tomato soup with crispy croutons — mild and creamy</span>
+                      <span class="text-cs hidden">Rajčatová polévka s křupavými krutony — jemná a krémová</span>
+                    </span>
                   </li>
-                  <li>
-                    <span class="text-pl">Nuggetsy drobiowe z frytkami i suróweczką</span>
-                    <span class="text-en hidden">Chicken nuggets with fries and small salad</span>
-                    <span class="text-cs hidden">Kuřecí nugety s hranolky a malým salátkem</span>
+                  <li class="flex items-start gap-2">
+                    <span class="text-accent/40 mt-2 shrink-0">&#8226;</span>
+                    <span>
+                      <span class="text-pl">Nuggetsy drobiowe z frytkami i suróweczką</span>
+                      <span class="text-en hidden">Chicken nuggets with fries and small salad</span>
+                      <span class="text-cs hidden">Kuřecí nugety s hranolky a malým salátkem</span>
+                    </span>
                   </li>
                 </ul>
               </div>
 
-              <div>
-                <h4 class="uppercase tracking-wider text-accent text-xs font-semibold mb-2">
+              <div class="menu-item">
+                <h4 class="uppercase tracking-wider text-accent text-[11px] font-semibold mb-2 flex items-center gap-2">
+                  <span class="w-4 h-px bg-accent/40"></span>
                   <span class="text-pl">Zimna płyta</span>
                   <span class="text-en hidden">Cold platters</span>
                   <span class="text-cs hidden">Studené mísy</span>
                 </h4>
-                <ul class="text-dark/70 space-y-1">
-                  <li><span class="text-pl">Patera serów — klasyczne i delikatne odmiany</span><span class="text-en hidden">Cheese platter — classic and delicate varieties</span><span class="text-cs hidden">Mísa sýrů — klasické a jemné druhy</span></li>
-                  <li><span class="text-pl">Patera szynek i wędlin — wyselekcjonowane, aromatyczne</span><span class="text-en hidden">Ham and cold cuts platter — selected, aromatic</span><span class="text-cs hidden">Mísa šunek a uzenin — vybrané, aromatické</span></li>
-                  <li><span class="text-pl">Sałatka caprese — mozzarella, pomidor, bazylia, oliwa</span><span class="text-en hidden">Caprese salad — mozzarella, tomato, basil, olive oil</span><span class="text-cs hidden">Salát caprese — mozzarella, rajče, bazalka, olivový olej</span></li>
-                  <li><span class="text-pl">Domowy smalec z pieczywem górskim</span><span class="text-en hidden">Homemade lard with mountain bread</span><span class="text-cs hidden">Domácí sádlo s horským chlebem</span></li>
-                  <li><span class="text-pl">Sałatka z grillowanym kurczakiem w lekkim dressingu</span><span class="text-en hidden">Grilled chicken salad in light dressing</span><span class="text-cs hidden">Salát s grilovaným kuřetem v lehkém dresinku</span></li>
+                <ul class="text-dark/60 space-y-1.5 pl-6">
+                  <li class="flex items-start gap-2"><span class="text-accent/40 mt-2 shrink-0">&#8226;</span><span><span class="text-pl">Patera serów — klasyczne i delikatne odmiany</span><span class="text-en hidden">Cheese platter — classic and delicate varieties</span><span class="text-cs hidden">Mísa sýrů — klasické a jemné druhy</span></span></li>
+                  <li class="flex items-start gap-2"><span class="text-accent/40 mt-2 shrink-0">&#8226;</span><span><span class="text-pl">Patera szynek i wędlin — wyselekcjonowane, aromatyczne</span><span class="text-en hidden">Ham and cold cuts platter — selected, aromatic</span><span class="text-cs hidden">Mísa šunek a uzenin — vybrané, aromatické</span></span></li>
+                  <li class="flex items-start gap-2"><span class="text-accent/40 mt-2 shrink-0">&#8226;</span><span><span class="text-pl">Sałatka caprese — mozzarella, pomidor, bazylia, oliwa</span><span class="text-en hidden">Caprese salad — mozzarella, tomato, basil, olive oil</span><span class="text-cs hidden">Salát caprese — mozzarella, rajče, bazalka, olivový olej</span></span></li>
+                  <li class="flex items-start gap-2"><span class="text-accent/40 mt-2 shrink-0">&#8226;</span><span><span class="text-pl">Domowy smalec z pieczywem górskim</span><span class="text-en hidden">Homemade lard with mountain bread</span><span class="text-cs hidden">Domácí sádlo s horským chlebem</span></span></li>
+                  <li class="flex items-start gap-2"><span class="text-accent/40 mt-2 shrink-0">&#8226;</span><span><span class="text-pl">Sałatka z grillowanym kurczakiem w lekkim dressingu</span><span class="text-en hidden">Grilled chicken salad in light dressing</span><span class="text-cs hidden">Salát s grilovaným kuřetem v lehkém dresinku</span></span></li>
                 </ul>
               </div>
 
-              <div>
-                <h4 class="uppercase tracking-wider text-accent text-xs font-semibold mb-2">
+              <div class="menu-item">
+                <h4 class="uppercase tracking-wider text-accent text-[11px] font-semibold mb-2 flex items-center gap-2">
+                  <span class="w-4 h-px bg-accent/40"></span>
                   <span class="text-pl">Deser i owoce</span>
                   <span class="text-en hidden">Dessert & fruit</span>
                   <span class="text-cs hidden">Dezert a ovoce</span>
                 </h4>
-                <ul class="text-dark/70 space-y-1">
-                  <li><span class="text-pl">Patera ciast — trzy rodzaje naszych wypieków</span><span class="text-en hidden">Cake platter — three types of our pastries</span><span class="text-cs hidden">Mísa dortů — tři druhy našich zákusků</span></li>
-                  <li><span class="text-pl">Patera świeżych owoców — kolorowa kompozycja sezonowa</span><span class="text-en hidden">Fresh fruit platter — colorful seasonal composition</span><span class="text-cs hidden">Mísa čerstvého ovoce — barevná sezonní kompozice</span></li>
+                <ul class="text-dark/60 space-y-1.5 pl-6">
+                  <li class="flex items-start gap-2"><span class="text-accent/40 mt-2 shrink-0">&#8226;</span><span><span class="text-pl">Patera ciast — trzy rodzaje naszych wypieków</span><span class="text-en hidden">Cake platter — three types of our pastries</span><span class="text-cs hidden">Mísa dortů — tři druhy našich zákusků</span></span></li>
+                  <li class="flex items-start gap-2"><span class="text-accent/40 mt-2 shrink-0">&#8226;</span><span><span class="text-pl">Patera świeżych owoców — kolorowa kompozycja sezonowa</span><span class="text-en hidden">Fresh fruit platter — colorful seasonal composition</span><span class="text-cs hidden">Mísa čerstvého ovoce — barevná sezonní kompozice</span></span></li>
                 </ul>
               </div>
             </div>
@@ -173,84 +230,102 @@ import info from '../data/info.json';
         </div>
 
         <!-- Szwedzki Stół -->
-        <div class="bg-white shadow-sm relative overflow-hidden">
-          <div class="h-3 bg-primary"></div>
+        <div class="bg-white relative overflow-hidden group scroll-reveal menu-card">
+          <div class="h-1 bg-primary w-0 group-hover:w-full transition-all duration-700 absolute top-0 left-0"></div>
+          <div class="h-1 bg-primary/30 w-full"></div>
+
           <div class="p-8 lg:p-10">
-            <h3 class="font-heading text-2xl font-bold text-primary mb-1">
-              <span class="text-pl">Szwedzki Stół</span>
-              <span class="text-en hidden">Buffet</span>
-              <span class="text-cs hidden">Švédský stůl</span>
-            </h3>
-            <p class="text-accent font-heading text-3xl font-bold mb-8">180 zł <span class="text-base font-normal text-dark/40">
-              <span class="text-pl">/ os.</span>
-              <span class="text-en hidden">/ person</span>
-              <span class="text-cs hidden">/ os.</span>
-            </span></p>
+            <!-- Header -->
+            <div class="flex items-start justify-between mb-8">
+              <div>
+                <p class="text-primary/40 uppercase tracking-[0.2em] text-[10px] mb-2">Classic</p>
+                <h3 class="font-heading text-2xl font-bold text-primary">
+                  <span class="text-pl">Szwedzki Stół</span>
+                  <span class="text-en hidden">Buffet</span>
+                  <span class="text-cs hidden">Švédský stůl</span>
+                </h3>
+              </div>
+              <div class="text-right">
+                <p class="text-accent font-heading text-3xl font-bold">180 zł</p>
+                <p class="text-dark/30 text-xs uppercase tracking-wider">
+                  <span class="text-pl">/ os.</span>
+                  <span class="text-en hidden">/ person</span>
+                  <span class="text-cs hidden">/ os.</span>
+                </p>
+              </div>
+            </div>
+
+            <div class="w-full h-px bg-cream-dark mb-8"></div>
 
             <div class="space-y-6 text-sm">
-              <div>
-                <h4 class="uppercase tracking-wider text-accent text-xs font-semibold mb-2">
+              <div class="menu-item">
+                <h4 class="uppercase tracking-wider text-accent text-[11px] font-semibold mb-2 flex items-center gap-2">
+                  <span class="w-4 h-px bg-accent/40"></span>
                   <span class="text-pl">Zupy (w wazach)</span>
                   <span class="text-en hidden">Soups (in tureens)</span>
                   <span class="text-cs hidden">Polévky (v mísách)</span>
                 </h4>
-                <ul class="text-dark/70 space-y-1">
-                  <li><span class="text-pl">Aromatyczny rosół domowy — klasyczny bulion gotowany na mięsie i warzywach</span><span class="text-en hidden">Aromatic homemade broth — classic bouillon cooked with meat and vegetables</span><span class="text-cs hidden">Aromatický domácí vývar — klasický bujón vařený na mase a zelenině</span></li>
-                  <li><span class="text-pl">Zupa pomidorowa kremowa, aksamitna, z dojrzałych pomidorów</span><span class="text-en hidden">Creamy, velvety tomato soup made from ripe tomatoes</span><span class="text-cs hidden">Krémová, sametová rajčatová polévka ze zralých rajčat</span></li>
+                <ul class="text-dark/60 space-y-1.5 pl-6">
+                  <li class="flex items-start gap-2"><span class="text-accent/40 mt-2 shrink-0">&#8226;</span><span><span class="text-pl">Aromatyczny rosół domowy — klasyczny bulion gotowany na mięsie i warzywach</span><span class="text-en hidden">Aromatic homemade broth — classic bouillon cooked with meat and vegetables</span><span class="text-cs hidden">Aromatický domácí vývar — klasický bujón vařený na mase a zelenině</span></span></li>
+                  <li class="flex items-start gap-2"><span class="text-accent/40 mt-2 shrink-0">&#8226;</span><span><span class="text-pl">Zupa pomidorowa kremowa, aksamitna, z dojrzałych pomidorów</span><span class="text-en hidden">Creamy, velvety tomato soup made from ripe tomatoes</span><span class="text-cs hidden">Krémová, sametová rajčatová polévka ze zralých rajčat</span></span></li>
                 </ul>
               </div>
 
-              <div>
-                <h4 class="uppercase tracking-wider text-accent text-xs font-semibold mb-2">
+              <div class="menu-item">
+                <h4 class="uppercase tracking-wider text-accent text-[11px] font-semibold mb-2 flex items-center gap-2">
+                  <span class="w-4 h-px bg-accent/40"></span>
                   <span class="text-pl">Dania gorące (2 do wyboru)</span>
                   <span class="text-en hidden">Hot dishes (choose 2)</span>
                   <span class="text-cs hidden">Teplá jídla (vyberte 2)</span>
                 </h4>
-                <ul class="text-dark/70 space-y-1">
-                  <li><span class="text-pl">Kurczak w chrupiącej panierce</span><span class="text-en hidden">Chicken in crispy breading</span><span class="text-cs hidden">Kuřecí v křupavém obalu</span></li>
-                  <li><span class="text-pl">Sakiewki wieprzowe z grzybami</span><span class="text-en hidden">Pork purses with mushrooms</span><span class="text-cs hidden">Vepřové kapsy s houbami</span></li>
-                  <li><span class="text-pl">Roladka z kurczaka ze szpinakiem</span><span class="text-en hidden">Chicken roulade with spinach</span><span class="text-cs hidden">Kuřecí roláda se špenátem</span></li>
-                  <li><span class="text-pl">Pieczeń wieprzowa ze śliwką</span><span class="text-en hidden">Roast pork with plum</span><span class="text-cs hidden">Vepřová pečeně se švestkou</span></li>
-                  <li><span class="text-pl">Pierogi z gęsiną</span><span class="text-en hidden">Dumplings with goose</span><span class="text-cs hidden">Pierogi s husím masem</span></li>
-                  <li><span class="text-pl">Papryka faszerowana (wege)</span><span class="text-en hidden">Stuffed peppers (vegetarian)</span><span class="text-cs hidden">Plněná paprika (vegetariánská)</span></li>
+                <ul class="text-dark/60 space-y-1.5 pl-6">
+                  <li class="flex items-start gap-2"><span class="text-accent/40 mt-2 shrink-0">&#8226;</span><span><span class="text-pl">Kurczak w chrupiącej panierce</span><span class="text-en hidden">Chicken in crispy breading</span><span class="text-cs hidden">Kuřecí v křupavém obalu</span></span></li>
+                  <li class="flex items-start gap-2"><span class="text-accent/40 mt-2 shrink-0">&#8226;</span><span><span class="text-pl">Sakiewki wieprzowe z grzybami</span><span class="text-en hidden">Pork purses with mushrooms</span><span class="text-cs hidden">Vepřové kapsy s houbami</span></span></li>
+                  <li class="flex items-start gap-2"><span class="text-accent/40 mt-2 shrink-0">&#8226;</span><span><span class="text-pl">Roladka z kurczaka ze szpinakiem</span><span class="text-en hidden">Chicken roulade with spinach</span><span class="text-cs hidden">Kuřecí roláda se špenátem</span></span></li>
+                  <li class="flex items-start gap-2"><span class="text-accent/40 mt-2 shrink-0">&#8226;</span><span><span class="text-pl">Pieczeń wieprzowa ze śliwką</span><span class="text-en hidden">Roast pork with plum</span><span class="text-cs hidden">Vepřová pečeně se švestkou</span></span></li>
+                  <li class="flex items-start gap-2"><span class="text-accent/40 mt-2 shrink-0">&#8226;</span><span><span class="text-pl">Pierogi z gęsiną</span><span class="text-en hidden">Dumplings with goose</span><span class="text-cs hidden">Pierogi s husím masem</span></span></li>
+                  <li class="flex items-start gap-2"><span class="text-accent/40 mt-2 shrink-0">&#8226;</span><span><span class="text-pl">Papryka faszerowana (wege)</span><span class="text-en hidden">Stuffed peppers (vegetarian)</span><span class="text-cs hidden">Plněná paprika (vegetariánská)</span></span></li>
                 </ul>
               </div>
 
-              <div>
-                <h4 class="uppercase tracking-wider text-accent text-xs font-semibold mb-2">
+              <div class="menu-item">
+                <h4 class="uppercase tracking-wider text-accent text-[11px] font-semibold mb-2 flex items-center gap-2">
+                  <span class="w-4 h-px bg-accent/40"></span>
                   <span class="text-pl">Dodatki</span>
                   <span class="text-en hidden">Sides</span>
                   <span class="text-cs hidden">Přílohy</span>
                 </h4>
-                <p class="text-dark/70">
+                <p class="text-dark/60 pl-6 leading-relaxed">
                   <span class="text-pl">Ziemniaki gotowane, ziemniaki pieczone, frytki. Surówki: mizeria, seler z rodzynkami, buraczki.</span>
                   <span class="text-en hidden">Boiled potatoes, roasted potatoes, fries. Salads: cucumber, celery with raisins, beetroot.</span>
                   <span class="text-cs hidden">Vařené brambory, pečené brambory, hranolky. Saláty: okurkový, celerový s rozinkami, řepový.</span>
                 </p>
               </div>
 
-              <div>
-                <h4 class="uppercase tracking-wider text-accent text-xs font-semibold mb-2">
+              <div class="menu-item">
+                <h4 class="uppercase tracking-wider text-accent text-[11px] font-semibold mb-2 flex items-center gap-2">
+                  <span class="w-4 h-px bg-accent/40"></span>
                   <span class="text-pl">Danie dla dzieci</span>
                   <span class="text-en hidden">Children's menu</span>
                   <span class="text-cs hidden">Dětské menu</span>
                 </h4>
-                <p class="text-dark/70">
+                <p class="text-dark/60 pl-6 leading-relaxed">
                   <span class="text-pl">Mini kotleciki z kurczaka lub paluszki rybne z frytkami lub ziemniakami puree i surówką.</span>
                   <span class="text-en hidden">Mini chicken cutlets or fish fingers with fries or mashed potatoes and salad.</span>
                   <span class="text-cs hidden">Mini kuřecí řízečky nebo rybí prsty s hranolky nebo bramborovým pyré a salátkem.</span>
                 </p>
               </div>
 
-              <div>
-                <h4 class="uppercase tracking-wider text-accent text-xs font-semibold mb-2">
+              <div class="menu-item">
+                <h4 class="uppercase tracking-wider text-accent text-[11px] font-semibold mb-2 flex items-center gap-2">
+                  <span class="w-4 h-px bg-accent/40"></span>
                   <span class="text-pl">Desery i owoce</span>
                   <span class="text-en hidden">Desserts & fruit</span>
                   <span class="text-cs hidden">Dezerty a ovoce</span>
                 </h4>
-                <ul class="text-dark/70 space-y-1">
-                  <li><span class="text-pl">Patera ciast — trzy rodzaje naszych wypieków</span><span class="text-en hidden">Cake platter — three types of our pastries</span><span class="text-cs hidden">Mísa dortů — tři druhy našich zákusků</span></li>
-                  <li><span class="text-pl">Patera świeżych owoców sezonowych</span><span class="text-en hidden">Fresh seasonal fruit platter</span><span class="text-cs hidden">Mísa čerstvého sezonního ovoce</span></li>
+                <ul class="text-dark/60 space-y-1.5 pl-6">
+                  <li class="flex items-start gap-2"><span class="text-accent/40 mt-2 shrink-0">&#8226;</span><span><span class="text-pl">Patera ciast — trzy rodzaje naszych wypieków</span><span class="text-en hidden">Cake platter — three types of our pastries</span><span class="text-cs hidden">Mísa dortů — tři druhy našich zákusků</span></span></li>
+                  <li class="flex items-start gap-2"><span class="text-accent/40 mt-2 shrink-0">&#8226;</span><span><span class="text-pl">Patera świeżych owoców sezonowych</span><span class="text-en hidden">Fresh seasonal fruit platter</span><span class="text-cs hidden">Mísa čerstvého sezonního ovoce</span></span></li>
                 </ul>
               </div>
             </div>
@@ -260,127 +335,142 @@ import info from '../data/info.json';
     </div>
   </section>
 
-  <!-- Pricing & notes -->
-  <section class="py-24 px-6">
-    <div class="max-w-4xl mx-auto">
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
-        <!-- Price summary -->
-        <div>
-          <h2 class="font-heading text-3xl font-bold text-primary mb-8">
+  <!-- Pricing & notes — dramatic horizontal layout -->
+  <section class="py-32 px-6">
+    <div class="max-w-6xl mx-auto">
+      <div class="grid grid-cols-1 lg:grid-cols-5 gap-16">
+
+        <!-- Pricing — left side, large typography -->
+        <div class="lg:col-span-2 scroll-reveal">
+          <div class="w-12 h-px bg-accent mb-6"></div>
+          <h2 class="font-heading text-4xl md:text-5xl font-bold text-primary mb-10">
             <span class="text-pl">Cennik</span>
             <span class="text-en hidden">Pricing</span>
             <span class="text-cs hidden">Ceník</span>
           </h2>
-          <div class="space-y-6">
-            <div class="flex items-baseline justify-between border-b border-cream-dark pb-4">
+
+          <div class="space-y-0">
+            <div class="flex items-baseline justify-between py-6 border-b border-cream-dark">
               <span class="font-heading text-lg text-primary">
                 <span class="text-pl">Menu Serwowane</span>
                 <span class="text-en hidden">Served Menu</span>
                 <span class="text-cs hidden">Servírované menu</span>
               </span>
-              <span class="text-accent font-heading text-2xl font-bold">230 zł</span>
+              <span class="text-accent font-heading text-3xl font-bold">230 <span class="text-base font-normal">zł</span></span>
             </div>
-            <div class="flex items-baseline justify-between border-b border-cream-dark pb-4">
+            <div class="flex items-baseline justify-between py-6 border-b border-cream-dark">
               <span class="font-heading text-lg text-primary">
                 <span class="text-pl">Szwedzki Stół</span>
                 <span class="text-en hidden">Buffet</span>
                 <span class="text-cs hidden">Švédský stůl</span>
               </span>
-              <span class="text-accent font-heading text-2xl font-bold">180 zł</span>
+              <span class="text-accent font-heading text-3xl font-bold">180 <span class="text-base font-normal">zł</span></span>
             </div>
-            <div class="flex items-baseline justify-between pb-4">
+            <div class="flex items-baseline justify-between py-6">
               <span class="font-heading text-lg text-primary">
                 <span class="text-pl">Dzieci poniżej 10 lat</span>
                 <span class="text-en hidden">Children under 10</span>
                 <span class="text-cs hidden">Děti do 10 let</span>
               </span>
-              <span class="text-accent font-heading text-2xl font-bold">50%</span>
+              <span class="text-accent font-heading text-3xl font-bold">50<span class="text-base font-normal">%</span></span>
             </div>
           </div>
         </div>
 
-        <!-- Notes -->
-        <div>
-          <h2 class="font-heading text-3xl font-bold text-primary mb-8">
-            <span class="text-pl">Ważne informacje</span>
-            <span class="text-en hidden">Important information</span>
-            <span class="text-cs hidden">Důležité informace</span>
+        <!-- Notes — right side, styled info blocks -->
+        <div class="lg:col-span-3 scroll-reveal">
+          <div class="w-12 h-px bg-accent mb-6"></div>
+          <h2 class="font-heading text-4xl md:text-5xl font-bold text-primary mb-10">
+            <span class="text-pl">Ważne <span class="italic text-accent">informacje</span></span>
+            <span class="text-en hidden">Important <span class="italic text-accent">information</span></span>
+            <span class="text-cs hidden">Důležité <span class="italic text-accent">informace</span></span>
           </h2>
-          <ul class="space-y-4">
-            <li class="flex gap-3">
-              <span class="text-accent mt-1 shrink-0">
-                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
-              </span>
-              <span class="text-dark/70">
-                <span class="text-pl">Cena nie obejmuje kosztów kolejki linowej</span>
-                <span class="text-en hidden">Price does not include cable car costs</span>
-                <span class="text-cs hidden">Cena nezahrnuje náklady na lanovku</span>
-              </span>
-            </li>
-            <li class="flex gap-3">
-              <span class="text-accent mt-1 shrink-0">
-                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
-              </span>
-              <span class="text-dark/70">
-                <span class="text-pl">Możemy pomóc w zorganizowaniu biletów na kolejkę</span>
-                <span class="text-en hidden">We can help arrange cable car tickets</span>
-                <span class="text-cs hidden">Pomůžeme s organizací lístků na lanovku</span>
-              </span>
-            </li>
-            <li class="flex gap-3">
-              <span class="text-accent mt-1 shrink-0">
-                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
-              </span>
-              <span class="text-dark/70">
-                <span class="text-pl">Możemy pomóc w zamówieniu tortu komunijnego</span>
-                <span class="text-en hidden">We can help order a communion cake</span>
-                <span class="text-cs hidden">Pomůžeme s objednáním dortu k přijímání</span>
-              </span>
-            </li>
-            <li class="flex gap-3">
-              <span class="text-accent mt-1 shrink-0">
-                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
-              </span>
-              <span class="text-dark/70">
-                <span class="text-pl">Możliwość dogadania szczegółów ciast i wypieków indywidualnie</span>
-                <span class="text-en hidden">Pastry and cake details can be customized individually</span>
-                <span class="text-cs hidden">Detaily zákusků a dortů lze domluvit individuálně</span>
-              </span>
-            </li>
-          </ul>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+            <div class="bg-cream-dark/50 p-6 border-l-2 border-accent/30">
+              <div class="flex items-center gap-3 mb-3">
+                <svg class="w-5 h-5 text-accent shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                <span class="text-dark/70 text-sm leading-relaxed">
+                  <span class="text-pl">Cena nie obejmuje kosztów kolejki linowej</span>
+                  <span class="text-en hidden">Price does not include cable car costs</span>
+                  <span class="text-cs hidden">Cena nezahrnuje náklady na lanovku</span>
+                </span>
+              </div>
+            </div>
+            <div class="bg-cream-dark/50 p-6 border-l-2 border-accent/30">
+              <div class="flex items-center gap-3 mb-3">
+                <svg class="w-5 h-5 text-accent shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                <span class="text-dark/70 text-sm leading-relaxed">
+                  <span class="text-pl">Możemy pomóc w zorganizowaniu biletów na kolejkę</span>
+                  <span class="text-en hidden">We can help arrange cable car tickets</span>
+                  <span class="text-cs hidden">Pomůžeme s organizací lístků na lanovku</span>
+                </span>
+              </div>
+            </div>
+            <div class="bg-cream-dark/50 p-6 border-l-2 border-accent/30">
+              <div class="flex items-center gap-3 mb-3">
+                <svg class="w-5 h-5 text-accent shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                <span class="text-dark/70 text-sm leading-relaxed">
+                  <span class="text-pl">Możemy pomóc w zamówieniu tortu komunijnego</span>
+                  <span class="text-en hidden">We can help order a communion cake</span>
+                  <span class="text-cs hidden">Pomůžeme s objednáním dortu k přijímání</span>
+                </span>
+              </div>
+            </div>
+            <div class="bg-cream-dark/50 p-6 border-l-2 border-accent/30">
+              <div class="flex items-center gap-3 mb-3">
+                <svg class="w-5 h-5 text-accent shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                <span class="text-dark/70 text-sm leading-relaxed">
+                  <span class="text-pl">Możliwość dogadania szczegółów ciast i wypieków indywidualnie</span>
+                  <span class="text-en hidden">Pastry and cake details can be customized individually</span>
+                  <span class="text-cs hidden">Detaily zákusků a dortů lze domluvit individuálně</span>
+                </span>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Contact CTA -->
-  <section class="relative py-32 px-6 overflow-hidden">
-    <div class="absolute inset-0 bg-[url('/images/wedding/wedding-65.jpg')] bg-cover bg-center md:bg-fixed"></div>
-    <div class="absolute inset-0 bg-gradient-to-t from-primary/90 via-dark/60 to-dark/30"></div>
-    <div class="relative z-10 max-w-3xl mx-auto text-center text-white">
-      <h2 class="font-heading text-4xl md:text-5xl font-bold mb-6">
-        <span class="text-pl">Zaplanuj komunię</span>
-        <span class="text-en hidden">Plan the communion</span>
-        <span class="text-cs hidden">Naplánujte přijímání</span>
-      </h2>
-      <p class="text-white/70 text-lg mb-4">
+  <!-- Contact CTA — cinematic with parallax photo -->
+  <section class="relative py-40 px-6 overflow-hidden">
+    <div class="absolute inset-0 bg-[url('/images/wedding/wedding-65.jpg')] bg-cover bg-center scale-105" id="komunie-cta-bg"></div>
+    <div class="absolute inset-0 bg-gradient-to-t from-primary/95 via-primary/70 to-primary/40"></div>
+
+    <!-- Grain overlay -->
+    <div class="absolute inset-0 opacity-[0.03]" style="background-image: url('data:image/svg+xml,%3Csvg viewBox=%220 0 256 256%22 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cfilter id=%22noise%22%3E%3CfeTurbulence type=%22fractalNoise%22 baseFrequency=%220.9%22 numOctaves=%224%22 stitchTiles=%22stitch%22/%3E%3C/filter%3E%3Crect width=%22100%25%22 height=%22100%25%22 filter=%22url(%23noise)%22/%3E%3C/svg%3E');"></div>
+
+    <div class="relative z-10 max-w-3xl mx-auto text-center text-white scroll-reveal">
+      <div class="w-px h-12 bg-accent/40 mx-auto mb-8"></div>
+      <p class="text-accent uppercase tracking-[0.25em] text-xs mb-6">
         <span class="text-pl">Skontaktuj się z nami</span>
         <span class="text-en hidden">Contact us</span>
         <span class="text-cs hidden">Kontaktujte nás</span>
       </p>
-      <p class="text-white font-heading text-xl mb-1">Anna Wachniak</p>
-      <p class="text-white/70 mb-8">
-        <a href="tel:+48515552130" class="hover:text-accent transition-colors">tel. 515 552 130</a>
-        &nbsp;&middot;&nbsp;
-        <a href="mailto:starastacjabielsko@gmail.com" class="hover:text-accent transition-colors">starastacjabielsko@gmail.com</a>
-      </p>
+      <h2 class="font-heading text-4xl md:text-5xl lg:text-6xl font-bold mb-8">
+        <span class="text-pl">Zaplanuj <span class="italic text-accent">komunię</span></span>
+        <span class="text-en hidden">Plan the <span class="italic text-accent">communion</span></span>
+        <span class="text-cs hidden">Naplánujte <span class="italic text-accent">přijímání</span></span>
+      </h2>
+
+      <div class="mb-10">
+        <p class="text-white font-heading text-xl mb-2">Anna Wachniak</p>
+        <p class="text-white/50 flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-4">
+          <a href="tel:+48515552130" class="hover:text-accent transition-colors">tel. 515 552 130</a>
+          <span class="hidden sm:inline text-white/20">&middot;</span>
+          <a href="mailto:starastacjabielsko@gmail.com" class="hover:text-accent transition-colors">starastacjabielsko@gmail.com</a>
+        </p>
+      </div>
+
       <div class="flex flex-col sm:flex-row gap-4 justify-center">
-        <a href="tel:+48515552130" class="px-8 py-4 bg-accent text-primary font-semibold uppercase tracking-wider text-sm hover:bg-accent-light transition-colors">
+        <a href="tel:+48515552130" class="group inline-flex items-center justify-center gap-3 px-10 py-4 bg-accent text-primary font-semibold uppercase tracking-wider text-sm hover:bg-accent-light transition-colors">
           <span class="text-pl">Zadzwoń</span>
           <span class="text-en hidden">Call now</span>
           <span class="text-cs hidden">Zavolejte</span>
+          <svg class="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
         </a>
-        <a href="/eventy" class="px-8 py-4 border-2 border-white/40 text-white font-semibold uppercase tracking-wider text-sm hover:bg-white/10 transition-colors">
+        <a href="/eventy" class="px-10 py-4 border-2 border-white/30 text-white font-semibold uppercase tracking-wider text-sm hover:bg-white/10 transition-colors">
           <span class="text-pl">Wszystkie eventy</span>
           <span class="text-en hidden">All events</span>
           <span class="text-cs hidden">Všechny akce</span>
@@ -391,3 +481,77 @@ import info from '../data/info.json';
 
   <Footer />
 </Layout>
+
+<style>
+  @keyframes grow-line {
+    from { height: 0; opacity: 0; }
+    to { height: 4rem; opacity: 1; }
+  }
+
+  .reveal-line {
+    animation: grow-line 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+
+  .reveal-up {
+    animation: reveal-up 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    opacity: 0;
+  }
+  .reveal-delay-1 { animation-delay: 0.15s; }
+  .reveal-delay-2 { animation-delay: 0.3s; }
+  .reveal-delay-3 { animation-delay: 0.45s; }
+
+  @keyframes reveal-up {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .scroll-reveal {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .scroll-reveal.revealed {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .menu-card {
+    transition: box-shadow 0.4s ease;
+  }
+  .menu-card:hover {
+    box-shadow: 0 20px 60px -15px rgba(44, 24, 16, 0.1);
+  }
+</style>
+
+<script>
+  // Scroll reveal
+  const reveals = document.querySelectorAll('.scroll-reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('revealed');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.15 });
+  reveals.forEach((el) => observer.observe(el));
+
+  // Subtle parallax on hero and CTA backgrounds
+  const heroBg = document.getElementById('komunie-hero-bg');
+  const ctaBg = document.getElementById('komunie-cta-bg');
+  if (window.innerWidth > 768) {
+    window.addEventListener('scroll', () => {
+      const y = window.scrollY;
+      if (heroBg && y < window.innerHeight) {
+        heroBg.style.transform = `scale(1.05) translateY(${y * 0.15}px)`;
+      }
+      if (ctaBg) {
+        const rect = ctaBg.parentElement?.getBoundingClientRect();
+        if (rect && rect.top < window.innerHeight && rect.bottom > 0) {
+          const offset = (rect.top - window.innerHeight / 2) * 0.08;
+          ctaBg.style.transform = `scale(1.05) translateY(${offset}px)`;
+        }
+      }
+    }, { passive: true });
+  }
+</script>
