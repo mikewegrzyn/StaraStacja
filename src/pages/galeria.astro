@@ -5,37 +5,37 @@ import Footer from '../components/Footer.astro';
 
 const galleryItems = [
   // === WIDOKI / VIEWS ===
-  { src: '/images/gallery/aerial-panorama.jpg', alt: 'Stara Stacja z lotu ptaka — panorama Szyndzielni', category: 'widoki', featured: true },
-  { src: '/images/gallery/exterior-summer.jpg', alt: 'Restauracja latem — taras z widokiem na góry', category: 'widoki' },
-  { src: '/images/gallery/aerial-winter.jpg', alt: 'Widok z drona — zimowy szczyt Szyndzielni', category: 'widoki' },
-  { src: '/images/gallery/winter-path.jpg', alt: 'Zimowa ścieżka do restauracji', category: 'widoki' },
-  { src: '/images/cablecar.jpg', alt: 'Kolejka linowa na Szyndzielnię', category: 'widoki' },
+  { src: '/images/gallery/aerial-panorama.jpg', alt: 'Stara Stacja z lotu ptaka — panorama Szyndzielni', altEn: 'Stara Stacja from above — Szyndzielnia panorama', altCs: 'Stará Stanice z ptačí perspektivy — panorama Szyndzielnie', category: 'widoki', featured: true },
+  { src: '/images/gallery/exterior-summer.jpg', alt: 'Restauracja latem — taras z widokiem na góry', altEn: 'Restaurant in summer — terrace with mountain views', altCs: 'Restaurace v létě — terasa s výhledem na hory', category: 'widoki' },
+  { src: '/images/gallery/aerial-winter.jpg', alt: 'Widok z drona — zimowy szczyt Szyndzielni', altEn: 'Drone view — winter summit of Szyndzielnia', altCs: 'Pohled z dronu — zimní vrchol Szyndzielnie', category: 'widoki' },
+  { src: '/images/gallery/winter-path.jpg', alt: 'Zimowa ścieżka do restauracji', altEn: 'Winter path to the restaurant', altCs: 'Zimní cesta k restauraci', category: 'widoki' },
+  { src: '/images/cablecar.jpg', alt: 'Kolejka linowa na Szyndzielnię', altEn: 'Cable car to Szyndzielnia', altCs: 'Lanovka na Szyndzielnii', category: 'widoki' },
 
   // === WNĘTRZE / INTERIOR ===
-  { src: '/images/gallery/gondola-interior.jpg', alt: 'Sala z zabytkową gondolą kolejki linowej', category: 'wnętrze', featured: true },
-  { src: '/images/gallery/dining-hall.jpg', alt: 'Główna sala restauracji', category: 'wnętrze' },
-  { src: '/images/gallery/table-setting.jpg', alt: 'Elegancka nakrycie stołu ze słonecznikami', category: 'wnętrze' },
-  { src: '/images/gallery/chef-flambe.jpg', alt: 'Szef kuchni przy pracy — flambowanie', category: 'wnętrze' },
-  { src: '/images/interior.jpg', alt: 'Wnętrze restauracji', category: 'wnętrze' },
+  { src: '/images/gallery/gondola-interior.jpg', alt: 'Sala z zabytkową gondolą kolejki linowej', altEn: 'Dining hall with vintage cable car gondola', altCs: 'Sál s historickou gondolou lanovky', category: 'wnętrze', featured: true },
+  { src: '/images/gallery/dining-hall.jpg', alt: 'Główna sala restauracji', altEn: 'Main dining hall', altCs: 'Hlavní sál restaurace', category: 'wnętrze' },
+  { src: '/images/gallery/table-setting.jpg', alt: 'Eleganckie nakrycie stołu ze słonecznikami', altEn: 'Elegant table setting with sunflowers', altCs: 'Elegantní prostírání se slunečnicemi', category: 'wnętrze' },
+  { src: '/images/gallery/chef-flambe.jpg', alt: 'Szef kuchni przy pracy — flambowanie', altEn: 'Chef at work — flambéing', altCs: 'Šéfkuchař při práci — flambování', category: 'wnętrze' },
+  { src: '/images/interior.jpg', alt: 'Wnętrze restauracji', altEn: 'Restaurant interior', altCs: 'Interiér restaurace', category: 'wnętrze' },
 
   // === KUCHNIA / FOOD ===
-  { src: '/images/gallery/potato-pancakes.jpg', alt: 'Placki ziemniaczane z ziołowym sosem', category: 'kuchnia', featured: true },
-  { src: '/images/gallery/pear-dessert.jpg', alt: 'Gruszka w kruszonkowej panierce z karmelem', category: 'kuchnia' },
-  { src: '/images/gallery/pizza-margherita.jpg', alt: 'Pizza Margherita z pieca', category: 'kuchnia' },
-  { src: '/images/gallery/filo-tartlet.jpg', alt: 'Tartaletka z grzybami i jajkiem', category: 'kuchnia' },
-  { src: '/images/gallery/soup-bread.jpg', alt: 'Zupa pomidorowa z rozmarynem i grzankami', category: 'kuchnia' },
-  { src: '/images/gallery/schnitzel-platter.jpg', alt: 'Sznycel z pieczonymi warzywami', category: 'kuchnia' },
-  { src: '/images/gallery/pierogi.jpg', alt: 'Pierogi zapiekane ze śmietaną i szczypiorkiem', category: 'kuchnia' },
-  { src: '/images/gallery/caesar-salad.jpg', alt: 'Sałatka z grillowanym kurczakiem', category: 'kuchnia' },
-  { src: '/images/gallery/pear-sorbet.jpg', alt: 'Gruszka z sorbetem malinowym', category: 'kuchnia' },
-  { src: '/images/gallery/pulled-meat.jpg', alt: 'Duszone mięso z ziołami', category: 'kuchnia' },
-  { src: '/images/gallery/schnitzel.jpg', alt: 'Tradycyjny kotlet schabowy', category: 'kuchnia' },
+  { src: '/images/gallery/potato-pancakes.jpg', alt: 'Placki ziemniaczane z ziołowym sosem', altEn: 'Potato pancakes with herb sauce', altCs: 'Bramboráky s bylinkovým sosem', category: 'kuchnia', featured: true },
+  { src: '/images/gallery/pear-dessert.jpg', alt: 'Gruszka w kruszonkowej panierce z karmelem', altEn: 'Pear in crumble crust with caramel', altCs: 'Hruška v drobenkovém obalu s karamelem', category: 'kuchnia' },
+  { src: '/images/gallery/pizza-margherita.jpg', alt: 'Pizza Margherita z pieca', altEn: 'Wood-fired Pizza Margherita', altCs: 'Pizza Margherita z pece', category: 'kuchnia' },
+  { src: '/images/gallery/filo-tartlet.jpg', alt: 'Tartaletka z grzybami i jajkiem', altEn: 'Filo tartlet with mushrooms and egg', altCs: 'Tartaletka s houbami a vejcem', category: 'kuchnia' },
+  { src: '/images/gallery/soup-bread.jpg', alt: 'Zupa pomidorowa z rozmarynem i grzankami', altEn: 'Tomato soup with rosemary and toast', altCs: 'Rajská polévka s rozmarýnem a topinkami', category: 'kuchnia' },
+  { src: '/images/gallery/schnitzel-platter.jpg', alt: 'Sznycel z pieczonymi warzywami', altEn: 'Schnitzel with roasted vegetables', altCs: 'Řízek s pečenou zeleninou', category: 'kuchnia' },
+  { src: '/images/gallery/pierogi.jpg', alt: 'Pierogi zapiekane ze śmietaną i szczypiorkiem', altEn: 'Baked pierogi with sour cream and chives', altCs: 'Zapečené pierogi se smetanou a pažitkou', category: 'kuchnia' },
+  { src: '/images/gallery/caesar-salad.jpg', alt: 'Sałatka z grillowanym kurczakiem', altEn: 'Salad with grilled chicken', altCs: 'Salát s grilovaným kuřetem', category: 'kuchnia' },
+  { src: '/images/gallery/pear-sorbet.jpg', alt: 'Gruszka z sorbetem malinowym', altEn: 'Pear with raspberry sorbet', altCs: 'Hruška s malinovým sorbetem', category: 'kuchnia' },
+  { src: '/images/gallery/pulled-meat.jpg', alt: 'Duszone mięso z ziołami', altEn: 'Slow-cooked pulled meat with herbs', altCs: 'Dušené trhané maso s bylinkami', category: 'kuchnia' },
+  { src: '/images/gallery/schnitzel.jpg', alt: 'Tradycyjny kotlet schabowy', altEn: 'Traditional pork schnitzel', altCs: 'Tradiční vepřový řízek', category: 'kuchnia' },
 
   // === EVENTY / EVENTS ===
-  { src: '/images/gallery/wedding-setup.jpg', alt: 'Sala weselna — eleganckie nakrycie ze świeżymi kwiatami', category: 'eventy', featured: true },
-  { src: '/images/gallery/festive-table.jpg', alt: 'Świąteczna dekoracja stołu', category: 'eventy' },
-  { src: '/images/gallery/event-crowd.jpg', alt: 'Wydarzenie w restauracji — pełna sala gości', category: 'eventy' },
-  { src: '/images/gallery/herring-buffet.jpg', alt: 'Catering — śledzie i zimne przekąski', category: 'eventy' },
+  { src: '/images/gallery/wedding-setup.jpg', alt: 'Sala weselna — eleganckie nakrycie ze świeżymi kwiatami', altEn: 'Wedding hall — elegant setting with fresh flowers', altCs: 'Svatební sál — elegantní prostírání s čerstvými květinami', category: 'eventy', featured: true },
+  { src: '/images/gallery/festive-table.jpg', alt: 'Świąteczna dekoracja stołu', altEn: 'Festive table decoration', altCs: 'Slavnostní dekorace stolu', category: 'eventy' },
+  { src: '/images/gallery/event-crowd.jpg', alt: 'Wydarzenie w restauracji — pełna sala gości', altEn: 'Restaurant event — full house', altCs: 'Akce v restauraci — plný sál hostů', category: 'eventy' },
+  { src: '/images/gallery/herring-buffet.jpg', alt: 'Catering — śledzie i zimne przekąski', altEn: 'Catering — herring and cold appetizers', altCs: 'Catering — sledě a studené předkrmy', category: 'eventy' },
 ];
 
 const categories = [
@@ -108,7 +108,11 @@ const categories = [
             />
             <div class="absolute inset-0 bg-gradient-to-t from-dark/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
             <div class="absolute bottom-0 left-0 right-0 p-3 sm:p-4 translate-y-full group-hover:translate-y-0 transition-transform duration-300">
-              <p class="text-white text-xs sm:text-sm font-medium drop-shadow-lg">{item.alt}</p>
+              <p class="text-white text-xs sm:text-sm font-medium drop-shadow-lg">
+                <span class="text-pl">{item.alt}</span>
+                <span class="text-en hidden">{item.altEn}</span>
+                <span class="text-cs hidden">{item.altCs}</span>
+              </p>
             </div>
           </a>
         ))}

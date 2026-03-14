@@ -40,7 +40,9 @@ import info from '../data/info.json';
         Stara Stacja
       </h1>
       <p class="text-xl md:text-2xl font-light text-white/80 mb-10">
-        {info.tagline}
+        <span class="text-pl">{info.tagline}</span>
+        <span class="text-en hidden">1,000 meters above sea level</span>
+        <span class="text-cs hidden">1 000 metrů nad mořem</span>
       </p>
       <div class="flex flex-col sm:flex-row gap-4 justify-center">
         <a href="/menu" class="px-8 py-4 bg-accent text-primary font-semibold uppercase tracking-wider text-sm hover:bg-accent-light transition-colors">
@@ -78,14 +80,19 @@ import info from '../data/info.json';
           <span class="text-cs hidden">Výjimečné místo na mapě Bielska</span>
         </h2>
         <p class="text-dark/70 leading-relaxed mb-6">
-          <span class="text-pl">Stara Stacja to restauracja z duszą, położona na szczycie góry Szyndzielnia. Łączymy tradycyjną kuchnię regionalną z nowoczesnymi technikami kulinarnymi, oferując niezapomniane doznania smakowe z panoramicznym widokiem na góry.</span>
-          <span class="text-en hidden">Stara Stacja is a restaurant with soul, located at the summit of Mount Szyndzielnia. We combine traditional regional cuisine with modern culinary techniques, offering unforgettable flavors with a panoramic mountain view.</span>
-          <span class="text-cs hidden">Stara Stacja je restaurace s duší, která se nachází na vrcholu hory Szyndzielnia. Kombinujeme tradiční regionální kuchyni s moderními kulinářskými technikami a nabízíme nezapomenutelné chuťové zážitky s panoramatickým výhledem na hory.</span>
+          <span class="text-pl">Stara Stacja to restauracja z duszą, położona na szczycie góry Szyndzielnia (1000 m n.p.m.) w sercu Beskidu Śląskiego. Łączymy tradycyjną kuchnię regionalną z nowoczesnymi technikami kulinarnymi, oferując niezapomniane doznania smakowe z panoramicznym widokiem na góry. Nasz budynek to dawna stacja kolejki linowej, która zyskała nowe życie jako przestrzeń gastronomiczna z charakterem.</span>
+          <span class="text-en hidden">Stara Stacja is a restaurant with soul, located at the summit of Mount Szyndzielnia (1,000 m a.s.l.) in the heart of the Silesian Beskids. We combine traditional regional cuisine with modern culinary techniques, offering unforgettable flavors with a panoramic mountain view. Our building is a former cable car station that has gained new life as a dining space with character.</span>
+          <span class="text-cs hidden">Stara Stacja je restaurace s duší na vrcholu hory Szyndzielnia (1 000 m n. m.) v srdci Slezských Beskyd. Kombinujeme tradiční regionální kuchyni s moderními kulinářskými technikami a nabízíme nezapomenutelné chuťové zážitky s panoramatickým výhledem na hory. Naše budova je bývalá stanice lanovky, která získala nový život jako gastronomický prostor s charakterem.</span>
+        </p>
+        <p class="text-dark/70 leading-relaxed mb-6">
+          <span class="text-pl">Szyndzielnia to serce górskiej turystyki w Bielsku-Białej. Ze szczytu rozchodzą się popularne szlaki na Klimczok, Błatnią i dalej w Beskid Śląski — idealne na jednodniowe wycieczki piesze i trailowe wyprawy. Dzięki kolejce linowej na szczyt dostaniesz się wygodnie w kilka minut, co czyni to miejsce doskonałym punktem startowym dla turystów w każdym wieku — od rodzin z dziećmi po doświadczonych wędrowców.</span>
+          <span class="text-en hidden">Szyndzielnia is the heart of mountain tourism in Bielsko-Biała. From the summit, popular hiking trails lead to Klimczok, Błatnia, and deeper into the Silesian Beskids — perfect for day hikes and trail adventures. Thanks to the cable car, you can reach the top comfortably in just a few minutes, making it an excellent starting point for hikers of all ages — from families with children to experienced trekkers.</span>
+          <span class="text-cs hidden">Szyndzielnia je srdcem horské turistiky v Bielsku-Bílé. Z vrcholu vedou oblíbené turistické stezky na Klimczok, Błatnii a dále do Slezských Beskyd — ideální na jednodenní pěší túry a trailové výpravy. Díky lanovce se na vrchol dostanete pohodlně za pár minut, což z něj činí vynikající výchozí bod pro turisty všech věkových kategorií — od rodin s dětmi po zkušené turisty.</span>
         </p>
         <p class="text-dark/70 leading-relaxed mb-8">
-          <span class="text-pl">Nasz budynek to dawna stacja kolejki linowej, która zyskała nowe życie jako przestrzeń gastronomiczna z charakterem. To idealne miejsce na rodzinny obiad, romantyczną kolację czy wyjątkowe wydarzenie.</span>
-          <span class="text-en hidden">Our building is a former cable car station that has gained new life as a dining space with character. It's the perfect place for a family lunch, romantic dinner, or a special event.</span>
-          <span class="text-cs hidden">Naše budova je bývalá stanice lanovky, která získala nový život jako gastronomický prostor s charakterem. Je to ideální místo pro rodinný oběd, romantickou večeři nebo výjimečnou událost.</span>
+          <span class="text-pl">Region jest również kultowym miejscem dla społeczności MTB — sieć tras enduro i cross-country przyciąga rowerzystów górskich z całej Polski i zza granicy. Po intensywnym dniu na szlakach lub trasach rowerowych Stara Stacja to idealne miejsce na regenerację z pysznym jedzeniem i widokami na Beskidy.</span>
+          <span class="text-en hidden">The region is also an iconic destination for the MTB community — a network of enduro and cross-country trails attracts mountain bikers from across Poland and beyond. After an intense day on the hiking trails or bike routes, Stara Stacja is the perfect place to recharge with delicious food and Beskid mountain views.</span>
+          <span class="text-cs hidden">Region je také kultovním místem pro komunitu MTB — síť enduro a cross-country tras přitahuje horské cyklisty z celého Polska i ze zahraničí. Po intenzivním dni na turistických stezkách nebo cyklistických trasách je Stara Stacja ideálním místem k regeneraci s vynikajícím jídlem a výhledy na Beskydy.</span>
         </p>
         <a href="/kontakt" class="inline-block text-accent font-semibold uppercase tracking-wider text-sm border-b-2 border-accent pb-1 hover:text-primary hover:border-primary transition-colors">
           <span class="text-pl">Dowiedz się więcej →</span>
