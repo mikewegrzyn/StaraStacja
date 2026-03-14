@@ -1,0 +1,32 @@
+{
+  "name": "Stara Stacja",
+  "tagline": "1000 metrów nad poziomem morza",
+  "description": "Wyjątkowa restauracja na szczycie Szyndzielni w Bielsku-Białej. Idealne miejsce na rodzinne obiady, spotkania ze znajomymi i niezapomniane wydarzenia.",
+  "address": {
+    "street": "Aleja Armii Krajowej 466",
+    "city": "43-300 Bielsko-Biała",
+    "country": "Polska"
+  },
+  "phone": "+48 515 552 130",
+  "email": "starastacjabielsko@gmail.com",
+  "hours": {
+    "monday": "10:00 – 17:30",
+    "tuesday_sunday": "9:00 – 17:30"
+  },
+  "capacity": {
+    "indoor": 120,
+    "terrace": 120,
+    "total": 240
+  },
+  "social": {
+    "instagram": "https://instagram.com/stara.stacja",
+    "facebook": "https://facebook.com/profile.php?id=61561136411926"
+  },
+  "features": [
+    "Widok na panoramę gór",
+    "Taras na 120 osób",
+    "Organizacja eventów i wesel",
+    "Rezerwacja kolejki linowej",
+    "Kuchnia regionalna i europejska"
+  ]
+}

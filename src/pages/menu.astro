@@ -1,0 +1,182 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+import menu from '../data/menu.json';
+
+const foodCategories = ['Śniadania', 'Sałatki', 'Zupy', 'Dania główne', 'Dania dla dzieci', 'Desery', 'Pizza'];
+const drinkCategories = ['Piwa', 'Spritz', 'Alkohole', 'Alkohole na ciepło', 'Wina', 'Kawa / Herbata / Napoje'];
+
+const food = menu.categories.filter(c => foodCategories.includes(c.name));
+const drinks = menu.categories.filter(c => drinkCategories.includes(c.name));
+
+function slugify(name: string) {
+  return name.toLowerCase().replace(/\s+/g, '-').replace(/\//g, '-');
+}
+---
+
+<Layout title="Menu — Stara Stacja" description="Menu restauracji Stara Stacja na szczycie Szyndzielni. Kuchnia regionalna i europejska.">
+  <Nav />
+
+  <!-- Page header -->
+  <section class="relative pt-32 pb-20 px-6 bg-primary text-white">
+    <div class="max-w-4xl mx-auto text-center">
+      <p class="text-accent-light uppercase tracking-[0.15em] sm:tracking-[0.3em] text-xs sm:text-sm mb-4">Stara Stacja</p>
+      <h1 class="font-heading text-4xl sm:text-5xl md:text-6xl font-bold mb-4">Menu</h1>
+      <p class="text-white/60 max-w-xl mx-auto">Smaki Podbeskidzia w nowoczesnym wydaniu</p>
+    </div>
+  </section>
+
+  <!-- Language toggle + section tabs -->
+  <div class="sticky top-16 z-40 bg-cream/95 backdrop-blur-sm border-b border-cream-dark">
+    <div class="max-w-4xl mx-auto px-6 py-4 flex items-center justify-between">
+      <div class="flex gap-2">
+        <button id="tab-food" class="menu-tab text-xs uppercase tracking-widest font-medium text-accent border-b-2 border-accent px-3 py-2 min-h-[44px]">Kuchnia</button>
+        <button id="tab-drinks" class="menu-tab text-xs uppercase tracking-widest font-medium text-dark/40 hover:text-accent px-3 py-2 min-h-[44px]">Napoje</button>
+      </div>
+      <div class="flex gap-2">
+        <button id="lang-pl" class="lang-btn text-xs font-semibold px-4 py-2 min-w-[44px] min-h-[44px] bg-primary text-white rounded-full">PL</button>
+        <button id="lang-en" class="lang-btn text-xs font-semibold px-4 py-2 min-w-[44px] min-h-[44px] bg-cream-dark text-dark/50 rounded-full hover:bg-primary hover:text-white transition-colors">EN</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Food section -->
+  <section id="section-food" class="py-16 px-6">
+    <div class="max-w-3xl mx-auto">
+      {food.map((category) => (
+        <div id={slugify(category.name)} class="mb-16 scroll-mt-32">
+          <div class="flex items-baseline gap-4 mb-8">
+            <h2 class="font-heading text-3xl font-bold text-primary">
+              <span class="text-pl">{category.name}</span>
+              <span class="text-en hidden">{category.nameEn}</span>
+            </h2>
+            <span class="text-sm text-dark/30 uppercase tracking-wider text-pl">{category.nameEn}</span>
+          </div>
+          {category.note && (
+            <p class="text-sm text-accent italic mb-6">
+              <span class="text-pl">{category.note}</span>
+              <span class="text-en hidden">{category.noteEn}</span>
+            </p>
+          )}
+          <div class="space-y-6">
+            {category.items.map((item) => (
+              <div class="group flex justify-between items-start gap-4 pb-6 border-b border-cream-dark last:border-0">
+                <div class="flex-1">
+                  <h3 class="font-heading text-lg font-semibold text-primary group-hover:text-accent transition-colors">
+                    <span class="text-pl">{item.name}</span>
+                    <span class="text-en hidden">{item.nameEn || item.name}</span>
+                  </h3>
+                  {item.description && (
+                    <p class="text-sm text-dark/50 mt-1 leading-relaxed">
+                      <span class="text-pl">{item.description}</span>
+                      <span class="text-en hidden">{item.descriptionEn || item.description}</span>
+                    </p>
+                  )}
+                </div>
+                <span class="text-accent font-semibold whitespace-nowrap">{item.price} zł</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <!-- Drinks section -->
+  <section id="section-drinks" class="py-16 px-6 hidden">
+    <div class="max-w-3xl mx-auto">
+      {drinks.map((category) => (
+        <div id={slugify(category.name)} class="mb-16 scroll-mt-32">
+          <div class="flex items-baseline gap-4 mb-8">
+            <h2 class="font-heading text-3xl font-bold text-primary">
+              <span class="text-pl">{category.name}</span>
+              <span class="text-en hidden">{category.nameEn}</span>
+            </h2>
+            <span class="text-sm text-dark/30 uppercase tracking-wider text-pl">{category.nameEn}</span>
+          </div>
+          <div class="space-y-4">
+            {category.items.map((item) => (
+              <div class="group flex justify-between items-start gap-4 pb-4 border-b border-cream-dark last:border-0">
+                <div class="flex-1">
+                  <h3 class="font-heading text-base font-semibold text-primary group-hover:text-accent transition-colors">
+                    <span class="text-pl">{item.name}</span>
+                    <span class="text-en hidden">{item.nameEn || item.name}</span>
+                  </h3>
+                  {item.description && (
+                    <p class="text-xs text-dark/40 mt-0.5">
+                      <span class="text-pl">{item.description}</span>
+                      <span class="text-en hidden">{item.descriptionEn || item.description}</span>
+                    </p>
+                  )}
+                </div>
+                <span class="text-accent font-semibold whitespace-nowrap text-sm">{item.price} zł</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <!-- Menu images download -->
+  <section class="py-16 px-6 bg-cream-dark">
+    <div class="max-w-4xl mx-auto text-center">
+      <h2 class="font-heading text-2xl font-bold text-primary mb-6">Menu do pobrania</h2>
+      <div class="flex flex-wrap gap-4 justify-center">
+        <a href="/images/menu1-pl.png" target="_blank" class="px-6 py-3 bg-primary text-white text-sm uppercase tracking-wider hover:bg-primary-light transition-colors">Menu PL (1)</a>
+        <a href="/images/menu2-pl.png" target="_blank" class="px-6 py-3 bg-primary text-white text-sm uppercase tracking-wider hover:bg-primary-light transition-colors">Napoje PL</a>
+        <a href="/images/menu3-pl.png" target="_blank" class="px-6 py-3 bg-primary text-white text-sm uppercase tracking-wider hover:bg-primary-light transition-colors">Pizza PL</a>
+        <a href="/images/menu1-en.png" target="_blank" class="px-6 py-3 bg-accent text-primary text-sm uppercase tracking-wider hover:bg-accent-light transition-colors">Menu EN (1)</a>
+        <a href="/images/menu2-en.png" target="_blank" class="px-6 py-3 bg-accent text-primary text-sm uppercase tracking-wider hover:bg-accent-light transition-colors">Drinks EN</a>
+        <a href="/images/menu3-en.png" target="_blank" class="px-6 py-3 bg-accent text-primary text-sm uppercase tracking-wider hover:bg-accent-light transition-colors">Pizza EN</a>
+      </div>
+    </div>
+  </section>
+
+  <Footer />
+</Layout>
+
+<script>
+  // Section tabs
+  const tabFood = document.getElementById('tab-food');
+  const tabDrinks = document.getElementById('tab-drinks');
+  const sectionFood = document.getElementById('section-food');
+  const sectionDrinks = document.getElementById('section-drinks');
+
+  function activateTab(tab: HTMLElement, section: HTMLElement, otherTab: HTMLElement, otherSection: HTMLElement) {
+    tab.classList.add('text-accent', 'border-b-2', 'border-accent');
+    tab.classList.remove('text-dark/40');
+    otherTab.classList.remove('text-accent', 'border-b-2', 'border-accent');
+    otherTab.classList.add('text-dark/40');
+    section.classList.remove('hidden');
+    otherSection.classList.add('hidden');
+  }
+
+  tabFood?.addEventListener('click', () => activateTab(tabFood, sectionFood!, tabDrinks!, sectionDrinks!));
+  tabDrinks?.addEventListener('click', () => activateTab(tabDrinks, sectionDrinks!, tabFood!, sectionFood!));
+
+  // Language toggle
+  const langPl = document.getElementById('lang-pl');
+  const langEn = document.getElementById('lang-en');
+  const textPl = document.querySelectorAll('.text-pl');
+  const textEn = document.querySelectorAll('.text-en');
+
+  langPl?.addEventListener('click', () => {
+    langPl.classList.add('bg-primary', 'text-white');
+    langPl.classList.remove('bg-cream-dark', 'text-dark/50');
+    langEn?.classList.remove('bg-primary', 'text-white');
+    langEn?.classList.add('bg-cream-dark', 'text-dark/50');
+    textPl.forEach(el => el.classList.remove('hidden'));
+    textEn.forEach(el => el.classList.add('hidden'));
+  });
+
+  langEn?.addEventListener('click', () => {
+    langEn.classList.add('bg-primary', 'text-white');
+    langEn.classList.remove('bg-cream-dark', 'text-dark/50');
+    langPl?.classList.remove('bg-primary', 'text-white');
+    langPl?.classList.add('bg-cream-dark', 'text-dark/50');
+    textEn.forEach(el => el.classList.remove('hidden'));
+    textPl.forEach(el => el.classList.add('hidden'));
+  });
+</script>

@@ -1,0 +1,114 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+
+const galleryItems = [
+  { src: '/images/hero.jpg', alt: 'Bar restauracji Stara Stacja', category: 'wnętrze', span: 'sm:col-span-2 sm:row-span-2' },
+  { src: '/images/interior.jpg', alt: 'Wnętrze restauracji — elegancka sala', category: 'wnętrze', span: '' },
+  { src: '/images/cablecar.jpg', alt: 'Kolejka linowa na Szyndzielnię nocą', category: 'widoki', span: '' },
+  { src: '/images/menu1-pl.png', alt: 'Menu — dania główne', category: 'menu', span: '' },
+  { src: '/images/menu2-pl.png', alt: 'Menu — napoje i wina', category: 'menu', span: '' },
+  { src: '/images/menu3-pl.png', alt: 'Menu — pizza weekendowa', category: 'menu', span: '' },
+];
+
+const categories = ['wszystko', 'wnętrze', 'widoki', 'menu'];
+---
+
+<Layout title="Galeria — Stara Stacja" description="Zdjęcia restauracji Stara Stacja — widoki, wnętrza i dania.">
+  <Nav />
+
+  <section class="relative pt-32 pb-20 px-6 bg-primary text-white">
+    <div class="max-w-4xl mx-auto text-center">
+      <p class="text-accent-light uppercase tracking-[0.15em] sm:tracking-[0.3em] text-xs sm:text-sm mb-4">Stara Stacja</p>
+      <h1 class="font-heading text-5xl md:text-6xl font-bold mb-4">Galeria</h1>
+      <p class="text-white/60 max-w-xl mx-auto">Odkryj piękno Starej Stacji na szczycie Szyndzielni</p>
+    </div>
+  </section>
+
+  <!-- Category filter -->
+  <div class="bg-cream border-b border-cream-dark">
+    <div class="max-w-6xl mx-auto px-6 py-4 flex gap-6 justify-center">
+      {categories.map((cat) => (
+        <button
+          data-filter={cat}
+          class:list={[
+            'gallery-filter text-xs uppercase tracking-widest transition-colors font-medium cursor-pointer px-3 py-2 min-h-[44px] flex items-center',
+            cat === 'wszystko' ? 'text-accent' : 'text-dark/50 hover:text-accent',
+          ]}
+        >
+          {cat}
+        </button>
+      ))}
+    </div>
+  </div>
+
+  <!-- Gallery grid -->
+  <section class="py-16 px-6">
+    <div class="max-w-6xl mx-auto">
+      <div id="gallery-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 auto-rows-[300px]">
+        {galleryItems.map((item) => (
+          <a
+            href={item.src}
+            target="_blank"
+            class:list={[
+              'gallery-item group relative overflow-hidden bg-cream-dark cursor-pointer block',
+              item.span,
+            ]}
+            data-category={item.category}
+          >
+            <img
+              src={item.src}
+              alt={item.alt}
+              class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+              loading="lazy"
+            />
+            <div class="absolute inset-0 bg-dark/0 group-hover:bg-dark/40 transition-colors duration-300"></div>
+            <div class="absolute bottom-0 left-0 right-0 p-3 sm:p-4 bg-gradient-to-t from-dark/70 to-transparent sm:translate-y-full sm:group-hover:translate-y-0 transition-transform duration-300">
+              <p class="text-white text-xs sm:text-sm font-medium">{item.alt}</p>
+            </div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA for more photos -->
+  <section class="py-16 px-6 bg-cream-dark">
+    <div class="max-w-3xl mx-auto text-center">
+      <p class="text-dark/60 mb-4">Więcej zdjęć znajdziesz na naszym Instagramie</p>
+      <a href="https://instagram.com/stara.stacja" target="_blank" rel="noopener" class="inline-block px-8 py-4 bg-primary text-white font-semibold uppercase tracking-wider text-sm hover:bg-primary-light transition-colors">
+        @stara.stacja
+      </a>
+    </div>
+  </section>
+
+  <Footer />
+</Layout>
+
+<script>
+  const filters = document.querySelectorAll('.gallery-filter');
+  const items = document.querySelectorAll('.gallery-item');
+
+  filters.forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const filter = (btn as HTMLElement).dataset.filter;
+
+      filters.forEach((f) => {
+        f.classList.remove('text-accent');
+        f.classList.add('text-dark/50');
+      });
+      btn.classList.add('text-accent');
+      btn.classList.remove('text-dark/50');
+
+      items.forEach((item) => {
+        const el = item as HTMLElement;
+        if (filter === 'wszystko' || el.dataset.category === filter) {
+          el.style.display = '';
+        } else {
+          el.style.display = 'none';
+        }
+      });
+    });
+  });
+</script>

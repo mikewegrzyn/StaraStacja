@@ -1,0 +1,328 @@
+{
+  "categories": [
+    {
+      "name": "Śniadania",
+      "nameEn": "Breakfast",
+      "items": [
+        {
+          "name": "Jajecznica z 3 jaj",
+          "nameEn": "Scrambled Eggs (3 eggs)",
+          "description": "chleb górek / cebula / oliwa ziołowa",
+          "descriptionEn": "mountain bread / onion / herb olive oil",
+          "price": "30"
+        },
+        {
+          "name": "Śniadanie The Loop",
+          "nameEn": "The Loop Breakfast",
+          "description": "obwarzanek / mix sałat / szynka parmeńska / pomidory koktajlowe / ogórek zielony",
+          "descriptionEn": "bagel / mixed greens / Parma ham / cherry tomatoes / cucumber",
+          "price": "35"
+        }
+      ]
+    },
+    {
+      "name": "Sałatki",
+      "nameEn": "Salads",
+      "items": [
+        {
+          "name": "Sałatka z burratą",
+          "nameEn": "Burrata Salad",
+          "description": "mix sałat / pomidory koktajlowe / ogórek zielony / sos musztardowo-miodowy",
+          "descriptionEn": "mixed greens / cherry tomatoes / cucumber / honey mustard dressing",
+          "price": "38"
+        },
+        {
+          "name": "Sałatka z szynką parmeńską",
+          "nameEn": "Parma Ham Salad",
+          "description": "mix sałat / pomidory koktajlowe / ogórek zielony / sos musztardowo-miodowy",
+          "descriptionEn": "mixed greens / cherry tomatoes / cucumber / honey mustard dressing",
+          "price": "38"
+        }
+      ]
+    },
+    {
+      "name": "Zupy",
+      "nameEn": "Soups",
+      "items": [
+        {
+          "name": "Zupa cebulowa",
+          "nameEn": "Onion Soup",
+          "description": "bulion mięsny / białe wino / gorgonzola",
+          "descriptionEn": "meat broth / white wine / gorgonzola",
+          "price": "35"
+        },
+        {
+          "name": "Gulasz tyrolski",
+          "nameEn": "Tyrolean Goulash",
+          "description": "kark wieprzowy / kwaśna śmietana / chleb górek",
+          "descriptionEn": "pork neck / sour cream / mountain bread",
+          "price": "45"
+        }
+      ]
+    },
+    {
+      "name": "Dania główne",
+      "nameEn": "Main Courses",
+      "items": [
+        {
+          "name": "Schabowy smażony na smalcu",
+          "nameEn": "Pork Schnitzel Fried in Lard",
+          "description": "konfitowane ziemniaki / smażona kapusta / groszek",
+          "descriptionEn": "confit potatoes / sautéed sauerkraut / mushrooms",
+          "price": "59"
+        },
+        {
+          "name": "Kurczak w panko",
+          "nameEn": "Panko Chicken",
+          "description": "konfitowane ziemniaki / karmelizowane marchew / sos musztardowo-miodowy",
+          "descriptionEn": "confit potatoes / caramelized carrots / honey mustard sauce",
+          "price": "58"
+        },
+        {
+          "name": "Placki ziemniaczane z gulaszem",
+          "nameEn": "Potato Pancakes with Goulash",
+          "description": "karczek wieprzowy / kwaśna śmietana / parmezan",
+          "descriptionEn": "pork neck / sour cream / parmesan",
+          "price": "52"
+        },
+        {
+          "name": "Pieczony boczek",
+          "nameEn": "Roasted Pork Belly",
+          "description": "ciasto filo / sos śliwkowy / grillowana sałata rzymska",
+          "descriptionEn": "filo pastry / plum sauce / grilled romaine lettuce",
+          "price": "48"
+        },
+        {
+          "name": "Pierogi ze szpinakiem i ricottą",
+          "nameEn": "Dumplings with Spinach & Ricotta",
+          "description": "majonez kraftowy / oliwa ziołowa / orzechy",
+          "descriptionEn": "craft mayonnaise / herb olive oil / nuts",
+          "price": "41"
+        },
+        {
+          "name": "Pierogi z gęsiną i truflą",
+          "nameEn": "Dumplings with Goose & Truffle",
+          "description": "oliwa ziołowa / parmezan / sos z karmelizowanej cebuli",
+          "descriptionEn": "herb olive oil / parmesan / caramelized onion sauce",
+          "price": "48"
+        }
+      ]
+    },
+    {
+      "name": "Dania dla dzieci",
+      "nameEn": "Kids' Menu",
+      "items": [
+        {
+          "name": "Zupa pomidorowa",
+          "nameEn": "Tomato Soup",
+          "description": "pomidory pelati / mozzarella / grzanki",
+          "descriptionEn": "pelati tomatoes / mozzarella / croutons",
+          "price": "25"
+        },
+        {
+          "name": "Lasagne",
+          "nameEn": "Lasagne",
+          "description": "mięso wieprzowe / pomidory pelati / bazylia",
+          "descriptionEn": "pork / pelati tomatoes / basil",
+          "price": "25"
+        },
+        {
+          "name": "Kluseczki leniwe",
+          "nameEn": "Lazy Dumplings",
+          "description": "sos owocowy / masło / bita śmietana",
+          "descriptionEn": "fruit sauce / butter / whipped cream",
+          "price": "25"
+        }
+      ]
+    },
+    {
+      "name": "Desery",
+      "nameEn": "Desserts",
+      "items": [
+        {
+          "name": "Austriacki knedel",
+          "nameEn": "Austrian Knödel",
+          "description": "budyń waniliowy / liofilizowane owoce / powidła śliwkowe",
+          "descriptionEn": "vanilla pudding / freeze-dried fruit / plum jam",
+          "price": "38"
+        },
+        {
+          "name": "Pieczona gruszka",
+          "nameEn": "Roasted Pear",
+          "description": "orzechy / karmel / lody",
+          "descriptionEn": "nuts / caramel / ice cream",
+          "price": "28"
+        },
+        {
+          "name": "Apfelstrudel",
+          "nameEn": "Apfelstrudel",
+          "description": "sos owocowy / bita śmietana / lody",
+          "descriptionEn": "fruit sauce / whipped cream / ice cream",
+          "price": "32"
+        },
+        {
+          "name": "Deser dnia",
+          "nameEn": "Dessert of the Day",
+          "description": "zapytaj obsługę",
+          "descriptionEn": "ask staff",
+          "price": "25"
+        }
+      ]
+    },
+    {
+      "name": "Pizza",
+      "nameEn": "Pizza",
+      "note": "Pizza dostępna tylko w weekendy",
+      "noteEn": "Pizza available on weekends only",
+      "items": [
+        {
+          "name": "Buratina",
+          "nameEn": "Buratina",
+          "description": "sos pomidorowy / rukola / pomidorki koktajlowe",
+          "descriptionEn": "tomato sauce / arugula / cherry tomatoes",
+          "price": "48"
+        },
+        {
+          "name": "Parma",
+          "nameEn": "Parma",
+          "description": "sos pomidorowy / szynka parmeńska / rukola / pomidorki koktajlowe / parmezan",
+          "descriptionEn": "tomato sauce / Parma ham / arugula / cherry tomatoes / parmesan",
+          "price": "45"
+        },
+        {
+          "name": "Salame Piccante",
+          "nameEn": "Salame Piccante",
+          "description": "sos pomidorowy / spinata piccante / peperoncino / bazylia / mozzarella",
+          "descriptionEn": "tomato sauce / spinata piccante / peperoncino / basil / mozzarella",
+          "price": "45"
+        },
+        {
+          "name": "Capricciosa",
+          "nameEn": "Capricciosa",
+          "description": "sos pomidorowy / szynka cotto / grzyby / bazylia / mozzarella",
+          "descriptionEn": "tomato sauce / cooked ham / mushrooms / basil / mozzarella",
+          "price": "45"
+        },
+        {
+          "name": "Margherita",
+          "nameEn": "Margherita",
+          "description": "sos pomidorowy / mozzarella / bazylia",
+          "descriptionEn": "tomato sauce / mozzarella / basil",
+          "price": "42"
+        },
+        {
+          "name": "Tartufo",
+          "nameEn": "Tartufo",
+          "description": "sos truflowy / spinata piccante / mascarpone / szczypiorek / mozzarella",
+          "descriptionEn": "truffle sauce / spinata piccante / mascarpone / chives / mozzarella",
+          "price": "48"
+        },
+        {
+          "name": "Tartufo wege",
+          "nameEn": "Tartufo Veggie",
+          "description": "sos truflowy / mascarpone / grzyby / szczypiorek / mozzarella",
+          "descriptionEn": "truffle sauce / mascarpone / mushrooms / chives / mozzarella",
+          "price": "47"
+        },
+        {
+          "name": "Salame",
+          "nameEn": "Salame",
+          "description": "sos pomidorowy / salame napoli / oliwki / mozzarella / orzechy / bazylia",
+          "descriptionEn": "tomato sauce / salame napoli / olives / mozzarella / nuts / basil",
+          "price": "45"
+        }
+      ]
+    },
+    {
+      "name": "Piwa",
+      "nameEn": "Beers",
+      "items": [
+        { "name": "Hoegaarden", "price": "25" },
+        { "name": "Radegast", "price": "18" },
+        { "name": "Holba", "price": "18" },
+        { "name": "Liocel Dark Citron", "price": "18" },
+        { "name": "Piwo kraftowe butelka", "nameEn": "Craft beer bottle", "price": "20" },
+        { "name": "Piwo kraftowe bezalkoholowe butelka", "nameEn": "Non-alcoholic craft beer bottle", "price": "20" }
+      ]
+    },
+    {
+      "name": "Spritz",
+      "nameEn": "Spritz",
+      "items": [
+        { "name": "Aperol spritz", "price": "38" },
+        { "name": "Campari spritz", "price": "38" },
+        { "name": "Limoncello spritz", "price": "38" },
+        { "name": "Cherry spritz", "price": "38" },
+        { "name": "Aperol free", "price": "30" },
+        { "name": "Limoncello free", "price": "30" }
+      ]
+    },
+    {
+      "name": "Alkohole",
+      "nameEn": "Spirits",
+      "items": [
+        { "name": "Campari", "price": "22" },
+        { "name": "Jagermeister", "price": "24" },
+        { "name": "Beefeater", "price": "22" },
+        { "name": "Limoncello", "price": "20" },
+        { "name": "Havana", "price": "23" },
+        { "name": "Glenlivey 12y", "price": "28" },
+        { "name": "Vodka Ostoya", "price": "17" },
+        { "name": "Haberfeld Połomówka", "price": "24" },
+        { "name": "Haberfeld Żywica", "price": "34" },
+        { "name": "Haberfeld Miodula", "price": "34" }
+      ]
+    },
+    {
+      "name": "Alkohole na ciepło",
+      "nameEn": "Hot Alcoholic Drinks",
+      "items": [
+        { "name": "Herbata zimowa z rumem", "nameEn": "Winter Tea with Rum", "price": "38" },
+        { "name": "Grzane wino", "nameEn": "Mulled Wine", "price": "28" },
+        { "name": "Irish coffee", "price": "28" },
+        { "name": "Bombardino", "price": "39" },
+        { "name": "Wiśniówka na ciepło", "nameEn": "Hot Cherry Liqueur", "price": "32" },
+        { "name": "Wiśniówka", "nameEn": "Cherry Liqueur", "price": "25" }
+      ]
+    },
+    {
+      "name": "Wina",
+      "nameEn": "Wines",
+      "items": [
+        { "name": "Prosecco by the glass", "price": "18" },
+        { "name": "Abtei Himmerod, Riesling", "description": "białe, półwytrawne, Niemcy", "descriptionEn": "white, semi-dry, Germany", "price": "17 / 170" },
+        { "name": "Chareron et Trebuchet Chablis", "description": "białe, wytrawne, Francja", "descriptionEn": "white, dry, France", "price": "25 / 250" },
+        { "name": "Friuli Grave, Sauvignon blanc", "description": "białe, wytrawne, Włochy", "descriptionEn": "white, dry, Italy", "price": "17 / 170" },
+        { "name": "Chianti Classico, Sangiovese", "description": "czerwone, wytrawne, Włochy", "descriptionEn": "red, dry, Italy", "price": "17 / 170" },
+        { "name": "Cascina Chicco, Barbera", "description": "czerwone, wytrawne, Włochy", "descriptionEn": "red, dry, Italy", "price": "17 / 170" },
+        { "name": "Domaine de la Baume, Syrah", "description": "czerwone, wytrawne, Francja", "descriptionEn": "red, dry, France", "price": "17 / 170" }
+      ]
+    },
+    {
+      "name": "Kawa / Herbata / Napoje",
+      "nameEn": "Coffee / Tea / Beverages",
+      "items": [
+        { "name": "Gorąca czekolada z bitą śmietaną", "nameEn": "Hot Chocolate with Whipped Cream", "price": "17" },
+        { "name": "Espresso", "price": "13" },
+        { "name": "Doppio", "price": "16" },
+        { "name": "Americano", "price": "16" },
+        { "name": "Cappuccino", "price": "20" },
+        { "name": "Kawa biała", "nameEn": "Flat White", "price": "18" },
+        { "name": "Latte", "price": "20" },
+        { "name": "Black Ceylon", "price": "16" },
+        { "name": "Earl Grey", "price": "16" },
+        { "name": "Green", "price": "16" },
+        { "name": "Fruit", "price": "16" },
+        { "name": "Mint", "price": "16" },
+        { "name": "Winter", "price": "15" },
+        { "name": "Coca-Cola", "price": "14" },
+        { "name": "Coca-Cola Zero", "price": "14" },
+        { "name": "Fentimans", "price": "14" },
+        { "name": "Tonic", "price": "14" },
+        { "name": "Sprite", "price": "14" },
+        { "name": "Woda gazowana / niegazowana", "nameEn": "Sparkling / Still Water", "price": "10" },
+        { "name": "Soki owocowe", "nameEn": "Fruit juices", "price": "14" }
+      ]
+    }
+  ]
+}
