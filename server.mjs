@@ -1,25 +1,22 @@
 /**
- * Stara Stacja — Production Server
- *
- * This file serves the static Astro build from the dist/ folder.
- * If dist/ does not exist, it runs the build automatically.
+ * Stara Stacja — Production Server (Hostinger Node.js)
  *
  * Hostinger setup:
+ *   - Framework: Express
  *   - Entry point: server.mjs
- *   - Build command: npm install && npm run build
- *   - Start command: npm start
- *   - Node.js version: 22+
+ *   - Branch: main
+ *   - Node.js: 22.x
  *
- * You can also run manually:
- *   npm install
- *   npm run build
- *   npm start
+ * How it works:
+ *   1. Builds Astro site to dist/ if not already built
+ *   2. Copies dist/ contents to public_html/ (where Hostinger serves from)
+ *   3. Starts Express server as a fallback
  */
 
 import express from 'express';
-import { dirname, join } from 'path';
+import { dirname, join, resolve } from 'path';
 import { fileURLToPath } from 'url';
-import { existsSync } from 'fs';
+import { existsSync, cpSync, readdirSync } from 'fs';
 import { execSync } from 'child_process';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
@@ -40,28 +37,41 @@ if (!existsSync(distPath)) {
 // Verify dist/index.html exists
 if (!existsSync(join(distPath, 'index.html'))) {
   console.error('[Stara Stacja] ERROR: dist/index.html not found. Build may have failed.');
-  console.error('[Stara Stacja] Try running: npm install && npm run build');
   process.exit(1);
 }
 
+// Copy dist/ contents to Hostinger's public_html/ if we detect we're on Hostinger
+// Hostinger serves static files from public_html/, not from the Node.js app
+const hostingerPublicHtml = resolve(__dirname, '..', '..', '..', '..');
+const htaccessPath = join(hostingerPublicHtml, '.htaccess');
+
+if (existsSync(htaccessPath) && hostingerPublicHtml.includes('public_html')) {
+  console.log(`[Stara Stacja] Hostinger detected — copying dist/ to ${hostingerPublicHtml}`);
+  try {
+    const distFiles = readdirSync(distPath);
+    for (const file of distFiles) {
+      cpSync(join(distPath, file), join(hostingerPublicHtml, file), { recursive: true, force: true });
+    }
+    console.log(`[Stara Stacja] Copied ${distFiles.length} items to public_html/`);
+  } catch (err) {
+    console.error('[Stara Stacja] Failed to copy to public_html:', err.message);
+  }
+}
+
+// Start Express server (used by Hostinger's Node.js proxy)
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-// Serve static files from dist/
 app.use(express.static(distPath, {
   extensions: ['html'],
   index: 'index.html',
 }));
 
-// Handle clean URLs — Astro generates /menu/index.html for /menu
 app.get('*', (req, res) => {
-  // Try serving the path as a directory with index.html
   const filePath = join(distPath, req.path, 'index.html');
   if (existsSync(filePath)) {
     return res.sendFile(filePath);
   }
-
-  // 404 fallback
   const notFound = join(distPath, '404.html');
   if (existsSync(notFound)) {
     return res.status(404).sendFile(notFound);
