@@ -356,7 +356,7 @@
       "nameEn": "Wines",
       "nameCs": "Vína",
       "items": [
-        { "name": "Prosecco by the glass", "nameCs": "Prosecco na skleničku", "price": "18" },
+        { "name": "Prosecco lampka", "nameEn": "Prosecco by the glass", "nameCs": "Prosecco na skleničku", "price": "18" },
         { "name": "Abtei Himmerod, Riesling", "description": "białe, półwytrawne, Niemcy", "descriptionEn": "white, semi-dry, Germany", "descriptionCs": "bílé, polosuché, Německo", "price": "17 / 170" },
         { "name": "Chartron et Trebuchet Chablis", "description": "białe, wytrawne, Francja", "descriptionEn": "white, dry, France", "descriptionCs": "bílé, suché, Francie", "price": "25 / 250" },
         { "name": "Friuli Grave, Sauvignon blanc", "description": "białe, wytrawne, Włochy", "descriptionEn": "white, dry, Italy", "descriptionCs": "bílé, suché, Itálie", "price": "17 / 170" },
